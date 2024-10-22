@@ -1,10 +1,9 @@
 <template>
-    <div class="container-fluid text-white pt-3 border-top border-bottom bg-dark">
+    <div class="container-fluid pt-3 border-top border-bottom bg-white">
         <div class="row">
             <div class="col-12 col-md-4 mb-3 d-flex flex-column align-items-center justify-content-center">
                 <router-link to="/" class="text-decoration-none text-dark d-flex flex-column align-items-center">
-                    <img :src="img" style="width: 150px;object-fit: contain; ">
-                    <span class="text-white fs-1">Exolar Energy</span>
+                    <img :src="img" style="width: 200px;object-fit: contain; ">
                 </router-link>
 
             </div>
@@ -27,14 +26,14 @@
                 <div class="mb-3 text-start">
                     <p class="mb-2 fw-bold">Company</p>
                     <div class="d-flex flex-column">
-                        <router-link :to="link.link" class="text-decoration-none my-1 text-white"
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
                             v-for="(link, index) in company" :key="index">{{ link.name }}</router-link>
                     </div>
                 </div>
                 <div class="mb-3 text-start">
                     <p class="mb-2 fw-bold">Resources</p>
                     <div class="d-flex flex-column">
-                        <router-link :to="link.link" class="text-decoration-none my-1 text-white"
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
                             v-for="(link, index) in links" :key="index">{{ link.name }}</router-link>
                     </div>
                 </div>
@@ -59,7 +58,7 @@ export default {
     },
     data() {
         return {
-            img: 'img/logo.png',
+            img: '/img/logo.png',
             company: [
                 {
                     id: 4,
@@ -75,6 +74,11 @@ export default {
                     id: 3,
                     name: 'Refund Policy',
                     link: '/refund-policy'
+                },
+                {
+                    id: 3,
+                    name: 'Business',
+                    link: '/business'
                 },
                 // {
                 //     id: 23,

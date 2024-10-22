@@ -55,9 +55,9 @@
             </div>
         </div>
     </div>
-    <div class="wh-60 rounded-circle position-fixed  bg-success px-3 py-1" data-bs-toggle="modal"
-        data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;">
-        <i class="bi bi-phone fs-2 text-white"></i>
+    <div class="wh-60 rounded-circle position-fixed p-2" data-bs-toggle="modal"
+        data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;background-color: var(--bg-secondary);">
+        <img src="/img/enquiry.svg" alt="" style="width: 25px;filter: invert(1);">
     </div>
     <FaqFormSection />
 

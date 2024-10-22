@@ -17,14 +17,14 @@
                                 :data-bs-target="'#collapse' + index" aria-expanded="false"
                                 :aria-controls="'collapse' + index" style="background-color: var(--bg-primary);">
                                 <i :class="step.icon" class="fs-1 text-white me-3"></i>
-                                <h5 class="fw-bold fs-4 text-white mb-0">{{ step.title }}</h5>
+                                <h5 class="text-white mb-0">{{ step.title }}</h5>
                             </button>
                         </h2>
                         <div :id="'collapse' + index" class="accordion-collapse collapse"
                             :aria-labelledby="'heading' + index" :data-bs-parent="'#accordion' + index">
                             <div class="accordion-body">
                                 <ul class=" ">
-                                    <li class="text-start text-white" v-for="(detail, detailIndex) in step.details"
+                                    <li class="text-start text-white small" v-for="(detail, detailIndex) in step.details"
                                         :key="detailIndex">
                                         {{ detail }}
                                     </li>
@@ -64,7 +64,7 @@ export default {
                     ]
                 },
                 {
-                    title: 'Validation and Design',
+                    title: 'Validation & Design',
                     icon: 'bi bi-gear',
                     details: [
                         'Validation and updating of the simulation',
@@ -73,7 +73,7 @@ export default {
                     ]
                 },
                 {
-                    title: 'Proposal and Acceptance',
+                    title: 'Proposal & Acceptance',
                     icon: 'bi bi-file-earmark-text',
                     details: [
                         'Preparation of optimized commercial terms and conditions',
@@ -84,7 +84,7 @@ export default {
                     ]
                 },
                 {
-                    title: 'Installation, Testing and Commissioning',
+                    title: 'Installation & Testing',
                     icon: 'bi bi-lightning-charge',
                     details: [
                         'Detailed design drawing prepared',

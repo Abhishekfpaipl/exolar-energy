@@ -18,7 +18,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6 text-start ps-5 py-5" v-observe style="color: var(--bg-secondary)">
                     <div class="row ">
-                        <div class="col-md-6" v-for="(counter, index) in counters" :key="index">
+                        <div class="col-6" v-for="(counter, index) in counters" :key="index">
                             <h1 class="display-3 fw-bold">{{ counter.number }}+</h1>
                             <p class="fs-4">{{ counter.text }}</p>
                         </div>

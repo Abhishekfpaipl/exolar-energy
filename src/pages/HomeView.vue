@@ -27,7 +27,7 @@
       <WhyGoSolar />
     </div>
     <div class="my-5">
-      <SolarAdvantages />
+      <!-- <SolarAdvantages /> -->
     </div>
     <div class="my-5">
       <SolarInstallationSteps />
@@ -75,7 +75,7 @@
 
 <script>
 import WhyGoSolar from '@/components/WhyGoSolar.vue'
-import SolarAdvantages from '@/components/SolarAdvantages.vue'
+// import SolarAdvantages from '@/components/SolarAdvantages.vue'
 import SolarInstallationSteps from '@/components/SolarInstallationSteps.vue'
 import CarouselBanner from "@/components/CarouselBanner.vue";
 import GallerySection from "@/components/GallerySection.vue";
@@ -99,7 +99,7 @@ export default {
   name: "HomeView",
   components: {
     WhyGoSolar,
-    SolarAdvantages,
+    // SolarAdvantages,
     CarouselBanner,
     GallerySection,
     SolarInstallationSteps,

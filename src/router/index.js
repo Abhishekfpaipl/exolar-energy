@@ -76,6 +76,36 @@ const routes = [
     name: "FacilityPage",
     component: () => import("@/pages/FacilityPage.vue"),
   },
+  {
+    path: "/business",
+    name: "BusinessPage",
+    component: () => import("@/pages/BusinessPage.vue"),
+  },
+  {
+    path: "/category-sentence/:id",
+    name: "CategorySentence",
+    component: () => import("@/pages/CategorySentence.vue")
+  },
+  {
+    path: "/customer-sentence/:id",
+    name: "CustomerSentence",
+    component: () => import("@/pages/CustomerSentence.vue")
+  },
+  {
+    path: "/place-sentence/:id",
+    name: "PlaceSentence",
+    component: () => import("@/pages/PlaceSentence.vue")
+  },
+  {
+    path: "/service-sentence/:id",
+    name: "ServiceSentence",
+    component: () => import("@/pages/ServiceSentence.vue")
+  },
+  {
+    path: "/service/:slug",
+    name: "ServicePage",
+    component: () => import("@/pages/ServicePage.vue")
+  },
 ];
 
 const router = createRouter({

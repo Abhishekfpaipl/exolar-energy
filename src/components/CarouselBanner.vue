@@ -1,8 +1,8 @@
 <template>
   <div>
     <router-link to="/products" class="text-decoration-none text-dark">
-      <img src="/img/banner/desktopBanner.jpeg" class="d-md-block d-none w-100" alt="Banner">
-      <img src="/img/banner/mobileBanner.jpeg" class="d-md-none d-block w-100" alt="Banner">
+      <img src="/img/banner/desktopBanner.jpg" class="d-md-block d-none w-100" alt="Banner">
+      <img src="/img/banner/mobileBanner.jpg" class="d-md-none d-block w-100" alt="Banner">
     </router-link>
   </div>
 

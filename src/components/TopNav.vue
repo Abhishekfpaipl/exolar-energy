@@ -1,9 +1,8 @@
 <template>
-    <div class="position-fixed w-100 d-flex justify-content-between  align-items-center p-2 top-0 bg-light"
+    <div class="position-fixed w-100 d-flex justify-content-between  align-items-center p-2 top-0 bg-white border-bottom"
         style="z-index: 10;">
         <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
-            <img src="img/logo.png" alt="" style="height: 50px;">
-            <span class="fs-3">Exolar Energy</span>
+            <img src="/img/logo.png" alt="" style="height: 40px;">
         </router-link>
         <div class="d-none d-md-flex align-items-center gap-3">
             <router-link :to="link.route" class="text-decoration-none text-dark" v-for="(link, index) in links"
@@ -12,7 +11,7 @@
         <i class="bi bi-list fs-1 d-md-none d-block text-dark" data-bs-toggle="offcanvas" data-bs-target="#MobileMenu"
             aria-controls="MobileMenu"></i>
     </div>
-    <div class="offcanvas offcanvas-end" style="background-color: var(--bg-primary)" tabindex="-1" id="MobileMenu"
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="MobileMenu"
         aria-labelledby="MobileMenuLabel">
         <div class="offcanvas-header border-bottom d-flex justify-content-between align-items-center">
             <img src="img/logo.png" alt="" style="height: 40px;">
@@ -22,7 +21,7 @@
             <div class="d-flex flex-column align-items-start gap-3">
                 <router-link :to="link.route" class="text-decoration-none text-dark w-100 border-bottom px-3"
                     v-for="(link, index) in links" :key="index">
-                    <p data-bs-dismiss="offcanvas" class="text-start mb-0">{{ link.name }}</p>
+                    <p data-bs-dismiss="offcanvas" class="text-center mb-0">{{ link.name }}</p>
                 </router-link>
             </div>
         </div>
