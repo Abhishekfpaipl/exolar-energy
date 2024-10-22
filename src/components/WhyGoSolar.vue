@@ -1,7 +1,7 @@
 <template>
     <div class="container my-5">
         <div class="text-start">
-            <p class="text-muted mb-1 text-uppercase">Ariseol</p>
+            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
             <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Why Go Solar ?</h2>
         </div>
         <div class="row justify-content-center align-items-start">

@@ -1,7 +1,10 @@
 <template>
     <div class="container">
-        <h2 class="mb-5 text-start display-5" style="color: var(--bg-primary);">Steps For Successful Solar Rooftop
-            Installation</h2>
+        <div class="text-start">
+            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
+            <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Steps For Successful Solar Rooftop
+                Installation</h2>
+        </div>
         <h2 class="text-center mb-4"></h2>
         <div class="row row-cols-1 row-cols-md-2 g-2">
             <div class="col" v-for="(step, index) in steps" :key="index">

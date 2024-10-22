@@ -16,13 +16,14 @@
                         <div class="small text-muted text-start px-2 text-ellipsis2 mb-3">
                            " {{ video.title }}
                         </div>
-                        <div class="d-flex justify-content-between p-2">
+                        <div class="d-flex justify-content-between align-items-center p-2">
                             <div class="">
-                                <i class="bi bi-star-fill text-success"></i>
-                                <i class="bi bi-star-fill text-success"></i>
-                                <i class="bi bi-star-fill text-success"></i>
-                                <i class="bi bi-star-fill text-success"></i>
-                                <i class="bi bi-star-half text-success"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <span class="ms-2 smaller text-muted">Star</span>
                             </div>
                             <div class="views-counter mt-2 text-muted">
                                 <i class="bi bi-eye me-1"></i>

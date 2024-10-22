@@ -8,9 +8,9 @@
             <div class="d-flex overflow-x-scroll gap-3 my-3 p-2 px-3 rounded" id="scroll">
                 <li class="nav-item border rounded-pill" role="presentation" v-for="(price, index) in pricing"
                     :key="index">
-                    <button class="nav-link" :class="{ 'active': index === activeTabIndex }" :id="'tab-' + index"
-                        data-bs-toggle="pill" :data-bs-target="'#content-' + index" type="button" role="tab"
-                        :aria-controls="'content-' + index" :aria-selected="index === activeTabIndex"
+                    <button class="nav-link text-dark" :class="{ 'active': index === activeTabIndex }"
+                        :id="'tab-' + index" data-bs-toggle="pill" :data-bs-target="'#content-' + index" type="button"
+                        role="tab" :aria-controls="'content-' + index" :aria-selected="index === activeTabIndex"
                         @click="activeTabIndex = index">{{ price.name
                         }}</button>
                 </li>
@@ -144,7 +144,7 @@ export default {
 
 .nav-link.active {
     background-color: var(--bg-primary) !important;
-    color: black !important;
+    color: white !important;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     border-radius: 2rem;
     /* transform: scale(1.2); */
@@ -161,5 +161,9 @@ export default {
     z-index: 3;
     outline: 0;
     box-shadow: none !important;
+}
+
+.accordion-button::after {
+    filter: invert(1) !important
 }
 </style>

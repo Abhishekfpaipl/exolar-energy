@@ -1,15 +1,18 @@
 <template>
     <div class="container">
-        <h2 class="mb-5 text-start display-5" style="color: var(--bg-primary);">Get The Exolar Advantage, We Understand
-            Better</h2>
+        <div class="text-start">
+            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
+            <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Get The Exolar Advantage, We
+                Understand
+                Better</h2>
+        </div> 
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col" v-for="(advantage, index) in advantages" :key="index">
                 <div class="card h-100" style="background-color: var(--bg-primary);">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
-                            <i :class="advantage.icon" class="fs-1 me-3"
-                                style="color: var(--bg-secondary);"></i>
+                            <i :class="advantage.icon" class="fs-1 me-3" style="color: var(--bg-secondary);"></i>
                             <h5 class="text-white  mb-0">{{ advantage.title }}</h5>
                         </div>
                         <p class="text-start text-white">{{ advantage.description }}</p>
