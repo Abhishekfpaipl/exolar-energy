@@ -76,21 +76,21 @@ export default {
                     name: 'Refund Policy',
                     link: '/refund-policy'
                 },
-                {
-                    id: 23,
-                    name: 'Career',
-                    link: '/career'
-                },
-                {
-                    id: 23,
-                    name: 'Benefit',
-                    link: '/benefit'
-                },
-                {
-                    id: 3,
-                    name: 'Check Dealership',
-                    link: '/check-dealership'
-                },
+                // {
+                //     id: 23,
+                //     name: 'Career',
+                //     link: '/career'
+                // },
+                // {
+                //     id: 23,
+                //     name: 'Benefit',
+                //     link: '/benefit'
+                // },
+                // {
+                //     id: 3,
+                //     name: 'Check Dealership',
+                //     link: '/check-dealership'
+                // },
 
             ],
             links: [
@@ -109,16 +109,16 @@ export default {
                     name: 'Terms & Conditions',
                     link: '/term-of-use'
                 },
-                {
-                    id: 23,
-                    name: 'Facility',
-                    link: '/facility'
-                },
-                {
-                    id: 23,
-                    name: 'Reports',
-                    link: '/report'
-                },
+                // {
+                //     id: 23,
+                //     name: 'Facility',
+                //     link: '/facility'
+                // },
+                // {
+                //     id: 23,
+                //     name: 'Reports',
+                //     link: '/report'
+                // },
             ],
         }
     },

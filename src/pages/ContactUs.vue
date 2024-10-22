@@ -65,8 +65,10 @@ export default {
     data() {
         return {
             contact: [
-                { name: ' info@clgoilindia.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
-                { name: ' HD-723, WeWork Enam Sambhav, C - 20, G Block Rd, G-Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra - 400051', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
+                { name: ' contact.exolarenergy@gmail.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
+                {
+                    name: ' 310, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi - geo - fill', color: 'black', action: 'openMaps'
+                },
             ],
             name: '',
             number: '',
@@ -76,9 +78,9 @@ export default {
     },
     methods: {
         handleIconClick(action) {
-            const phoneNumber = '+919711256073';
-            const emailAddress = 'info@clgoilindia.com';
-            const location = 'HD-723, WeWork Enam Sambhav, C - 20, G Block Rd, G-Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra - 400051';
+            const phoneNumber = '+919319179678';
+            const emailAddress = 'contact.exolarenergy@gmail.com';
+            const location = '310, Pearl Best Height-1,Netaji Subhash Place, Delhi-34';
 
             switch (action) {
                 case 'openEmail':
@@ -97,12 +99,12 @@ export default {
                     break;
             }
         },
-        submitQuery() { 
+        submitQuery() {
             console.log('send');
             this.name = "",
-            this.number = "",
-            this.email = "",
-            this.note = "";
+                this.number = "",
+                this.email = "",
+                this.note = "";
         }
     },
 }
