@@ -1,18 +1,19 @@
 <template>
-    <div class="container-fluid text-white pt-3 border-top border-bottom" style="background-color: var(--bg-primary);">
+    <div class="container-fluid text-white pt-3 border-top border-bottom bg-dark">
         <div class="row">
             <div class="col-12 col-md-4 mb-3 d-flex flex-column align-items-center justify-content-center">
-                <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
-                    <img :src="img" style="width: 100%;object-fit: contain; ">
+                <router-link to="/" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                    <img :src="img" style="width: 150px;object-fit: contain; ">
+                    <span class="text-white fs-1">Exolar Energy</span>
                 </router-link>
 
             </div>
 
             <div class=" col-12 col-md-4 mb-3 text-center">
                 <p class="mb-2 fw-bold">Contact Us</p>
-                <p class="mb-2">Email : info@clgoilindia.com</p>
-                <p class="mb-2">Address : HD-723, WeWork Enam Sambhav, C - 20, <br>G Block Rd, G-Block BKC, Bandra Kurla
-                    Complex,<br> Bandra East, Mumbai, Maharashtra - 400051 </p>
+                <p class="mb-2">Email : contact.exolarenergy@gmail.com</p>
+                <p class="mb-2">Address : 310, Pearl Best Height-1, <br>
+                    Netaji Subhash Place, Delhi-34</p>
                 <div class="d-flex gap-2 justify-content-center">
                     <p class="fw-bold">Follow Us :</p>
                     <i class="bi bi-twitter-x"></i>
@@ -72,8 +73,8 @@ export default {
                 },
                 {
                     id: 3,
-                    name: 'Dealership',
-                    link: '/dealership'
+                    name: 'Refund Policy',
+                    link: '/refund-policy'
                 },
                 {
                     id: 23,

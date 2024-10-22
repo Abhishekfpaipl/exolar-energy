@@ -4,114 +4,111 @@
         <div class="container py-5 rounded-top-5 bg-white text-start" style="margin-top: -40px;" v-observe>
             <div class="card border-0">
                 <div class="card-body my-5">
-                    <h1 class="text-center mb-4">CLG Oil India Terms and Conditions</h1>
-                    <p><strong>Last Updated:</strong> April 2024</p>
-                    <p>
-                        These Terms and Conditions ("Terms") govern your use of the CLG Oil India website
-                        located at
-                        <a href="https://clgoilindia.com/" target="_blank">www.clgoilindia.com</a> and any related mobile
-                        applications
-                        (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these
-                        Terms. If
-                        you do not agree to these Terms, you are not authorized to use the Service.
-                    </p>
+                    <div class="card-body my-5">
+                        <h1 class="text-center mb-4">Exolar Energy Pvt. Ltd. Terms and Conditions</h1>
+                        <p><strong>Last Updated:</strong> October 2024</p>
+                        <p>Welcome to Exolar Energy Pvt. Ltd. These Terms and Conditions ("Terms") govern your access
+                            to and use of our website located at <a href="https://www.exolarenergy.com/"
+                                target="_blank">www.elysianenergy.in</a> ("Service"). By using our Service, you agree to
+                            these Terms, along with our <a href="https://www.exolarenergy.com/privacy-policy" target="_blank">Privacy Policy</a>.
+                        </p>
 
-                    <section>
-                        <h2>1. Definitions</h2>
-                        <p><strong>"Indian Oil Company," "we," "us," or "our"</strong> refers to the Indian Oil Company,
-                            the owner and operator of the Service.</p>
-                        <p><strong>"You"</strong> refers to the user of the Service.</p>
-                        <p><strong>"Content"</strong> refers to all text, information, graphics, audio, video, and data
-                            offered through the Service.</p>
-                    </section>
+                        <h2 class="mt-4">1. Introduction</h2>
+                        <p>Your use of the Service signifies your agreement to these Terms and our Privacy Policy
+                            (“Agreements”). If you do not agree, you may not use the Service. Please contact us at <a
+                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a> for any
+                            issues.</p>
 
-                    <section>
-                        <h2>2. Use of the Service</h2>
+                        <h2 class="mt-4">2. Communications</h2>
+                        <p>By using our Service, you agree to receive newsletters, marketing or promotional
+                            communications. You may opt out of these communications by following the unsubscribe link or
+                            emailing us at <a href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>.
+                        </p>
+
+                        <h2 class="mt-4">3. Content</h2>
+                        <p>All content on this Service is owned by Exolar Energy Pvt. Ltd. You are not permitted to
+                            use, distribute, or modify any content without express written consent from us.</p>
+
+                        <h2 class="mt-4">4. Prohibited Uses</h2>
+                        <p>You may only use the Service for lawful purposes. You agree not to:</p>
                         <ul>
-                            <li>The Service may be used to browse oil products, related services, and other offerings
-                                from Indian Oil Company.</li>
-                            <li>You are responsible for ensuring the accuracy of all information you provide to us,
-                                including your contact information and purchase details.</li>
+                            <li>Violate any applicable national or international laws or regulations.</li>
+                            <li>Exploit or harm minors in any way.</li>
+                            <li>Send unsolicited advertising or promotional material ("spam").</li>
+                            <li>Impersonate any person or entity, or infringe on the rights of others.</li>
+                            <li>Engage in conduct that restricts or inhibits others from using the Service.</li>
                         </ul>
-                    </section>
+                        <p>Additionally, you agree not to use any automated means to access the Service or interfere
+                            with its proper functioning.</p>
 
-                    <section>
-                        <h2>3. User Accounts</h2>
+                        <h2 class="mt-4">5. Analytics</h2>
+                        <p>We may use third-party services to analyze and monitor the use of our Service.</p>
+
+                        <h2 class="mt-4">6. No Use by Minors</h2>
+                        <p>The Service is only available to users who are 18 years of age or older. By using the
+                            Service, you represent that you meet this age requirement.</p>
+
+                        <h2 class="mt-4">7. Intellectual Property</h2>
+                        <p>All content, features, and functionality on this Service are the exclusive property of
+                            Exolar Energy Pvt. Ltd. Our trademarks may not be used without prior written permission.
+                        </p>
+
+                        <h2 class="mt-4">8. Copyright Policy</h2>
+                        <p>If you believe any content on our Service infringes on your copyright, please email us at <a
+                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a> with the
+                            subject line “Copyright Infringement” and provide detailed information as outlined in our
+                            DMCA Notice.</p>
+
+                        <h2 class="mt-4">9. DMCA Notice</h2>
+                        <p>To file a DMCA claim, please include the following details in writing:</p>
                         <ul>
-                            <li>You may be required to register for an account to access certain features of the
-                                Service.</li>
-                            <li>You are responsible for maintaining the confidentiality of your account information and
-                                password.</li>
-                            <li>You are responsible for all activity that occurs under your account.</li>
+                            <li>Your electronic or physical signature.</li>
+                            <li>Description and location of the alleged infringement.</li>
+                            <li>Your contact information.</li>
+                            <li>A good faith statement and a perjury statement that your claim is accurate.</li>
                         </ul>
-                    </section>
 
-                    <section>
-                        <h2>4. Orders and Payments</h2>
-                        <ul>
-                            <li>Orders for products or services can be placed through the Service. You must provide
-                                accurate and complete information when placing an order.</li>
-                            <li>You agree to pay all charges associated with your orders, including any applicable
-                                taxes.</li>
-                            <li>All payments made through the Service are final and non-refundable, except as stated in
-                                our cancellation and refund policies.</li>
-                        </ul>
-                    </section>
+                        <h2 class="mt-4">10. Error Reporting and Feedback</h2>
+                        <p>If you encounter any errors or have feedback, feel free to contact us at <a
+                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>. By providing
+                            feedback, you agree to grant us full rights to use it for any purpose.</p>
 
-                    <section>
-                        <h2>5. Cancellations and Refunds</h2>
-                        <ul>
-                            <li>Cancellation policies vary by product or service. Please review the terms associated
-                                with your specific order.</li>
-                            <li>If eligible, refunds will be processed according to the respective policies of the
-                                Indian Oil Company.</li>
-                        </ul>
-                    </section>
+                        <h2 class="mt-4">11. Disclaimer of Warranty</h2>
+                        <p>The Service is provided on an "as-is" and "as-available" basis. We make no guarantees
+                            regarding the accuracy, reliability, or availability of the Service.</p>
 
-                    <section>
-                        <h2>6. Limitation of Liability</h2>
-                        <p>We will not be liable for any damages arising out of or related to your use of the Service,
-                            including but not limited to direct, indirect, incidental, or consequential damages.</p>
-                    </section>
+                        <h2 class="mt-4">12. Limitation of Liability</h2>
+                        <p>We will not be liable for any indirect, incidental, or consequential damages arising from the
+                            use of the Service. Our liability is limited to the amount paid for the products or
+                            services.</p>
 
-                    <section>
-                        <h2>7. Intellectual Property</h2>
-                        <p>The Service and all Content are protected by copyright, trademark, and other intellectual
-                            property laws. You may not copy, modify, distribute, or commercially exploit any Content
-                            without our written permission.</p>
-                    </section>
+                        <h2 class="mt-4">13. Governing Law</h2>
+                        <p>These Terms are governed by the laws of India. Any legal disputes will be resolved under
+                            Indian law.</p>
 
-                    <section>
-                        <h2>8. Termination</h2>
-                        <ul>
-                            <li>We may terminate your access to the Service for any reason, at any time, without notice.
-                            </li>
-                            <li>You may terminate your account at any time.</li>
-                        </ul>
-                    </section>
+                        <h2 class="mt-4">14. Changes to Service</h2>
+                        <p>We reserve the right to modify or discontinue the Service at any time without notice.</p>
 
-                    <section>
-                        <h2>9. Governing Law and Dispute Resolution</h2>
-                        <p>These Terms shall be governed by and construed in accordance with the laws of India. Any
-                            dispute arising out of or relating to these Terms shall be settled through arbitration in
-                            New Delhi, India, according to Indian law.</p>
-                    </section>
+                        <h2 class="mt-4">15. Amendments to Terms</h2>
+                        <p>We may amend these Terms at any time by posting updated versions. Continued use of the
+                            Service signifies your acceptance of any changes.</p>
 
-                    <section>
-                        <h2>10. Force Majeure</h2>
-                        <p>We will not be liable for any delay or failure to perform our obligations under these Terms
-                            if such delay or failure is caused by an event beyond our reasonable control, such as
-                            natural disasters, strikes, or governmental restrictions.</p>
-                    </section>
+                        <h2 class="mt-4">16. Waiver and Severability</h2>
+                        <p>Failure to enforce any part of these Terms does not constitute a waiver. If any part of these
+                            Terms is found invalid, the remaining provisions will remain in effect.</p>
 
-                    <section>
-                        <h2>11. Contact Us</h2>
-                        <p>If you have any questions about these Terms, please contact us at <a
-                                href="mailto:info@clgoilindia.com">info@clgoilindia.com</a></p>
-                    </section>
+                        <h2 class="mt-4">17. Acknowledgment</h2>
+                        <p>By using the Service, you acknowledge that you have read and agree to these Terms.</p>
 
-                    <p class="text-start fw-bold">BY USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ
-                        THESE TERMS AND AGREE TO BE BOUND BY THEM.</p>
+                        <h2 class="mt-4">18. Delivery Time-Line</h2>
+                        <p>Orders will be shipped within 7-8 business days. Please note that these times are estimates
+                            and may vary based on processing and location.</p>
+
+                        <h2 class="mt-4">19. Contact Us</h2>
+                        <p>If you have any questions or require support, contact us at <a
+                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>.</p>
+                    </div>
+
                 </div>
             </div>
         </div>

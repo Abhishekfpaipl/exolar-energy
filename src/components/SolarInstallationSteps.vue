@@ -7,30 +7,30 @@
             <div class="col" v-for="(step, index) in steps" :key="index">
                 <!-- <div class="card border-0">
                     <div class="card-body"> -->
-                        <div class="accordion" :id="'accordion' + index">
-                            <div class="accordion-item" style="background-color: var(--bg-primary);">
-                                <h2 class="accordion-header" :id="'heading' + index" >
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        :data-bs-target="'#collapse' + index" aria-expanded="false"
-                                        :aria-controls="'collapse' + index" style="background-color: var(--bg-primary);">
-                                        <i :class="step.icon" class="fs-1 text-white me-3"></i>
-                                        <h5 class="fw-bold fs-4 text-white mb-0 text-decoration-underline">{{ step.title }}</h5>
-                                    </button>
-                                </h2>
-                                <div :id="'collapse' + index" class="accordion-collapse collapse"
-                                    :aria-labelledby="'heading' + index" :data-bs-parent="'#accordion' + index">
-                                    <div class="accordion-body">
-                                        <ul class=" ">
-                                            <li class="text-start text-white"
-                                                v-for="(detail, detailIndex) in step.details" :key="detailIndex">
-                                                {{ detail }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                <div class="accordion" :id="'accordion' + index">
+                    <div class="accordion-item" style="background-color: var(--bg-primary);">
+                        <h2 class="accordion-header" :id="'heading' + index">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                :data-bs-target="'#collapse' + index" aria-expanded="false"
+                                :aria-controls="'collapse' + index" style="background-color: var(--bg-primary);">
+                                <i :class="step.icon" class="fs-1 text-white me-3"></i>
+                                <h5 class="fw-bold fs-4 text-white mb-0">{{ step.title }}</h5>
+                            </button>
+                        </h2>
+                        <div :id="'collapse' + index" class="accordion-collapse collapse"
+                            :aria-labelledby="'heading' + index" :data-bs-parent="'#accordion' + index">
+                            <div class="accordion-body">
+                                <ul class=" ">
+                                    <li class="text-start text-white" v-for="(detail, detailIndex) in step.details"
+                                        :key="detailIndex">
+                                        {{ detail }}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    <!-- </div>
+                    </div>
+                </div>
+                <!-- </div>
                 </div> -->
             </div>
         </div>
@@ -106,4 +106,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.accordion-button::after {
+    filter: invert(1) !important
+}
+</style>

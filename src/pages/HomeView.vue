@@ -22,6 +22,7 @@
                     reliable lubrication, protection against corrosion, and optimal performance for a wide range of
                     applications. With a focus on sustainability, we continuously innovate to deliver solutions that
                     help reduce energy consumption and environmental impact." image-alt="gallery" :imageFirst="true" /> -->
+
     <div class="my-5">
       <WhyGoSolar />
     </div>
@@ -33,7 +34,7 @@
     </div>
     <div class="container my-5">
       <div class="text-start mb-5">
-        <p class="text-muted mb-1 text-uppercase">Ariseol Lubricants</p>
+        <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
         <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Precision Engineered with Nanotechnology
         </h2>
       </div>
@@ -53,13 +54,16 @@
 
     <FeaturesSection />
     <AboutSection />
-    <TestimonialSection />
+    <!-- <TestimonialSection /> -->
     <div class="my-5">
       <AriseolBenefits />
     </div>
     <ContactSection />
     <div class="my-5">
       <TeamSection />
+    </div>
+    <div class="my-5">
+      <FaqSection />
     </div>
     <div class="my-5">
       <GallerySection />
@@ -79,7 +83,7 @@ import GallerySection from "@/components/GallerySection.vue";
 // import TeamSection from "@/components/TeamSection.vue";
 // import ContactSection from "@/components/ContactSection.vue";
 import AboutSection from "@/components/AboutSection.vue";
-import TestimonialSection from "@/components/TestimonialSection.vue";
+// import TestimonialSection from "@/components/TestimonialSection.vue";
 // import ImageSection from "@/components/ImageSection.vue";
 import FeaturesSection from "@/components/FeaturesSection.vue";
 import WeAreAriseol from "@/components/WeAreAriseol.vue";
@@ -87,6 +91,7 @@ import GermanTechonology from "@/components/GermanTechonology.vue";
 import GermanPerformance from "@/components/GermanPerformance.vue";
 import NanoTechnology from "@/components/NanoTechnology.vue";
 import AriseolBenefits from "@/components/AriseolBenefits.vue";
+import FaqSection from "@/components/FaqSection.vue";
 
 export default {
   name: "HomeView",
@@ -103,13 +108,14 @@ export default {
     // TeamSection,
     // ContactSection,
     AboutSection,
-    TestimonialSection,
+    // TestimonialSection,
     FeaturesSection,
     WeAreAriseol,
     GermanTechonology,
     GermanPerformance,
     NanoTechnology,
-    AriseolBenefits
+    AriseolBenefits,
+    FaqSection,
   },
   data() {
     return {

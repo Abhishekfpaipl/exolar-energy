@@ -1,145 +1,90 @@
 <template>
     <div style="padding-top: 66px;">
-        <SectionTopBanner/>
+        <SectionTopBanner />
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card border-0">
                         <div class="card-body my-5 text-start">
                             <h1 class="text-center mb-4">Privacy Policy</h1>
-                            <p><strong>Effective Date:</strong> Sept 24</p>
 
-                            <section>
-                                <h2>Our Commitment to Your Privacy</h2>
-                                <p>
-                                    We at CLG value your privacy and are committed to
-                                    protecting your personal information. This Privacy Policy outlines
-                                    how we collect, use, and safeguard your data when you engage with
-                                    our services, including fuel purchases, refinery operations, or
-                                    customer support. We understand the importance of the information
-                                    you provide us and treat it with the highest level of care.
-                                </p>
-                            </section>
+                            <p>At <strong>Exolar Energy Pvt. Ltd</strong>, accessible from <a
+                                    href="https://www.exolarenergy.com/"
+                                    target="_blank">https://www.exolarenergy.com/</a>, one of our main priorities is the
+                                privacy of our visitors. This Privacy Policy outlines the types of information that are
+                                collected and recorded by Exolar Energy Pvt. Ltd and how we use it.</p>
 
-                            <section>
-                                <h2>Information We Collect</h2>
-                                <p>We collect the following types of information:</p>
+                            <p>If you have any additional questions or require more information about our Privacy
+                                Policy, feel free to <a href="https://www.exolarenergy.com/contact/">contact us</a>.</p>
 
-                                <h3>Personal Information</h3>
-                                <ul>
-                                    <li>Name</li>
-                                    <li>Email Address</li>
-                                    <li>Phone Number</li>
-                                    <li>Mailing Address</li>
-                                    <li>Payment Information (securely processed)</li>
-                                    <li>Service Requests</li>
-                                    <li>Contest or Promotion Entries</li>
-                                </ul>
+                            <h2>Consent</h2>
+                            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+                            </p>
 
-                                <h3>Non-Personal Information</h3>
-                                <ul>
-                                    <li>Browser Type</li>
-                                    <li>IP Address</li>
-                                    <li>Operating System</li>
-                                    <li>Pages Visited on Our Website</li>
-                                    <li>Date and Time of Visit</li>
-                                    <li>Search Queries</li>
-                                    <li>Usage Data on Apps</li>
-                                </ul>
-                            </section>
+                            <h2>Information We Collect</h2>
+                            <p>When visiting our website, you may be asked to provide personal information, such as:</p>
+                            <ul>
+                                <li>Name</li>
+                                <li>Email address</li>
+                                <li>Phone number</li>
+                                <li>Company name</li>
+                                <li>Address</li>
+                            </ul>
+                            <p>We may also collect additional information if you contact us directly, including the
+                                contents of your message and any attachments you may provide.</p>
 
-                            <section>
-                                <h2>How We Collect Information</h2>
-                                <ul>
-                                    <li><strong>Product Orders:</strong> Fuel purchases, lubricants, etc.</li>
-                                    <li><strong>Service Requests:</strong> Maintenance or technical support.</li>
-                                    <li><strong>Customer Feedback:</strong> Via phone, email, or website.</li>
-                                    <li><strong>Website Interactions:</strong> Cookies and tracking technologies.</li>
-                                </ul>
-                            </section>
+                            <h2>How We Use Your Information</h2>
+                            <p>We use the information collected in various ways, including:</p>
+                            <ul>
+                                <li>To provide, operate, and maintain our website</li>
+                                <li>To improve and personalize your experience on our website</li>
+                                <li>To analyze and understand how you interact with our website</li>
+                                <li>To develop new products, services, and features</li>
+                                <li>To communicate with you directly, including for customer service and promotional
+                                    purposes</li>
+                                <li>To send periodic emails</li>
+                                <li>To prevent fraudulent activity</li>
+                            </ul>
 
-                            <section>
-                                <h2>How We Use Your Information</h2>
-                                <ul>
-                                    <li><strong>Order Fulfillment:</strong> Process and deliver your orders.</li>
-                                    <li><strong>Customer Service:</strong> Handle inquiries or complaints.</li>
-                                    <li><strong>Marketing Communications:</strong> Send newsletters and promotions.</li>
-                                    <li><strong>Website and App Improvement:</strong> Analyze activity to enhance
-                                        functionality.</li>
-                                    <li><strong>Security:</strong> Protect against fraud and data breaches.</li>
-                                </ul>
-                            </section>
+                            <h2>Log Files</h2>
+                            <p>Exolar Energy Pvt. Ltd follows a standard procedure of using log files. These log files
+                                may collect information such as:</p>
+                            <ul>
+                                <li>IP address</li>
+                                <li>Browser type</li>
+                                <li>Internet Service Provider (ISP)</li>
+                                <li>Date and time of visit</li>
+                                <li>Pages visited</li>
+                                <li>Click patterns</li>
+                            </ul>
+                            <p>This information is used for analytical purposes to track visitor behavior and improve
+                                our site.</p>
 
-                            <section>
-                                <h2>Your Choices</h2>
-                                <ul>
-                                    <li><strong>Opt-Out of Marketing:</strong> Unsubscribe from emails anytime.</li>
-                                    <li><strong>Access and Update:</strong> Modify your data via your account.</li>
-                                    <li><strong>Manage Cookies:</strong> Adjust your browser settings for cookies.</li>
-                                </ul>
-                            </section>
+                            <h2>Advertising Partners</h2>
+                            <p>Third-party advertisers on our website may use cookies, JavaScript, or web beacons to
+                                collect information and personalize advertising. We have no control over the practices
+                                of these third parties. Please review their respective privacy policies for further
+                                details.</p>
 
-                            <section>
-                                <h2>Data Security</h2>
-                                <p>We use advanced security protocols:</p>
-                                <ul>
-                                    <li>Data encryption during transactions</li>
-                                    <li>Secured servers and databases</li>
-                                    <li>Restricted access to your data within the company</li>
-                                </ul>
-                                <p>However, no system is 100% secure.</p>
-                            </section>
+                            <h2>Third-Party Privacy Policies</h2>
+                            <p>Exolar Energy Pvt. Ltd’s Privacy Policy does not extend to external websites or
+                                advertisers. You are encouraged to review the privacy policies of any third-party sites
+                                you interact with.</p>
 
-                            <section>
-                                <h2>Retention of Your Information</h2>
-                                <p>
-                                    We retain personal data only as long as necessary for legal and
-                                    business purposes, including regulatory requirements and dispute resolution.
-                                </p>
-                            </section>
+                            <h2>Children's Privacy</h2>
+                            <p>We are committed to protecting children’s privacy online. Exolar Energy Pvt. Ltd does
+                                not knowingly collect personal information from children under the age of 13. If such
+                                information is found in our records, we will take steps to delete it immediately. If you
+                                believe your child has provided us with personal data, please <a
+                                    href="https://www.exolarenergy.com/contact/">contact us</a>.</p>
 
-                            <section>
-                                <h2>Children’s Privacy</h2>
-                                <p>
-                                    Our services are not intended for minors under 18. If you believe we have
-                                    collected data from a minor, please contact us for removal.
-                                </p>
-                            </section>
+                            <h2>Changes to This Privacy Policy</h2>
+                            <p>We may update our Privacy Policy periodically. Any changes will be posted on this page,
+                                and you are encouraged to review it from time to time.</p>
 
-                            <section>
-                                <h2>Data Transfer and Compliance</h2>
-                                <p>
-                                    Your data may be stored or processed outside of your country of residence.
-                                    We comply with Indian and international data protection regulations.
-                                </p>
-                            </section>
-
-                            <section>
-                                <h2>Sharing Your Information</h2>
-                                <p>
-                                    We do not sell your data. We only share information under specific
-                                    circumstances:
-                                </p>
-                                <ul>
-                                    <li><strong>Service Providers:</strong> Trusted partners for operations, delivery,
-                                        and support.</li>
-                                    <li><strong>Legal Requirements:</strong> As required by law or legal proceedings.
-                                    </li>
-                                    <li><strong>Business Transfers:</strong> In the event of mergers or acquisitions.
-                                    </li>
-                                </ul>
-                            </section>
-
-                            <section>
-                                <h2>Contact Us</h2>
-                                <p>If you have questions or concerns, please contact us:</p>
-                                <ul>
-                                    <li><strong>Email:</strong> info@clgoilindia.com</li> 
-                                    <li><strong>Address:</strong> HD-723, WeWork Enam Sambhav, C - 20,
-                                        G Block Rd, G-Block BKC, Bandra Kurla Complex,
-                                        Bandra East, Mumbai, Maharashtra - 400051</li>
-                                </ul>
-                            </section>
+                            <h2 id="contact-us">Contact Us</h2>
+                            <p>If you have any questions or suggestions about our Privacy Policy, feel free to <a
+                                    href="mailto:contact.exolarenergy@gmail.com">contact us</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -153,7 +98,7 @@ import SectionTopBanner from '@/components/SectionTopBanner.vue';
 
 export default {
     name: 'PrivacyPolicy',
-    components:{
+    components: {
         SectionTopBanner
     },
 }

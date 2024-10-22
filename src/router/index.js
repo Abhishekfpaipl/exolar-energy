@@ -42,6 +42,11 @@ const routes = [
     component: () => import("@/pages/PrivacyPolicy.vue"),
   },
   {
+    path: "/refund-policy",
+    name: "RefundPolicy",
+    component: () => import("@/pages/RefundPolicy.vue"),
+  },
+  {
     path: "/term-of-use",
     name: "TermOfUse",
     component: () => import("@/pages/TermOfUse.vue"),

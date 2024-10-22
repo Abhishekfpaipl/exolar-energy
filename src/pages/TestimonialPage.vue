@@ -2,25 +2,33 @@
     <div>
         <SectionTopBanner />
         <div class="container mt-4">
-            <h2>Latest Videos</h2>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+            <h2 class="text-start mb-4">Latest Videos</h2>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3 my-5">
                 <div v-for="(video, index) in videos" :key="index" class="col">
-                    <div class="position-relative border">
-                        <!-- <img :src="video.thumbnailUrl" :alt="video.title" class="rounded-4"
-                                style="width: 100%; height:250px; object-fit: cover;"> -->
-                        <div class="" style="height:250px;">
-                            <iframe style="width: 100%;height: 100%;"
+                    <div class="border shadow-sm">
+                        <!-- Video Section -->
+                        <div class="video-container mb-3" style="height: 250px;">
+                            <iframe style="width: 100%; height: 100%;"
                                 :src="`https://www.youtube.com/embed/${video.videoId}`" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                                allowfullscreen></iframe>
                         </div>
-                        <div class="short-overlay">
-                            <div class="short-title">{{ video.title }}</div>
+                        <div class="small text-muted text-start px-2 text-ellipsis2 mb-3">
+                           " {{ video.title }}
                         </div>
-                    </div>
-                    <div class="short-info mt-2">
-                        <div class="short-views">{{ video.viewCount }} views</div>
+                        <div class="d-flex justify-content-between p-2">
+                            <div class="">
+                                <i class="bi bi-star-fill text-success"></i>
+                                <i class="bi bi-star-fill text-success"></i>
+                                <i class="bi bi-star-fill text-success"></i>
+                                <i class="bi bi-star-fill text-success"></i>
+                                <i class="bi bi-star-half text-success"></i>
+                            </div>
+                            <div class="views-counter mt-2 text-muted">
+                                <i class="bi bi-eye me-1"></i>
+                                {{ video.viewCount }} views
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,5 +102,18 @@ export default {
     height: 250px;
     object-fit: cover;
     border-radius: 12px;
+}
+
+.testimonial-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1rem;
+}
+
+
+.views-counter {
+    font-size: 0.8rem;
 }
 </style>

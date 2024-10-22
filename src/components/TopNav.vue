@@ -1,8 +1,9 @@
 <template>
     <div class="position-fixed w-100 d-flex justify-content-between  align-items-center p-2 top-0 bg-light"
         style="z-index: 10;">
-        <router-link to="/">
+        <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
             <img src="img/logo.png" alt="" style="height: 50px;">
+            <span class="fs-3">Exolar Energy</span>
         </router-link>
         <div class="d-none d-md-flex align-items-center gap-3">
             <router-link :to="link.route" class="text-decoration-none text-dark" v-for="(link, index) in links"

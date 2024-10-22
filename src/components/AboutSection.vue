@@ -40,7 +40,7 @@ export default {
     data() {
         return {
             counters: [
-                { number: 6000, text: "Customers" },
+                { number: 800, text: "Customers" },
                 { number: 20, text: "State Presence" },
                 { number: 18, text: "MW Capacity" },
                 { number: 250, text: "Trusted Partners" },
