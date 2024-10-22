@@ -1,27 +1,34 @@
 <template>
-    <div class="container-fluid bg-dark text-white py-5 why-go-solar"
-        style="background-image: url('/img/banner/1.jpg')">
-        <div class="overlay"></div> <!-- Overlay div -->
-        <div class="container position-relative">
-            <h2 class="mb-5 text-start display-5">Why Go Solar?</h2>
-            <!-- <h2 class="text-center mb-5">Why Go Solar?</h2> -->
-            <div class="row justify-content-center">
-                <div v-for="(reason, index) in reasons" :key="index" class="col-md-4 mb-4">
-                    <div class="card bg-transparent text-white h-100 border-light">
-                        <div class="card-body text-center">
-                            <div class="display-4 mb-3 text-start">
-                                <i :class="reason.icon" class="bi"></i>
+    <div class="container my-5">
+        <div class="text-start">
+            <p class="text-muted mb-1 text-uppercase">Ariseol</p>
+            <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Why Go Solar ?</h2>
+        </div>
+        <div class="row justify-content-center align-items-start">
+            <div class="col-md-6 mt-3">
+                <p class="text-start fs-5 mb-4">
+                    Exolar Energy, a leader in renewable energy solutions, is championing the shift to solar power. As
+                    the world moves toward cleaner and more sustainable energy sources, Exolar Energy offers a
+                    compelling case for going solar. Harnessing the power of the sun, solar energy provides a reliable,
+                    cost-effective, and eco-friendly alternative to traditional power sources. By choosing solar, not
+                    only can you significantly reduce your energy bills, but you can also contribute to a greener
+                    planet. With Exolar Energy's advanced solar technologies and commitment to sustainability, making
+                    the switch to solar has never been easier.
+                </p>
+
+                <div class="row g-1">
+                    <div class="col-6" v-for="(advantage, index) in advantages" :key="index">
+                        <div class="card p-2">
+                            <div class="d-flex align-items-start">
+                                <i class="me-3 fs-4 bi bi-check-circle text-success"></i>
+                                <p class="mb-0 text-start">{{ advantage.text }}</p>
                             </div>
-                            <ul class="list-unstyled">
-                                <li v-for="(point, pointIndex) in reason.points" :key="pointIndex"
-                                    class="text-start mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    {{ point }}
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/banner/1.jpg" alt="Engine" class="img-fluid" />
             </div>
         </div>
     </div>
@@ -29,62 +36,22 @@
 
 <script>
 export default {
-    name: 'WhyGoSolar',
+    name: 'OurAdvantages',
     data() {
         return {
-            reasons: [
-                {
-                    icon: 'bi-globe',
-                    points: [
-                        'Solar is the fastest growing sector in India and world.',
-                        'Clean, green and cheaper electricity.'
-                    ]
-                },
-                {
-                    icon: 'bi-lightbulb',
-                    points: [
-                        'Use your vacant roof space to reduce electricity bills substantially.',
-                        'Roof can still be used, if wanted.'
-                    ]
-                },
-                {
-                    icon: 'bi-coin',
-                    points: [
-                        'One time investment.',
-                        'Electricity for 25 years or more.',
-                        'Payback in 3-5 years.',
-                        'No more continuously increasing grid tariff.'
-                    ]
-                }
+            advantages: [
+                { text: 'Solar is the fastest growing sector in India and world.', },
+                { text: 'Clean, green and cheaper electricity.' },
+                { text: 'Use your vacant roof space to reduce electricity bills substantially.', },
+                { text: 'Roof can still be used, if wanted.' },
+                { text: 'One time investment.', },
+                { text: 'Electricity for 25 years or more.', },
+                { text: 'Payback in 3-5 years.', },
+                { text: 'No more continuously increasing grid tariff.', },
             ]
         }
     }
 }
 </script>
 
-<style scoped>
-.why-go-solar {
-    position: relative;
-    /* background-image: url('/img/banner/1.jpg'); */
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Adjust the opacity as needed */
-    z-index: 1;
-}
-
-.container {
-    position: relative;
-    z-index: 2;
-    /* Make sure content is above the overlay */
-}
-</style>
+<style scoped></style>

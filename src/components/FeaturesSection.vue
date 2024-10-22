@@ -26,12 +26,12 @@ export default {
             features: [
                 {
                     "image": "/img/why-choose/credit-card-icon.png",
-                    "title": "Credit Card Icon",
+                    "title": "Credit Card",
                     "description": "Secure and convenient payment options available via credit card."
                 },
                 {
                     "image": "/img/why-choose/customer-service-icon.png",
-                    "title": "Customer Service Icon",
+                    "title": "Customer Service",
                     "description": "Dedicated customer support to assist you at every step."
                 },
                 {
@@ -46,7 +46,7 @@ export default {
                 },
                 {
                     "image": "/img/why-choose/survey-icon.png",
-                    "title": "Survey Icon",
+                    "title": "Survey",
                     "description": "Comprehensive surveys to ensure accurate planning and execution."
                 },
                 {

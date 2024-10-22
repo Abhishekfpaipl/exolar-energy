@@ -50,7 +50,6 @@
 
     <WeAreAriseol />
 
-    <OurAdvantages />
 
     <FeaturesSection />
     <AboutSection />
@@ -84,7 +83,6 @@ import TestimonialSection from "@/components/TestimonialSection.vue";
 // import ImageSection from "@/components/ImageSection.vue";
 import FeaturesSection from "@/components/FeaturesSection.vue";
 import WeAreAriseol from "@/components/WeAreAriseol.vue";
-import OurAdvantages from "@/components/OurAdvantages.vue";
 import GermanTechonology from "@/components/GermanTechonology.vue";
 import GermanPerformance from "@/components/GermanPerformance.vue";
 import NanoTechnology from "@/components/NanoTechnology.vue";
@@ -108,7 +106,6 @@ export default {
     TestimonialSection,
     FeaturesSection,
     WeAreAriseol,
-    OurAdvantages,
     GermanTechonology,
     GermanPerformance,
     NanoTechnology,
