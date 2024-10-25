@@ -19,12 +19,14 @@
                 <div class="col-md-6 text-start ps-5 py-5" v-observe style="color: var(--bg-secondary)">
                     <div class="row ">
                         <div class="col-6" v-for="(counter, index) in counters" :key="index">
-                            <h1 class="display-3 fw-bold">{{ counter.number }}+</h1>
+                            <div class="display-3 fw-bold d-flex gap-1">
+                                <AutoCounter :data="counter.number" /> +
+                            </div>
                             <p class="fs-4">{{ counter.text }}</p>
                         </div>
                     </div>
 
-                   
+
                 </div>
                 <div class="col-md-6 text-end ps-md-5" v-observe>
                     <img src="/img/aboutSection.jpg" alt="" style="width: 100%;">
@@ -35,8 +37,12 @@
 </template>
 
 <script>
+import AutoCounter from '@/components/AutoCounter.vue'
 export default {
     name: "AboutUs",
+    components: {
+        AutoCounter,
+    },
     data() {
         return {
             counters: [

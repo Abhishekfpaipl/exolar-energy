@@ -18,16 +18,27 @@
 </head>
 
 <body>
-
+  <script type="text/javascript" src="https://widget.senja.io/js/iframeResizer.min.js"></script>
+  <script type="text/javascript">iFrameResize({ log: false, checkOrigin: false }, "#senja-collector-iframe");</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+
 
   <noscript>
     <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
         Please enable it to continue.</strong>
   </noscript>
+
   <div id="app"></div>
+
+  
+
+  <!-- <script type="text/javascript" src="https://widget.senja.io/js/iframeResizer.min.js"></script>
+  <iframe id="senja-collector-iframe" src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
+    allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%" height="700"></iframe>
+  <script type="text/javascript">iFrameResize({ log: false, checkOrigin: false }, "#senja-collector-iframe");</script> -->
   <!-- built files will be auto injected -->
 </body>
 

@@ -1,14 +1,13 @@
 <template>
     <div class="container my-5 text-dark">
         <div class="text-start mb-5">
-            <p class="text-muted mb-1 text-uppercase">Review</p>
+            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
             <div class="d-md-flex justify-content-between align-items-center">
-                <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">What our customers say about us
-                </h2>
-                <router-link to="/testimonial" class="position-absolute end-0 text-decoration-none pe-md-5 pe-1"
+                <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Why choose us</h2>
+                <!-- <router-link to="/testimonial" class="position-absolute end-0 text-decoration-none pe-md-5 pe-1"
                     style="color: var(--bg-primary);">
                     See All <i class="bi bi-arrow-right"></i>
-                </router-link>
+                </router-link> -->
             </div>
         </div>
 
@@ -29,8 +28,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -51,8 +49,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -74,8 +71,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -96,8 +92,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +114,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -141,8 +135,7 @@
                                 </div>
                                 <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
-                                    <!-- <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.subtitle }}</p> -->
-                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.review }} </p>
+                                    <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
                             </div>
                         </div>
@@ -169,162 +162,100 @@ export default {
             isReverse: false,
             cards: [
                 {
-                    image: 'img/flags/usa.svg',
-                    title: 'USA',
-                    name: 'John Doe',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'The motor oil significantly improved the efficiency of our fleet. We saw a notable reduction in engine wear and tear. Highly recommended for heavy-duty vehicles.',
+                    "image": "/img/why-choose/credit-card-icon.png",
+                    "title": "Credit Card",
+                    "description": "Secure and convenient payment options available via credit card."
                 },
                 {
-                    image: 'img/flags/canada.svg',
-                    title: 'Canada',
-                    name: 'Emily Johnson',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'After switching to this motor oil, our trucks run smoother and maintenance costs have dropped. It’s the best oil we’ve used so far.',
+                    "image": "/img/why-choose/customer-service-icon.png",
+                    "title": "Customer Service",
+                    "description": "Dedicated customer support to assist you at every step."
                 },
                 {
-                    image: 'img/flags/uk.svg',
-                    title: 'UK',
-                    name: 'Michael Smith',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'This oil offers superior engine protection, even in extreme weather conditions. Our vehicles have been running efficiently across all terrains.',
+                    "image": "/img/why-choose/end-to-end-delivery.png",
+                    "title": "End to End Delivery",
+                    "description": "Seamless delivery service from start to finish, ensuring timely arrival."
                 },
                 {
-                    image: 'img/flags/australia.jpg',
-                    title: 'Australia',
-                    name: 'Sarah Williams',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'Since we started using this motor oil, the performance consistency of our machinery has been remarkable. Fuel consumption has decreased as well.',
+                    "image": "/img/why-choose/quick-install.png",
+                    "title": "Quick Install",
+                    "description": "Fast and efficient installation for minimal disruption and downtime."
                 },
                 {
-                    image: 'img/flags/germany.svg',
-                    title: 'Germany',
-                    name: 'David Brown',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'Our industrial machines are running more efficiently with less frequent oil changes. This motor oil truly maximizes engine longevity.',
+                    "image": "/img/why-choose/survey-icon.png",
+                    "title": "Survey",
+                    "description": "Comprehensive surveys to ensure accurate planning and execution."
                 },
                 {
-                    image: 'img/flags/france.jpg',
-                    title: 'France',
-                    name: 'Sophia Martin',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'Exceptional quality! The motor oil keeps our engines running like new, even under heavy load. It’s a trusted part of our maintenance routine.',
+                    "image": "/img/why-choose/trained-technicians.png",
+                    "title": "Trained Technicians",
+                    "description": "Expert technicians providing professional and reliable services."
                 },
-                {
-                    image: 'img/flags/japan.svg',
-                    title: 'Japan',
-                    name: 'Hiroshi Yamamoto',
-                    subtitle: 'Director at RBB Buildcon Pvt. Ltd.',
-                    review: 'This motor oil provides excellent protection and enhances engine performance. We have seen extended service intervals and improved fuel efficiency.',
-                },
-
             ],
             cards2: [
                 {
-                    image: 'img/flags/brazil.jpg',
-                    title: 'Brazil',
-                    name: 'Carlos Silva',
-                    subtitle: 'Operations Manager at Tranporte Nacional',
-                    review: 'Using this oil, we’ve noticed smoother engine operation in our transport fleet, even in high-heat conditions. Definitely a product we trust.',
+                    "image": "/img/why-choose/credit-card-icon.png",
+                    "title": "Credit Card",
+                    "description": "Secure and convenient payment options available via credit card."
                 },
                 {
-                    image: 'img/flags/italy.jpg',
-                    title: 'Italy',
-                    name: 'Giulia Rossi',
-                    subtitle: 'Fleet Supervisor at Milano Logistics',
-                    review: 'The oil’s performance has been outstanding. Our trucks experience less downtime and run more efficiently on long routes.',
+                    "image": "/img/why-choose/customer-service-icon.png",
+                    "title": "Customer Service",
+                    "description": "Dedicated customer support to assist you at every step."
                 },
                 {
-                    image: 'img/flags/south-korea.jpg',
-                    title: 'South Korea',
-                    name: 'Jung-ho Park',
-                    subtitle: 'Technical Manager at Seoul Heavy Industries',
-                    review: 'Our heavy-duty machinery runs like a dream with this oil. Its durability and protection have reduced wear and extended maintenance intervals.',
+                    "image": "/img/why-choose/end-to-end-delivery.png",
+                    "title": "End to End Delivery",
+                    "description": "Seamless delivery service from start to finish, ensuring timely arrival."
                 },
                 {
-                    image: 'img/flags/russia.jpg',
-                    title: 'Russia',
-                    name: 'Anastasia Ivanova',
-                    subtitle: 'Director at Siberian Transport Co.',
-                    review: 'Even in sub-zero temperatures, this motor oil ensures reliable starts and optimal performance. It’s a game-changer for our operations.',
+                    "image": "/img/why-choose/quick-install.png",
+                    "title": "Quick Install",
+                    "description": "Fast and efficient installation for minimal disruption and downtime."
                 },
                 {
-                    image: 'img/flags/mexico.svg',
-                    title: 'Mexico',
-                    name: 'Juan Lopez',
-                    subtitle: 'Fleet Manager at Logística del Sur',
-                    review: 'Since we began using this motor oil, our fuel consumption has noticeably decreased, and engine performance has never been better.',
+                    "image": "/img/why-choose/survey-icon.png",
+                    "title": "Survey",
+                    "description": "Comprehensive surveys to ensure accurate planning and execution."
                 },
                 {
-                    image: 'img/flags/spain.svg',
-                    title: 'Spain',
-                    name: 'Isabella García',
-                    subtitle: 'Logistics Coordinator at Transporte Ibérico',
-                    review: 'Our fleet’s performance has greatly improved with this oil. The engines run smoother and require less frequent maintenance.',
+                    "image": "/img/why-choose/trained-technicians.png",
+                    "title": "Trained Technicians",
+                    "description": "Expert technicians providing professional and reliable services."
                 },
-                {
-                    image: 'img/flags/south-africa.jpg',
-                    title: 'South Africa',
-                    name: 'Thabo Mokoena',
-                    subtitle: 'Operations Director at Cape Haulers',
-                    review: 'This motor oil has proven to be reliable under extreme conditions. It keeps our engines performing at peak efficiency, even in hot climates.',
-                }
             ],
             cards3: [
                 {
-                    image: 'img/flags/sweden.jpg',
-                    title: 'Sweden',
-                    name: 'Lars Johansson',
-                    subtitle: 'Transport Manager at NordFreight AB',
-                    review: 'The cold weather performance is exceptional. Even in freezing temperatures, the engines start smoothly, and we have had fewer breakdowns.',
+                    "image": "/img/why-choose/credit-card-icon.png",
+                    "title": "Credit Card",
+                    "description": "Secure and convenient payment options available via credit card."
                 },
                 {
-                    image: 'img/flags/netherlands.jpg',
-                    title: 'Netherlands',
-                    name: 'Marieke Van Dijk',
-                    subtitle: 'Fleet Manager at EuroTrans BV',
-                    review: 'Since switching to this motor oil, our fleet has been more efficient, and we’ve noticed extended oil change intervals, saving both time and money.',
+                    "image": "/img/why-choose/customer-service-icon.png",
+                    "title": "Customer Service",
+                    "description": "Dedicated customer support to assist you at every step."
                 },
                 {
-                    image: 'img/flags/argentina.jpg',
-                    title: 'Argentina',
-                    name: 'Diego Perez',
-                    subtitle: 'Operations Lead at Andes Logistics',
-                    review: 'We operate across different terrains, and this motor oil has ensured smooth performance, reducing engine wear in our trucks.',
+                    "image": "/img/why-choose/end-to-end-delivery.png",
+                    "title": "End to End Delivery",
+                    "description": "Seamless delivery service from start to finish, ensuring timely arrival."
                 },
                 {
-                    image: 'img/flags/china.jpg',
-                    title: 'China',
-                    name: 'Li Wei',
-                    subtitle: 'Maintenance Director at Beijing Freight Co.',
-                    review: 'The oil’s longevity and efficiency have dramatically decreased our operational costs. It’s ideal for our high-performance fleet.',
+                    "image": "/img/why-choose/quick-install.png",
+                    "title": "Quick Install",
+                    "description": "Fast and efficient installation for minimal disruption and downtime."
                 },
                 {
-                    image: 'img/flags/saudi-arabia.jpg',
-                    title: 'Saudi Arabia',
-                    name: 'Ahmed Al-Farouq',
-                    subtitle: 'Logistics Head at Desert Transport Co.',
-                    review: 'This oil stands up to the harsh desert environment, providing excellent performance even in extreme heat and sandy conditions.',
+                    "image": "/img/why-choose/survey-icon.png",
+                    "title": "Survey",
+                    "description": "Comprehensive surveys to ensure accurate planning and execution."
                 },
                 {
-                    image: 'img/flags/norway.jpg',
-                    title: 'Norway',
-                    name: 'Erik Hansen',
-                    subtitle: 'Fleet Supervisor at FjordHaulage AS',
-                    review: 'Our trucks operate in challenging weather conditions, and this motor oil has provided consistent performance and protection all year round.',
+                    "image": "/img/why-choose/trained-technicians.png",
+                    "title": "Trained Technicians",
+                    "description": "Expert technicians providing professional and reliable services."
                 },
-                {
-                    image: 'img/flags/new-zealand.jpg',
-                    title: 'New Zealand',
-                    name: 'Olivia Clarke',
-                    subtitle: 'Transport Director at Kiwi Logistics Ltd.',
-                    review: 'The fuel efficiency and engine protection we’ve experienced with this oil are unmatched. It’s now a key part of our fleet’s maintenance.',
-                }
-
             ]
-
-
-
         };
     },
     methods: {
@@ -441,8 +372,7 @@ export default {
 }
 
 .card-header {
-    background: linear-gradient(180deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 95%);
-    ;
+    background: linear-gradient(180deg, rgba(35, 122, 191, 1) 0%, rgba(255, 255, 255, 1) 95%);
     padding: 10px;
     text-align: center;
     border-bottom: 0px !important;
