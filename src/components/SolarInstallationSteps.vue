@@ -1,23 +1,34 @@
 <template>
     <div class="container text-center py-5">
-        <h2 class="fw-bold mb-4 text-success">Our Approach</h2>
-        <h3 class="mb-5">Setting up Solar Systems with Optimum Energy Generation</h3>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-2 mb-4 d-flex flex-column justify-content-center align-items-center h-100"
-                v-for="(step, index) in steps" :key="index" v-observe>
-                <div class="d-flex justify-content-center align-items-center border rounded-circle position-relative"
-                    style="width: 100px; height: 100px;">
-                    <div class="position-absolute end-0 bg-success text-white rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                        style="width: 40px; height: 40px; font-size: 1.2rem; top: -10%">
-                        {{ index + 1 }}
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center bg-light p-3 rounded-circle "
-                        style="width: 50px; height: 50px;">
-                        <i :class="`bi ${step.icon} fs-1 text-success`"></i>
+        <div class="text-start mb-5">
+            <p class="text-muted mb-1 text-uppercase">Our Approach</p>
+            <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems with Optimum
+                Energy Generation</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/img/stepsImage.jpeg" alt="" class="w-100 sticky-image">
+            </div>
+            <div class="col-md-6 mt-5 mt-md-0">
+                <div class="row row-cols-1 g-2">
+                    <div class="col " v-for="(step, index) in steps" :key="index" v-observe>
+                        <div class="border p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
+                            style="background-color: #F3F8F3;">
+                            <div class="d-flex justify-content-center align-items-center border rounded-circle position-relative"
+                                style="min-width: 100px; min-height: 100px;">
+                                <div class="position-absolute end-0 bg-success text-white rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px; font-size: 1.2rem; top: -10%">
+                                    {{ index + 1 }}
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center bg-light p-3 rounded-circle "
+                                    style="width: 50px; height: 50px;">
+                                    <i :class="`bi ${step.icon} fs-1 text-success`"></i>
+                                </div>
+                            </div>
+                            <p class="mb-0 fs-3 text-start ms-3">{{ step.title }}</p>
+                        </div>
                     </div>
                 </div>
-                <h5 class="mt-3">{{ step.title }}</h5>
             </div>
         </div>
     </div>
@@ -46,12 +57,12 @@ export default {
 };
 </script>
 
-<style scoped>
-h3 {
-    font-weight: 400;
-}
-
-.fs-1 {
-    font-size: 2rem;
+<style scoped> 
+@media (min-width: 768px) {
+ 
+    .sticky-image {
+        position: sticky;
+        top: 10%; 
+    }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <div class=" py-5">
-        <div class="container-fluid">
+    <div class="award-section">
+        <div class="container-fluid px-0">
             <!-- About Us Header -->
-            <div class="row justify-content-center text-center mb-3">
+            <div class="row justify-content-center text-center mb-3 mx-0">
                 <div class="col-md-10">
                     <h1 class="fw-bold text-capitalize">Our Award wining <span class=""
                             style="color: var(--bg-primary)">facts</span>
@@ -15,21 +15,23 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-md-6 text-start ps-5 py-5" v-observe style="color: var(--bg-secondary)">
-                    <div class="row ">
-                        <div class="col-6" v-for="(counter, index) in counters" :key="index">
-                            <div class="display-3 fw-bold d-flex gap-1">
-                                <AutoCounter :data="counter.number" /> +
+            <div class="row align-items-stretch mx-0">
+                <div class="col-md-6 px-0 stats-section" v-observe style="background-image: url('/img/worldmap.jpg');">
+                    <div class="counter-wrapper">
+                        <div class="row g-4">
+                            <div class="col-6" v-for="(counter, index) in counters" :key="index">
+                                <div class="counter-item primary-text">
+                                    <div class="display-3 fw-bold d-flex gap-1 justify-content-center">
+                                        <AutoCounter :data="counter.number" /> +
+                                    </div>
+                                    <p class="small">{{ counter.text }}</p>
+                                </div>
                             </div>
-                            <p class="fs-4">{{ counter.text }}</p>
                         </div>
                     </div>
-
-
                 </div>
-                <div class="col-md-6 text-end ps-md-5" v-observe>
-                    <img src="/img/aboutSection.jpg" alt="" style="width: 100%;">
+                <div class="col-md-6 px-0 image-section" v-observe>
+                    <img src="/img/aboutSection.jpg" alt="" class="award-image">
                 </div>
             </div>
         </div>
@@ -38,6 +40,7 @@
 
 <script>
 import AutoCounter from '@/components/AutoCounter.vue'
+
 export default {
     name: "AboutUs",
     components: {
@@ -46,28 +49,13 @@ export default {
     data() {
         return {
             counters: [
-                { number: 800, text: "Customers" },
+                { number: 800, text: "Satisfied Customers" },
                 { number: 20, text: "State Presence" },
-                { number: 18, text: "MW Capacity" },
+                { number: 16, text: "Megawatt Capacity" },
                 { number: 250, text: "Trusted Partners" },
             ]
         }
     },
-    // mounted() {
-    //     const image = this.$refs.motorbikeImage;
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //             entries.forEach((entry) => {
-    //                 if (entry.isIntersecting) {
-    //                     image.classList.add("scale-up");
-    //                 }
-    //             });
-    //         },
-    //         { threshold: [0.1] }
-    //     );
-
-    //     observer.observe(image);
-    // },
     methods: {
         imageClass(position) {
             return {
@@ -80,26 +68,43 @@ export default {
 </script>
 
 <style scoped>
-h1 span.text-danger {
-    color: #d0021b;
-    /* Red color for the 'US' part of the title */
+.award-section {
+    overflow: hidden;
 }
 
-.bg-danger {
-    background-color: #d0021b !important;
-    /* Ensure a consistent red background */
+.stats-section {
+    height: 500px;
+    color: var(--bg-secondary);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
-/* Initial scale set to 0 */
-.scale-0 {
-    transform: scale(0);
-    transition: transform 1.5s ease-in-out;
-    /* Smooth scaling transition */
+.counter-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(6, 24, 66, 0.6); */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
 }
 
-/* This class will be added when the image is in view */
-.scale-up {
-    transform: scale(1);
+.image-section {
+    height: 500px;
+}
+
+.award-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.counter-item {
+    padding: 0.5rem;
 }
 
 .before-enter-left {
@@ -117,5 +122,33 @@ h1 span.text-danger {
 .enter {
     opacity: 1;
     transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+
+    .stats-section,
+    .image-section {
+        height: 400px;
+    }
+
+    .counter-wrapper {
+        padding: 1.5rem;
+    }
+
+    .counter-item {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .stats-section,
+    .image-section {
+        height: 350px;
+    }
+
+    .counter-wrapper {
+        padding: 1rem;
+    }
 }
 </style>

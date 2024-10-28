@@ -1,18 +1,31 @@
 <template>
   <DashboardNav />
   <router-view />
-  <iframe id="senja-collector-iframe" src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
-    allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%" height="700"></iframe>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/img/" alt="">
+      </div>
+      <div class="col-md-6">
+        <iframe id="senja-collector-iframe" src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
+          allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%"
+          height="700"></iframe>
+      </div>
+    </div>
+  </div>
+  <ThankYou/>
   <FooterBar />
 </template>
 <script>
 import DashboardNav from "@/components/TopNav.vue";
 import FooterBar from "@/components/FooterBar.vue";
+import ThankYou from "@/components/ThankYou.vue";
 export default {
   name: "App",
   components: {
     DashboardNav,
-    FooterBar
+    FooterBar,
+    ThankYou
   },
   computed: {
     // hide() {

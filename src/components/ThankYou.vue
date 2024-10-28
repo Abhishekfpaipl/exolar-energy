@@ -9,7 +9,7 @@
     name: 'CreativeTextAnimation',
     data() {
       return {
-        text: 'Exolar/Energy'
+        text: 'Exolar...Energy'
       };
     }
   };
@@ -52,7 +52,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: var(--bg-primary);
+    color: white;
     -webkit-text-stroke: 0vw var(--bg-primary);
     border-right: 2px solid var(--bg-primary);
     overflow: hidden;

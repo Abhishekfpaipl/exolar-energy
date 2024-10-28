@@ -1,26 +1,26 @@
 <template>
-    <div class="container">
-        <div class="text-start">
-            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
-            <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Why Go Solar ?</h2>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-4">
-                <img src="/img/banner/2.jpg" alt="Engine" class="img-fluid" />
-            </div>
-            <div class="col-md-8">
-                <p class="text-start fs-5 mb-4 mt-5 mt-md-0">
-                    Exolar Energy, a leader in renewable energy solutions, is championing the shift to solar power. As
-                    the world moves toward cleaner and more sustainable energy sources, Exolar Energy offers a
-                    compelling case for going solar. Harnessing the power of the sun, solar energy provides a reliable,
-                    cost-effective, and eco-friendly alternative to traditional power sources.
-                </p>
-                <section class="d-flex justify-content-center align-items-center my-3">
-                    <div class="position-relative w-100">
-                        <p class="">We offer&hellip;</p>
-                        <h2 class="rotatingText-adjective" :key="currentPhrase">{{ phrases[currentIndex] }}</h2>
+    <div class="pb-5 pb-md-0" style="background-color:#f3f8f3 !important ">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-4">
+                    <img ref="solarPanel" src="/img/banner/2.jpg" alt="Engine" class="img-fluid scale-0" />
+                </div>
+                <div class="col-md-8 mt-5 mt-md-0">
+                    <div class="text-center">
+                        <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
+                        <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Why Go Solar ?</h2>
                     </div>
-                </section>
+                    <section class="d-flex justify-content-center align-items-center my-3">
+                        <div class="position-relative w-100">
+                            <p class="text-uppercase text-muted">Solar Benefits</p>
+                            <h2 class="rotatingText-adjective fw-bold" style="color: var(--bg-primary);"
+                                :key="currentPhrase">{{
+                                    phrases[currentIndex] }}</h2>
+                        </div>
+                    </section>
+                    <button class="btn mt-5 fs-4 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        style="background-color:var(--bg-third);">Enquiry Now</button>
+                </div>
             </div>
         </div>
     </div>
@@ -55,6 +55,20 @@ export default {
         this.intervalId = setInterval(() => {
             this.currentIndex = (this.currentIndex + 1) % this.phrases.length;
         }, 2000);
+
+        const image = this.$refs.solarPanel;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        image.classList.add("scale-up");
+                    }
+                });
+            },
+            { threshold: [0.1] }
+        );
+
+        observer.observe(image);
     },
     beforeUnmount() {
         // Clear interval on component unmount
@@ -64,6 +78,18 @@ export default {
 </script>
 
 <style scoped>
+/* Initial scale set to 0 */
+.scale-0 {
+    transform: scale(0);
+    transition: transform 1.5s ease-in-out;
+    /* Smooth scaling transition */
+}
+
+/* This class will be added when the image is in view */
+.scale-up {
+    transform: scale(1);
+}
+
 .rotatingText-adjective {
     left: 0;
     margin-top: 30px;

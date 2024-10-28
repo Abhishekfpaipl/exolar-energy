@@ -16,13 +16,14 @@
             <div class="marquee" :class="{ 'marquee--vertical': isVertical }">
                 <div class="marquee__group mt-5" :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div class="" v-for="(card, index) in cards" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -37,13 +38,14 @@
                 <div aria-hidden="true" class="marquee__group mt-5"
                     :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div class="" v-for="(card, index) in cards" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -59,13 +61,14 @@
             <div class="marquee marquee--reverse" :class="{ 'marquee--vertical': isVertical }">
                 <div class="marquee__group mt-5" :style="{ 'animation-direction': isReverse ? 'normal' : 'reverse' }">
                     <div class="" v-for="(card, index) in cards2" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -80,13 +83,14 @@
                 <div aria-hidden="true" class="marquee__group mt-5"
                     :style="{ 'animation-direction': isReverse ? 'normal' : 'reverse' }">
                     <div class="" v-for="(card, index) in cards2" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -102,13 +106,14 @@
             <div class="marquee" :class="{ 'marquee--vertical': isVertical }">
                 <div class="marquee__group mt-5" :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div class="" v-for="(card, index) in cards3" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -123,13 +128,14 @@
                 <div aria-hidden="true" class="marquee__group mt-5"
                     :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div class="" v-for="(card, index) in cards3" :key="index">
-                        <div class="card-container bg-light border position-relative rounded p-2 ">
+                        <div class="card-container border position-relative rounded p-2 "
+                            style="background-color:#f3f8f3 !important">
                             <div class="card border-0">
                                 <div class="card-header d-flex flex-column justify-content-center align-items-center">
-                                    <div class="rounded-circle overflow-hidden border border-white bg-light border-2 p-1"
-                                        style="width:60px; height:60px; margin-top:-40px;">
+                                    <div class="rounded overflow-hidden border border-white border-2 p-1"
+                                        style="width:60px; height:60px; margin-top:-40px; background-color: var(--bg-third)">
                                         <img :src="card.image" alt="Profile" class="rounded-circle"
-                                            style="width: 100%; height: 100%;object-fit: cover;" />
+                                            style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
@@ -372,7 +378,8 @@ export default {
 }
 
 .card-header {
-    background: linear-gradient(180deg, rgba(35, 122, 191, 1) 0%, rgba(255, 255, 255, 1) 95%);
+    background: linear-gradient(180deg, rgba(27, 150, 0, 1) 0%, rgba(243, 248, 243, 1) 95%);
+    /* background-color:var(--bg-third);  */
     padding: 10px;
     text-align: center;
     border-bottom: 0px !important;

@@ -3,84 +3,80 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule a Free Site Visit Today!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="container mt-4">
-                        <form @submit.prevent="submitForm" class="card p-4">
-                            <h2 class="text-center mb-4">Schedule a Free Site Visit Today!</h2>
-
+                    <div class="mt-4">
+                        <form @submit.prevent="submitForm" class="">
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="firstName">First Name*</label>
-                                        <input type="text" class="form-control" id="firstName"
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="firstName" placeholder=""
                                             v-model="formData.firstName" :class="{ 'is-invalid': errors.firstName }"
                                             required>
                                         <div class="invalid-feedback">{{ errors.firstName }}</div>
+                                        <label for="firstName">First Name*</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="lastName">Last Name*</label>
-                                        <input type="text" class="form-control" id="lastName"
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="lastName" placeholder=""
                                             v-model="formData.lastName" :class="{ 'is-invalid': errors.lastName }"
                                             required>
                                         <div class="invalid-feedback">{{ errors.lastName }}</div>
+                                        <label for="lastName">Last Name*</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="postalCode">Postal Code*</label>
-                                        <input type="text" class="form-control" id="postalCode"
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="postalCode" placeholder=""
                                             v-model="formData.postalCode" :class="{ 'is-invalid': errors.postalCode }"
                                             required>
                                         <div class="invalid-feedback">{{ errors.postalCode }}</div>
+                                        <label for="postalCode">Postal Code*</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="city">City*</label>
-                                        <input type="text" class="form-control" id="city" v-model="formData.city"
-                                            :class="{ 'is-invalid': errors.city }" required>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="city" placeholder=""
+                                            v-model="formData.city" :class="{ 'is-invalid': errors.city }" required>
                                         <div class="invalid-feedback">{{ errors.city }}</div>
+                                        <label for="city">City*</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="state">State*</label>
-                                        <input type="text" class="form-control" id="state" v-model="formData.state"
-                                            :class="{ 'is-invalid': errors.state }" required>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="state" placeholder=""
+                                            v-model="formData.state" :class="{ 'is-invalid': errors.state }" required>
                                         <div class="invalid-feedback">{{ errors.state }}</div>
+                                        <label for="state">State*</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="phoneNumber">Phone Number*</label>
-                                        <input type="tel" class="form-control" id="phoneNumber"
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" class="form-control" id="phoneNumber" placeholder=""
                                             v-model="formData.phoneNumber" :class="{ 'is-invalid': errors.phoneNumber }"
                                             required>
                                         <div class="invalid-feedback">{{ errors.phoneNumber }}</div>
+                                        <label for="phoneNumber">Phone Number*</label>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group mb-3">
-                                <label for="email">Email*</label>
-                                <input type="email" class="form-control" id="email" v-model="formData.email"
-                                    :class="{ 'is-invalid': errors.email }" required>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" placeholder=""
+                                    v-model="formData.email" :class="{ 'is-invalid': errors.email }" required>
                                 <div class="invalid-feedback">{{ errors.email }}</div>
+                                <label for="email">Email*</label>
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="electricityBill">What is your Average Electricity Bill (INR)*</label>
+                            <div class="form-floating mb-3">
                                 <select class="form-control" id="electricityBill" v-model="formData.electricityBill"
                                     :class="{ 'is-invalid': errors.electricityBill }" required>
                                     <option value="">Select your average bill</option>
@@ -89,23 +85,21 @@
                                     </option>
                                 </select>
                                 <div class="invalid-feedback">{{ errors.electricityBill }}</div>
+                                <label for="electricityBill">What is your Average Electricity Bill (INR)*</label>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label>Property Type*</label>
+                                <p class="text-start">
+                                    <label>Property Type*</label>
+                                </p>
                                 <div class="d-flex gap-4">
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="independent"
-                                            value="Independent Villa" v-model="formData.propertyType" required>
-                                        <label class="form-check-label" for="independent">Independent Villa</label>
+                                        <input type="checkbox" class="form-check-input" id="residential"
+                                            value="Residential" v-model="formData.propertyType">
+                                        <label class="form-check-label" for="residential">Residential</label>
                                     </div>
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="apartment" value="Apartment"
-                                            v-model="formData.propertyType">
-                                        <label class="form-check-label" for="apartment">Apartment</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="commercial"
+                                        <input type="checkbox" class="form-check-input" id="commercial"
                                             value="Commercial Establishment" v-model="formData.propertyType">
                                         <label class="form-check-label" for="commercial">Commercial
                                             Establishment</label>
@@ -117,14 +111,19 @@
                                 <input type="checkbox" class="form-check-input" id="terms"
                                     v-model="formData.termsAccepted" :class="{ 'is-invalid': errors.termsAccepted }"
                                     required>
-                                <label class="form-check-label" for="terms">
-                                    I agree to HomeScape Solar
-                                    <a href="#" class="text-decoration-none">Terms of Service & Privacy Policy*</a>
-                                </label>
+                                <p class="text-start">
+                                    <label class="form-check-label " for="terms">
+                                        I agree to HomeScape Solar
+                                        <a href="#" class="text-decoration-none">Terms of Service & Privacy Policy*</a>
+                                    </label>
+                                </p>
                                 <div class="invalid-feedback">{{ errors.termsAccepted }}</div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100">REQUEST A CALL BACK</button>
+                            <button type="submit" class="btn w-100 text-white"
+                                style="background-color: var(--bg-primary)">REQUEST A
+                                CALL
+                                BACK</button>
                         </form>
                     </div>
                 </div>
@@ -148,7 +147,7 @@ export default {
                 phoneNumber: '',
                 email: '',
                 electricityBill: '',
-                propertyType: '',
+                propertyType: [],
                 termsAccepted: false
             },
             errors: {},
@@ -158,7 +157,8 @@ export default {
                 '₹5,001 - ₹10,000',
                 '₹10,001 - ₹15,000',
                 '₹15,001+'
-            ]
+            ],
+
         }
     },
     methods: {
@@ -214,12 +214,24 @@ export default {
 
         submitForm() {
             if (this.validateForm()) {
-                // Handle form submission here
-                console.log('Form submitted:', this.formData)
-                // You can emit an event or call an API here
-                this.$emit('form-submitted', this.formData)
+                const phoneNumber = '918860012001'; // Replace with your WhatsApp number
+                const message = `Hello, my name is ${this.formData.firstName} ${this.formData.lastName}. These are my details:- City: ${this.formData.city}, State: ${this.formData.state}, Phone Number: ${this.formData.phoneNumber}, Email: ${this.formData.email}, Electricity Bill: ${this.formData.electricityBill}, Property Type: ${this.formData.propertyType}.`;
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+                this.formData.firstName = '',
+                    this.formData.lastName = '',
+                    this.formData.postalCode = '',
+                    this.formData.city = '',
+                    this.formData.state = '',
+                    this.formData.phoneNumber = '',
+                    this.formData.email = '',
+                    this.formData.electricityBill = '',
+                    this.formData.propertyType = [],
+                    this.formData.termsAccepted = false,
+                    // Handle form submission here
+                    console.log('Form submitted:', this.formData)
             }
-        }
+        },
     }
 }
 </script>

@@ -23,9 +23,9 @@
     <div class="my-5">
       <GallerySection />
     </div>
-    <div class="my-5">
+    <!-- <div class="my-5">
       <ThankYou />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -38,7 +38,7 @@ import GallerySection from "@/components/GallerySection.vue";
 import AboutSection from "@/components/AboutSection.vue";
 import TestimonialSection from "@/components/TestimonialSection.vue";
 import FaqSection from "@/components/FaqSection.vue";
-import ThankYou from "@/components/ThankYou.vue";
+// import ThankYou from "@/components/ThankYou.vue";
 import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 
 export default {
@@ -52,7 +52,7 @@ export default {
     AboutSection,
     TestimonialSection,
     FaqSection,
-    ThankYou,
+    // ThankYou,
     ShortsVideoSection,
   },
   data() {
