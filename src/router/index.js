@@ -106,6 +106,16 @@ const routes = [
     name: "ServicePage",
     component: () => import("@/pages/ServicePage.vue")
   },
+  {
+    path: "/write-testimonial",
+    name: "WriteTestimonial",
+    component: () => import("@/pages/WriteTestimonial.vue")
+  },
+  {
+    path: "/google-reviews",
+    name: "GoogleReview",
+    component: () => import("@/pages/GoogleReview.vue")
+  },
 ];
 
 const router = createRouter({

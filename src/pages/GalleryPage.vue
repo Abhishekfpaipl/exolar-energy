@@ -3,7 +3,7 @@
         <SectionTopBanner />
         <div class="container mb-5" v-observe>
             <div class="text-start my-5">
-                <p class="text-muted mb-1 text-uppercase">Ariseol</p>
+                <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
                 <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Check Our Gallery</h2>
             </div>
             <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2">
@@ -73,9 +73,11 @@ export default {
                 "/img/gallery/4.jpg",
                 "/img/gallery/5.jpg",
                 "/img/gallery/6.jpg",
-                "/img/gallery/7.jpg",
-                "/img/gallery/8.jpg",
-                "/img/gallery/9.jpg",
+                "/img/gallery/5.jpg",
+                "/img/gallery/4.jpg",
+                "/img/gallery/3.jpg",
+                "/img/gallery/2.jpg",
+                "/img/gallery/1.jpg",
             ],
             activeIndex: 0
         }

@@ -2,7 +2,12 @@
   <div class="container" v-observe>
     <div class="text-start mb-5">
       <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
-      <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Check Our Gallery</h2>
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Check Our Gallery</h2>
+        <router-link to="/gallery">
+          <i class="bi bi-arrow-right fs-3"></i>
+        </router-link>
+      </div>
     </div>
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2">
       <div class="col" v-for="(image, index) in images " :key="index" data-bs-toggle="modal"
@@ -65,9 +70,11 @@ export default {
         "/img/gallery/4.jpg",
         // "/img/gallery/5.jpg",
         // "/img/gallery/6.jpg",
-        // "/img/gallery/7.jpg",
-        // "/img/gallery/8.jpg",
-        // "/img/gallery/9.jpg",
+        // "/img/gallery/5.jpg",
+        // "/img/gallery/4.jpg",
+        // "/img/gallery/3.jpg",
+        // "/img/gallery/2.jpg",
+        // "/img/gallery/1.jpg",
       ],
       activeIndex: 0
     }

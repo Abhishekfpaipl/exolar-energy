@@ -16,42 +16,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-5 text-center">
-                CLG Oil India Private Limited embarked on its journey over two and a half decades ago, in 2000, making
-                its mark by introducing high-quality greases for both automotive and industrial applications. These
-                products are marketed under various leading brands, earning the company a strong reputation in the
-                industry.
-                Over the years, CLG Oil has grown into one of the foremost grease manufacturers in India, with a
-                production capacity ranging between 2,200 to 2,700 MT per month. This impressive output meets more than
-                15-20% of India's demand for premium greases, underscoring the company’s pivotal role in the market.
-                In addition to greases, CLG Oil India Private Limited has diversified its product range to Lubricants
-                and oils also, such as engine oils and industrial oils, catering to the automotive and industrial
-                sectors both within India and internationally. The company's ability to evolve and expand its offerings
-                has been a key factor in its sustained growth and success.
-                Since its inception in 2000, CLG Oil India Private Limited has witnessed tremendous growth, establishing
-                itself as a leading manufacturer and supplier of a comprehensive range of greases and lubricant oils.
-                The company’s expertise lies in producing a wide array of products, including automotive greases,
-                high-end lubricant oils, and synthetic oils, among others. Through continuous research and a strong
-                focus on customer satisfaction, CLG Oil has remained attuned to the evolving demands of the modern
-                Indian automotive industry, while also making significant strides in the domestic market. The company
-                prides itself on delivering high-performance products that ensure 100% customer satisfaction, thereby
-                maintaining its esteemed reputation for quality.
-                The journey of CLG Oil India Private Limited began modestly in 1988, with operations starting in a small
-                factory located in Bawana, Delhi. Fueled by relentless hard work, passion, and determination, the
-                company steadily progressed, eventually rebranding as CLG Oil India Pvt Ltd in 2019. This transformation
-                marked a new chapter in the company’s history, reflecting its growth and evolution over the years.
-                At the helm of this successful venture is Mr. Vipin Goyal Sir, who has been the driving force behind the
-                company's remarkable achievements. Under his leadership, CLG Oil India has reached unprecedented heights
-                over the past three decades, thanks to his unparalleled work ethic and visionary approach. Joining him
-                in this exceptional journey is his son, Mr. Gaurav Goyal, whose modern perspectives and enthusiasm have
-                further amplified the company’s potential for success. Together, they have propelled CLG Oil India
-                Private Limited to new levels of excellence, ensuring its continued prominence in the industry.
-                We also offer private label grease & lubricants manufacturing to well recognized brands in the
-                automotive aftermarket, MRO, and general industrial categories and independent marketing companies
-                across the globe. We, at CLG Oil India Private Limited.
-                In the year 2020, we aims to invest substantially in Research &Development, acquiring modern
-                technologies and geographical expansion.
-
+            <div class="col-12 mt-5 text-start">
+                Exolar Energy is a new age company that provides the combination of efficient economics and
+                sustainability through use of solar energy.
+                Our vision is to enable the world maximise the use of distributed solar energy. Our mission is to have
+                every potential roof solar systems installed.
+                Rooftop solar is most financially beneficial now and we, at Exolar, are at the forefront of the solar
+                revolution throughdistributed solar.
+                We bring together our expertise and experience inend to end EPC services, to electricity consumers of
+                all categories. Our clients have benefited from the following.
+                <ul class="text-start my-4">
+                    <li class="" v-for="(point, index) in points" :key="index">{{ point }}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -66,7 +42,14 @@ export default {
         return {
             image: 'img/about/owner.jpeg',
             title: "Gaurav Goyal",
-            post: "Owner"
+            post: "Owner",
+            points: [
+                "Optimal combination of cost, technology and benefits",
+                "Plant designs of global standard using latest software",
+                "Best in class components that are suggested based on our experience and associations",
+                "Most effective and efficient execution",
+                "O & M support and warranty administration assistance",
+            ]
         }
     }
 

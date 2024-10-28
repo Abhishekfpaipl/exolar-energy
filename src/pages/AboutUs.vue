@@ -11,7 +11,7 @@
             <AriseolBenefits />
         </div> -->
         <div class="my-5" v-observe>
-            <AboutKeyFeatures />
+            <OurMissionVision />
         </div>
         <div class="my-5" v-observe>
             <OurCoreValues />
@@ -25,7 +25,7 @@
 import SuccessStory from "@/components/SuccessStory.vue";
 import TeamInfoSection from "@/components/TeamInfoSection.vue";
 import OurCoreValues from "@/components/OurCoreValues.vue";
-import AboutKeyFeatures from "@/components/AboutKeyFeatures.vue";
+import OurMissionVision from "@/components/OurMissionVision.vue";
 import SectionTopBanner from "@/components/SectionTopBanner.vue";
 export default {
     name: "AboutUs",
@@ -34,7 +34,7 @@ export default {
         OurCoreValues,
         SuccessStory,
         TeamInfoSection,
-        AboutKeyFeatures,
+        OurMissionVision,
         SectionTopBanner,
     },
     data() {

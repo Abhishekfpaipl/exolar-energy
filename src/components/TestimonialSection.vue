@@ -27,7 +27,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -49,7 +49,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -72,7 +72,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -94,7 +94,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -117,7 +117,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -139,7 +139,7 @@
                                     </div>
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.title }}</p>
                                 </div>
-                                <div class="card-body bg-white py-2 px-1" style="max-width: 250px;">
+                                <div class="card-body bg-light py-2 px-1" style="max-width: 250px;">
                                     <p class="fw-bold smaller mb-0 mt-0 text-ellipsis1">{{ card.name }}</p>
                                     <p class="text-dark smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
@@ -378,7 +378,7 @@ export default {
 }
 
 .card-header {
-    background: linear-gradient(180deg, rgba(27, 150, 0, 1) 0%, rgba(243, 248, 243, 1) 95%);
+    /* background: linear-gradient(180deg, rgba(27, 150, 0, 1) 0%, rgba(243, 248, 243, 1) 95%); */
     /* background-color:var(--bg-third);  */
     padding: 10px;
     text-align: center;
@@ -400,7 +400,7 @@ export default {
     position: absolute;
     font-size: 2em;
     /* color: #4ecdc4; */
-    color: white !important;
+    color: black !important;
     font-family: sans-serif;
 }
 
@@ -408,7 +408,7 @@ export default {
     content: '”';
     position: absolute;
     font-size: 2em;
-    color: white !important;
+    color: black !important;
     font-family: sans-serif;
 }
 

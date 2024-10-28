@@ -17,7 +17,7 @@
             </div>
             <div class="row align-items-stretch mx-0">
                 <div class="col-md-6 px-0 stats-section" v-observe style="background-image: url('/img/worldmap.jpg');">
-                    <div class="counter-wrapper">
+                    <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-5" style=" background-color: rgba(0, 0, 0, 0.8)">
                         <div class="row g-4">
                             <div class="col-6" v-for="(counter, index) in counters" :key="index">
                                 <div class="counter-item primary-text">
@@ -27,6 +27,9 @@
                                     <p class="small">{{ counter.text }}</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <router-link to="/about-us" class="btn btn-warning">Know More About us</router-link>
                         </div>
                     </div>
                 </div>
@@ -81,16 +84,7 @@ export default {
 }
 
 .counter-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background-color: rgba(6, 24, 66, 0.6); */
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 3rem;
-    display: flex;
-    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.8); */
 }
 
 .image-section {

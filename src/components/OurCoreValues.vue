@@ -34,54 +34,55 @@ export default {
         return {
             datas: [
                 {
-                    icon: 'bi bi-lightbulb',
-                    heading: 'High Performance',
-                    text: 'Our products are engineered for superior performance, delivering exceptional results in diverse applications.'
+                    icon: 'bi bi-sun', // Sun icon for renewable energy
+                    heading: 'Sustainable Energy',
+                    text: 'Our mission is to deliver clean, renewable energy solutions that reduce carbon footprint and contribute to a greener planet.'
                 },
                 {
-                    icon: 'bi bi-person',
-                    heading: 'Temperature Control',
-                    text: 'We develop solutions that maintain optimal performance across a wide range of temperatures.'
+                    icon: 'bi bi-recycle', // Recycle icon for eco-friendliness
+                    heading: 'Eco-Friendly Practices',
+                    text: 'We are dedicated to eco-friendly practices, minimizing environmental impact through sustainable product development and operations.'
                 },
                 {
-                    icon: 'bi bi-people',
-                    heading: 'Eco-Friendly',
-                    text: 'We are committed to environmentally sustainable practices, ensuring our products and processes minimize environmental impact.'
+                    icon: 'bi bi-tree', // Tree icon for environmental consciousness
+                    heading: 'Environmental Stewardship',
+                    text: 'We prioritize conservation and environmental responsibility in all aspects of our business, ensuring a positive impact on the planet.'
                 },
                 {
-                    icon: 'bi bi-check2-all',
-                    heading: 'Advanced Infrastructure',
-                    text: 'We use cutting-edge technology and labs to deliver products that meet API and NLGI standards.'
+                    icon: 'bi bi-lightning', // Lightning icon for energy efficiency
+                    heading: 'High Energy Efficiency',
+                    text: 'Our products are engineered for maximum energy efficiency, providing reliable power while reducing overall energy consumption.'
                 },
                 {
-                    icon: 'bi bi-gear',
-                    heading: 'Integrity',
-                    text: 'We uphold the highest standards of integrity in all aspects of our business.'
+                    icon: 'bi bi-globe', // Globe icon for global reach
+                    heading: 'Global Reach',
+                    text: 'With projects across various regions, we are committed to making solar energy accessible and beneficial worldwide.'
                 },
                 {
-                    icon: 'bi bi-graph-up',
-                    heading: 'Diligence',
-                    text: 'Our leadership fosters strong work ethics and promotes transparency throughout the organization.'
+                    icon: 'bi bi-lightbulb', // Lightbulb icon for innovation
+                    heading: 'Innovation in Technology',
+                    text: 'We continuously innovate to bring the latest advancements in solar technology, providing efficient and cost-effective energy solutions.'
                 },
                 {
-                    icon: 'bi bi-graph-up',
-                    heading: 'Respect',
-                    text: 'We build strong relationships by treating all individuals and partners with respect and consideration'
+                    icon: 'bi bi-building', // Building icon for infrastructure
+                    heading: 'Reliable Infrastructure',
+                    text: 'Our robust infrastructure supports sustainable energy production, ensuring reliable power for both residential and commercial needs.'
                 },
                 {
-                    icon: 'bi bi-graph-up',
-                    heading: 'Flexibility',
-                    text: 'We offer custom formulations and tailored packaging to meet unique customer needs.'
+                    icon: 'bi bi-wrench', // Wrench icon for flexibility
+                    heading: 'Custom Solutions',
+                    text: 'We offer tailored solar solutions to meet the unique requirements of our customers, ensuring optimal results for each project.'
                 },
                 {
-                    icon: 'bi bi-graph-up',
-                    heading: 'Quality Control',
-                    text: 'We ensure top quality and adhere to global standards, with certifications like ISO 9001:2015 and TS 16949:2009.'
+                    icon: 'bi bi-award', // Award icon for quality assurance
+                    heading: 'Quality Assurance',
+                    text: 'Our commitment to quality is backed by industry standards and certifications, guaranteeing excellence in every product and service.'
                 },
             ],
         }
     },
 }
+
 </script>
 <style lang="">
 

@@ -12,6 +12,9 @@
     <div class="my-5">
       <ShortsVideoSection />
     </div>
+    <div class="my-5">
+      <ReviewSection />
+    </div>
     <AboutSection />
     <ContactSection />
     <div class="my-5">
@@ -22,6 +25,9 @@
     </div>
     <div class="my-5">
       <GallerySection />
+    </div>
+    <div class="my-5">
+      <GoogleReviewSection />
     </div>
     <!-- <div class="my-5">
       <ThankYou />
@@ -38,8 +44,10 @@ import GallerySection from "@/components/GallerySection.vue";
 import AboutSection from "@/components/AboutSection.vue";
 import TestimonialSection from "@/components/TestimonialSection.vue";
 import FaqSection from "@/components/FaqSection.vue";
+import ReviewSection from "@/components/ReviewSection.vue";
 // import ThankYou from "@/components/ThankYou.vue";
 import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
+import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 
 export default {
   name: "HomeView",
@@ -54,6 +62,8 @@ export default {
     FaqSection,
     // ThankYou,
     ShortsVideoSection,
+    ReviewSection,
+    GoogleReviewSection,
   },
   data() {
     return {
