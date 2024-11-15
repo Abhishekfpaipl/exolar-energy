@@ -1,6 +1,6 @@
 <template>
     <div class="p-2 rounded text-typing-deleting fw-bold overflow-hidden d-inline-block text-white">
-        <span v-if="showText" class="typed-text display-1"> {{ currentText }}<span v-if="!currentText"
+        <span v-if="showText" class="typed-text display-1 text-uppercase"> {{ currentText }}<span v-if="!currentText"
                 class="blinking-cursor">|</span></span>
     </div>
 </template>

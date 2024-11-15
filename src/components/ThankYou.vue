@@ -1,8 +1,9 @@
 <template>
-  <div class="text-container justify-content-around py-5">
+  <div class="text-container py-5">
     <h2 :data-text="text" class="">{{ text }}</h2>
-    <button class="btn btn-warning py-4 fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Know More</button>
   </div>
+  <button class="btn btn-warning my-5 fs-3 text-capitalize" data-bs-toggle="modal" data-bs-target="#exampleModal">Click
+    here to get a free quote <i class="bi bi-arrow-right visit"></i></button>
 </template>
 
 <script>
@@ -10,7 +11,7 @@ export default {
   name: 'CreativeTextAnimation',
   data() {
     return {
-      text: 'Exolar...Energy'
+      text: 'Exolar.Energy'
     };
   }
 };

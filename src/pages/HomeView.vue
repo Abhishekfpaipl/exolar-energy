@@ -7,7 +7,10 @@
     </div>
     <div class="my-5">
       <SolarInstallationSteps />
-      <TestimonialSection />
+      <!-- <TestimonialSection /> -->
+      <!-- <div class="my-5"> -->
+      <TestSection />
+      <!-- </div> -->
     </div>
     <div class="my-5">
       <ShortsVideoSection />
@@ -42,13 +45,14 @@ import WhyGoSolar from '@/components/WhyGoSolar.vue'
 import SolarInstallationSteps from '@/components/SolarInstallationSteps.vue'
 import CarouselBanner from "@/components/CarouselBanner.vue";
 import AboutSection from "@/components/AboutSection.vue";
-import TestimonialSection from "@/components/TestimonialSection.vue";
+// import TestimonialSection from "@/components/TestimonialSection.vue";
 import FaqSection from "@/components/FaqSection.vue";
 import ReviewSection from "@/components/ReviewSection.vue";
 // import ThankYou from "@/components/ThankYou.vue";
 import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 import NewGallerySection from '@/components/NewGallerySection.vue';
+import TestSection from '@/components/TestSection.vue';
 
 export default {
   name: "HomeView",
@@ -58,13 +62,14 @@ export default {
     CarouselBanner,
     SolarInstallationSteps,
     AboutSection,
-    TestimonialSection,
+    // TestimonialSection,
     FaqSection,
     // ThankYou,
     ShortsVideoSection,
     ReviewSection,
     GoogleReviewSection,
     NewGallerySection,
+    TestSection,
   },
   data() {
     return {
