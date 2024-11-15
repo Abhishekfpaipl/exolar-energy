@@ -1,138 +1,140 @@
 <template>
-    <div class="d-flex flex-column align-items-center mb-5">
-        <div class="d-flex justify-content-center align-items-center">
-            <h2 :data-text="text" class="text-uppercase display-1">{{ text }}</h2>
+    <div id="text-spot">
+        <h1 class="text-center display-3" style="font-family: Luckiest Guy;">Welcome to</h1>
+        <div id="inner-text" :class="{ 'done-animating': doneAnimating }">
+            <span v-for="(letter, index) in wordArray" :key="index" class="letter animate fs-4"
+                :style="{ animationDelay: `${300 * index}ms` }" @animationend="onAnimationEnd(index)">
+                {{ letter }}
+            </span>
         </div>
-        <svg viewBox="0 0 960 300">
-            <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="80%"> Exolar Energy.</text>
-                <text text-anchor="middle" x="50%" y="80%"> Exolar Energy.</text>
-            </symbol>
-
-            <g class="g-ants">
-                <use xlink:href="#s-text" class="text-copy" v-for="n in 5" :key="n"></use>
-            </g>
-        </svg>
+        <!-- <form id="custom-text-form" @submit.prevent="submitText">
+            <input type="text" id="custom-text" placeholder="customize this text" v-model="customText" />
+            <input type="submit" value="go!" />
+        </form> -->
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ExolarTextAnimation',
+    name: "AnimatedText",
     data() {
         return {
-            text: 'welcome'
+            customText: "",
+            wordArray: [],
+            doneAnimating: false,
         };
-    }
+    },
+    methods: {
+        drawText(word) {
+            this.doneAnimating = false;
+            this.wordArray = (word || "Exolar.Energy !").split("");
+        },
+        submitText() {
+            this.drawText(this.customText);
+        },
+        onAnimationEnd(index) {
+            if (index === this.wordArray.length - 1) {
+                this.doneAnimating = true;
+            }
+        },
+    },
+    mounted() {
+        this.drawText();
+    },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"); */
 
-
-svg {
-    display: block;
-    font: 7em 'Montserrat';
-    width: 100%;
-    height: 300px !important;
-}
-
-@media (max-width: 768px) {
-    svg {
-        display: block;
-        font: 7em 'Montserrat';
-        width: 100%;
-        height: 100% !important;
-    }
-}
-
-.text-copy {
-    fill: none;
-    stroke: white;
-    stroke-dasharray: 6% 29%;
-    stroke-width: 5px;
-    stroke-dashoffset: 0%;
-    animation: stroke-offset 5.5s infinite linear;
-}
-
-.text-copy:nth-child(1) {
-    stroke: var(--bg-third);
-    animation-delay: -1s;
-}
-
-.text-copy:nth-child(2) {
-    stroke: var(--bg-primary);
-    animation-delay: -2s;
-}
-
-.text-copy:nth-child(3) {
-    stroke: #797878;
-    animation-delay: -3s;
-}
-
-.text-copy:nth-child(4) {
-    stroke: #1B9600;
-    animation-delay: -4s;
-}
-
-.text-copy:nth-child(5) {
-    stroke: #797878;
-    animation-delay: -5s;
-}
-
-@keyframes stroke-offset {
-    100% {
-        stroke-dashoffset: -35%;
-    }
-}
-
-h2 {
-    position: relative;
-    color: var(--bg-primary);
-    -webkit-text-stroke: 0.3vw grey;
-    text-transform: uppercase;
-    /* font-size: 8vw; */
-}
-
-/* Adjust font size for larger screens */
-@media (min-width: 768px) {
-    h2 {
-        font-size: 8vw;
-    }
-}
-
-@media (min-width: 1024px) {
-    h2 {
-        font-size: 6vw;
-    }
-}
-
-h2::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--bg-third);
-    -webkit-text-stroke: 0vw var(--bg-primary);
-    border-right: 2px solid var(--bg-primary);
-    overflow: hidden;
-    animation: animate 6s linear infinite;
-}
-
-@keyframes animate {
-
-    0%,
-    10%,
-    100% {
-        width: 0;
+@keyframes dash {
+    0% {
+        transform: skew(-30deg, 0deg) translateX(300%) scale(0.8);
+        opacity: 1;
     }
 
-    70%,
+    40% {
+        transform: skew(10deg, 0deg) translateX(100%) scale(0.9);
+    }
+
+    60% {
+        transform: skew(10deg, 0deg) translateX(-10px) scale(1.2);
+    }
+
+    70% {
+        transform: skew(0, 0deg) translateX(0) scale(1.3);
+    }
+
+    75% {
+        transform: skew(0, 0deg) translateX(0) scale(1.3);
+    }
+
     90% {
-        width: 100%;
+        transform: skew(0, 0deg) translateX(0) scale(0.85);
     }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes done-animating {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+body {
+    background: #0b0b25;
+}
+
+#inner-text {
+    position: relative;
+    z-index: 1;
+}
+
+#inner-text.done-animating {
+    animation: done-animating 300ms ease-in;
+}
+
+#text-spot {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .letter {
+        display: inline-block;
+        font-size: 100px !important;
+        color: var(--bg-primary);
+        letter-spacing: 10px;
+        font-family: "Luckiest Guy";
+    }
+}
+
+.letter {
+    display: inline-block;
+    /* font-size: 120px; */
+    color: var(--bg-primary);
+    letter-spacing: 10px;
+    font-family: "Luckiest Guy";
+}
+
+.letter.animate {
+    animation: dash 500ms ease-in forwards;
+    opacity: 0;
 }
 </style>

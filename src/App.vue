@@ -1,7 +1,7 @@
 <template>
   <DashboardNav />
-  <router-view /> 
-  <ThankYou/>
+  <router-view />
+  <ThankYou /> 
   <FooterBar />
 </template>
 <script>

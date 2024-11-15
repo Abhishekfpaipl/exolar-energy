@@ -13,6 +13,7 @@
             <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body">
+                        <!-- <i class="bi bi-google text-primary"></i> -->
                         <div class="d-flex align-items-center mb-2">
                             <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
                             <h5 class="card-title m-0">{{ review.authorName }}</h5>
@@ -24,6 +25,9 @@
                                 <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
                             </span>
                             <span class="text-muted">{{ review.date }}</span>
+                        </div>
+                        <div class="text-end">
+                            <img src="/img/google.png" alt="google" style="width: 35px;">
                         </div>
                     </div>
                 </div>
@@ -55,12 +59,12 @@ export default {
                     date: 'July , 2024',
                     text: 'best ever',
                 },
-                {
-                    authorName: 'Saqlain Khan',
-                    rating: 1,
-                    date: 'July , 2024',
-                    text: 'Average',
-                },
+                // {
+                //     authorName: 'Saqlain Khan',
+                //     rating: 1,
+                //     date: 'July , 2024',
+                //     text: 'Average',
+                // },
                 // Add more review objects here
             ],
         };
