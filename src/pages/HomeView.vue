@@ -35,7 +35,9 @@
     <!-- <div class="my-5">
       <ThankYou />
     </div> -->
-
+    <div>
+      <SolarCalculator/>
+    </div>
   </div>
 </template>
 
@@ -53,6 +55,7 @@ import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 import NewGallerySection from '@/components/NewGallerySection.vue';
 import TestSection from '@/components/TestSection.vue';
+import SolarCalculator from '@/components/SolarCalculator.vue';
 
 export default {
   name: "HomeView",
@@ -70,6 +73,7 @@ export default {
     GoogleReviewSection,
     NewGallerySection,
     TestSection,
+    SolarCalculator,
   },
   data() {
     return {
