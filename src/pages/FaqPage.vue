@@ -23,10 +23,10 @@
             </div>
         </div>
     </div>
-    <div class="wh-60 rounded-circle position-fixed  bg-success px-3 py-1" data-bs-toggle="modal"
+    <!-- <div class="wh-60 rounded-circle position-fixed  bg-success px-3 py-1" data-bs-toggle="modal"
         data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;">
         <i class="bi bi-phone fs-2 text-white"></i>
-    </div>
+    </div> -->
     <FaqFormSection />
 
 </template>

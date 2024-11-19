@@ -4,7 +4,7 @@
             <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Customer Reviews</h2>
-                <router-link to="/google-reviews">
+                <router-link to="/">
                     <i class="bi bi-arrow-right fs-3"></i>
                 </router-link>
             </div>

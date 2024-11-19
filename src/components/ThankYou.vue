@@ -4,11 +4,21 @@
   </div>
   <button class="btn btn-warning my-5 fs-3 text-capitalize" data-bs-toggle="modal" data-bs-target="#exampleModal">Click
     here to get a free quote <i class="bi bi-arrow-right visit"></i></button>
+  <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    style="bottom: 20px; right: 5px;z-index: 10;">
+    <img src="/img/enquiry.svg" alt="" style="width: 30px;">
+  </div>
+  <FaqFormSection />
 </template>
 
 <script>
+
+import FaqFormSection from '@/components/FaqFormSection.vue'
 export default {
   name: 'CreativeTextAnimation',
+  components: {
+    FaqFormSection,
+  },
   data() {
     return {
       text: 'Exolar.Energy'

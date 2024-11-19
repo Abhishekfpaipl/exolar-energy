@@ -1,230 +1,239 @@
 <template>
-    <div class="container my-5">
-        <div class="card rounded-0 p-0 border-0">
-            <div class="card-header text-warning" style="background-color: var(--bg-secondary);">
-                <h2 class="text-center display-1">Solar Calculator</h2>
-            </div>
-            <div class="border-0">
-                <div class="p-2 text-white" style="background-color: var(--bg-secondary);">
-                    <!-- Building Type Selection -->
-                    <div class="d-flex flex-column align-items-center justify-content-start mb-4">
-                        <label class="form-label text-uppercase">Building Type</label>
-                        <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" v-model="buildingType" class="btn-check w-50 " name="btnradio"
-                                id="btnradio1" autocomplete="off" checked>
-                            <label class="btn btn-outline-light" for="btnradio1">Existing Building</label>
-
-                            <input type="radio" v-model="buildingType" class="btn-check w-50" name="btnradio"
-                                id="btnradio2" autocomplete="off">
-                            <label class="btn btn-outline-light" for="btnradio2">New Building</label>
-                        </div>
-                    </div>
-
-                    <!-- Location Input -->
-                    <div class="mb-4">
-                        <label class="form-label text-uppercase">Location</label>
-                        <div class="input-group">
-                            <input type="text" v-model="location" class="form-control" placeholder="Enter location" />
-                            <button @click="detectLocation" class="btn btn-warning">
-                                <i class="bi bi-geo-alt"></i> Detect
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Load and Bill Inputs -->
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Sanctioned Load (kW):</label>
-                            <input type="number" v-model="sanctionedLoad" class="form-control"
-                                placeholder="Enter sanctioned load" />
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Monthly Bill (Rs.):</label>
-                            <input type="number" v-model="monthlyBill" class="form-control"
-                                placeholder="Estimated monthly bill (Optional)" />
-                        </div>
-                    </div>
-
-                    <!-- Consumer Category Selection -->
-                    <div class="mt-4">
-                        <label class="form-label">Consumer Category:</label>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                            <button v-for="category in ['residential', 'commercial', 'industrial']" :key="category"
-                                @click="setCategory(category)"
-                                :class="['btn', 'me-2', consumerCategory === category ? 'btn-light' : 'btn-outline-light']">
-                                {{ category.toUpperCase() }}
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Calculate Button -->
-                    <div class="text-center mt-4">
-                        <button @click="calculate" class="btn btn-warning px-4 w-100">
-                            Calculate
-                        </button>
-                    </div>
-
+    <div style="">
+        <div class="container my-5">
+            <div class="card rounded-0 p-0 border-0">
+                <div class="card-header text-warning" style="background-color: var(--bg-secondary);">
+                    <h2 class="text-center display-1">Solar Calculator</h2>
                 </div>
-
-                <div class="bg-white p-0 mt-5">
-                    <!-- Results Tables -->
-                    <div v-if="calculatedData" class="">
-                        <!-- System Specifications -->
-                        <div class="text-start mb-5">
-                            <p class="text-muted mb-1 text-uppercase">system required</p>
-                            <h2 class="display-5 text-uppercase">Specifications</h2>
+                <div class="border-0">
+                    <div class="p-2 text-white" style="background-color: var(--bg-secondary);">
+                        <!-- Consumer Category Selection -->
+                        <div class="my-5 px-3">
+                            <label class="form-label text-uppercase fw-bold mb-4">Select your building Category</label>
+                            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                                <button v-for="category in ['residential', 'commercial', 'industrial']" :key="category"
+                                    @click="setCategory(category)"
+                                    :class="['btn', 'me-2', consumerCategory === category ? 'btn-warning' : 'btn-outline-warning']">
+                                    {{ category.toUpperCase() }}
+                                </button>
+                            </div>
                         </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered text-center">
-                                        <thead class="table-warning border-warning">
-                                            <tr>
-                                                <th class="text-start small">System Size (kW)</th>
-                                                <td class="">{{ calculatedData.kw }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small">Avg. Monthly Consumption (kWp)</th>
-                                                <td class="">{{ calculatedData.consumption }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small">System Size (sq.ft.)</th>
-                                                <td class="">{{ calculatedData.area }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small">Total Cost (Rs.)</th>
-                                                <td class="">{{ calculatedData.cost.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small">Subsidy (Rs.)</th>
-                                                <td class="">{{ calculatedData.subsidy.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small">Net Cost (Rs.)</th>
-                                                <td class="">{{ (calculatedData.cost -
-                                                    calculatedData.subsidy).toLocaleString()
-                                                    }}</td>
-                                            </tr>
+                        <!-- Building Type Selection -->
+                        <div class="d-flex flex-column align-items-center justify-content-start my-5 px-3">
+                            <label class="form-label text-uppercase fw-bold mb-4">Select your building Type</label>
+                            <div class="d-flex flex-column flex-md-row jusify-content-between align-items-center gap-3 text-uppercase" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" v-model="buildingType" class="btn-check" name="btnradio"
+                                    id="btnradio1" autocomplete="off">
+                                <label class="btn btn-outline-warning" for="btnradio1">Existing Building</label>
 
-                                        </thead>
-                                    </table>
+                                <input type="radio" v-model="buildingType" class="btn-check" name="btnradio"
+                                    id="btnradio2" autocomplete="off">
+                                <label class="btn btn-outline-warning" for="btnradio2">New Building</label>
+                            </div>
+                        </div>
+
+                        <!-- Location Input -->
+                        <div class="my-5 px-3">
+                            <label class="form-label text-uppercase fw-bold mb-4">Location</label>
+                            <div class="input-group">
+                                <input type="text" v-model="location" class="form-control"
+                                    placeholder="Enter location" />
+                                <button @click="detectLocation" class="btn btn-warning">
+                                    <i class="bi bi-geo-alt"></i> Detect
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Load and Bill Inputs -->
+                        <div class="row g-3 px-3">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label text-uppercase fw-bold mb-4">Sanctioned Load (kW)</label>
+                                <input type="number" v-model="sanctionedLoad" class="form-control"
+                                    placeholder="Enter sanctioned load" />
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label text-uppercase fw-bold mb-4">Monthly Bill (Rs.)</label>
+                                <input type="number" v-model="monthlyBill" class="form-control"
+                                    placeholder="Estimated monthly bill (Optional)" />
+                            </div>
+                        </div>
+
+
+
+                        <!-- Calculate Button -->
+                        <div class="text-center my-5 px-3">
+                            <button @click="calculate" class="btn btn-warning px-4 w-100">
+                                Calculate
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-white p-0 mt-5">
+                        <!-- Results Tables -->
+                        <div v-if="calculatedData" class="">
+                            <!-- System Specifications -->
+                            <div class="text-start mb-5">
+                                <p class="text-muted mb-1 text-uppercase">system required</p>
+                                <h2 class="display-5 text-uppercase">Specifications</h2>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center">
+                                            <thead class="table-warning border-warning">
+                                                <tr>
+                                                    <th class="text-start small">System Size (kW)</th>
+                                                    <td class="">{{ calculatedData.kw }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small">Avg. Monthly Consumption (kWp)</th>
+                                                    <td class="">{{ calculatedData.consumption }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small">System Size (sq.ft.)</th>
+                                                    <td class="">{{ calculatedData.area }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small">Total Cost (Rs.)</th>
+                                                    <td class="">{{ calculatedData.cost.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small">Subsidy (Rs.)</th>
+                                                    <td class="">{{ calculatedData.subsidy.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small">Net Cost (Rs.)</th>
+                                                    <td class="">{{ (calculatedData.cost -
+                                                        calculatedData.subsidy).toLocaleString()
+                                                        }}</td>
+                                                </tr>
+
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <canvas id="specificationsBarChart" class=""></canvas>
                                 </div>
                             </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <canvas id="specificationsBarChart" class=""></canvas>
-                            </div>
-                        </div>
 
-                        <!-- Savings Over Time -->
-                        <div class="text-start my-5">
-                            <p class="text-muted mb-1 text-uppercase">Over the Time</p>
-                            <h2 class="display-5 text-uppercase">Estimated Savings
-                            </h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered text-center">
-                                        <thead class=""
-                                            style="background-color: #EBE0FF !important; border-color:#9864FD !important">
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">1 Year</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year1.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">2 Years</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year2.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">3 Years</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year3.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">4 Years</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year4.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">5 Years</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year5.toLocaleString() }}</td>
-                                            </tr>
-                                            <tr>
-                                                <th class="text-start small"
-                                                    style="background-color: #EBE0FF !important;">25 Years</th>
-                                                <td style="background-color: #EBE0FF !important;">{{
-                                                    calculatedData.year25.toLocaleString() }}</td>
-                                            </tr>
-                                        </thead>
-                                    </table>
+                            <!-- Savings Over Time -->
+                            <div class="text-start my-5">
+                                <p class="text-muted mb-1 text-uppercase">Over the Time</p>
+                                <h2 class="display-5 text-uppercase">Estimated Savings
+                                </h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered text-center">
+                                            <thead class=""
+                                                style="background-color: #EBE0FF !important; border-color:#9864FD !important">
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">1 Year</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year1.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">2 Years</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year2.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">3 Years</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year3.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">4 Years</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year4.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">5 Years</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year5.toLocaleString() }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-start small"
+                                                        style="background-color: #EBE0FF !important;">25 Years</th>
+                                                    <td style="background-color: #EBE0FF !important;">{{
+                                                        calculatedData.year25.toLocaleString() }}</td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <canvas id="savingsBarChart"></canvas>
                                 </div>
                             </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <canvas id="savingsBarChart"></canvas>
-                            </div>
-                        </div>
 
-                        <!-- Appliance Support -->
-                        <div class="text-start my-5">
-                            <p class="text-muted mb-1 text-uppercase">Supported</p>
-                            <h2 class="display-5 text-uppercase"> Appliances</h2>
-                        </div>
-                        <h3 class="text-center text-primary my-4"></h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row row-cols-2 row-cols-md-3 g-3">
-                                    <div v-for="(count, appliance) in appliances" :key="appliance" class="col">
-                                        <div class="card h-100 text-dark p-2"
-                                            style="background-color: #D5F5F5; border-color:#4BC0C0 !important;">
-                                            <div class="card-body text-center p-0">
-                                                <p>{{ appliance }}</p>
-                                                <h5 class="">× {{ count }}</h5>
+                            <!-- Appliance Support -->
+                            <div class="text-start my-5">
+                                <p class="text-muted mb-1 text-uppercase">Supported</p>
+                                <h2 class="display-5 text-uppercase"> Appliances</h2>
+                            </div>
+                            <h3 class="text-center text-primary my-4"></h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row row-cols-2 row-cols-md-3 g-3">
+                                        <div v-for="(count, appliance) in appliances" :key="appliance" class="col">
+                                            <div class="card h-100 text-dark p-2"
+                                                style="background-color: #D5F5F5; border-color:#4BC0C0 !important;">
+                                                <div class="card-body text-center p-0">
+                                                    <p>{{ appliance }}</p>
+                                                    <h5 class="">× {{ count }}</h5>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6 mt-4 mt-md-0">
+                                    <canvas id="applianceBarChart"></canvas>
+                                </div>
                             </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <canvas id="applianceBarChart"></canvas>
-                            </div>
                         </div>
-                    </div>
-                    <div v-if="calculatedData">
-                        <!-- Savings Over Time Charts -->
-                        <div class="text-start my-5">
-                            <p class="text-muted mb-1 text-uppercase">Graphical view</p>
-                            <h2 class="display-5 text-uppercase">Estimated Savings
-                            </h2>
-                        </div>
-
-                        <canvas id="savingsPieChart" class="col-4"></canvas>
-
-                        <!-- System Specifications Charts -->
-                        <div class="text-start my-5">
-                            <p class="text-muted mb-1 text-uppercase">Graphical view</p>
-                            <h2 class="display-5 text-uppercase">Specifications
-                            </h2>
-                        </div>
-                        <canvas id="specificationsPieChart" class="col-4"></canvas>
-
-                        <!-- Pie Chart for Appliances -->
                         <div v-if="calculatedData">
+                            <!-- Savings Over Time Charts -->
                             <div class="text-start my-5">
                                 <p class="text-muted mb-1 text-uppercase">Graphical view</p>
-                                <h2 class="display-5 text-uppercase"> Appliances</h2>
+                                <h2 class="display-5 text-uppercase">Estimated Savings
+                                </h2>
                             </div>
-                            <canvas id="appliancePieChart" class="col-4"></canvas>
-                        </div>
-                    </div>
+                            <div class="col-md-4">
+                                <canvas id="savingsPieChart" class=""></canvas>
+                            </div>
 
+                            <!-- System Specifications Charts -->
+                            <div class="text-start my-5">
+                                <p class="text-muted mb-1 text-uppercase">Graphical view</p>
+                                <h2 class="display-5 text-uppercase">Specifications
+                                </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <canvas id="specificationsPieChart" class=""></canvas>
+                            </div>
+
+                            <!-- Pie Chart for Appliances -->
+                            <div v-if="calculatedData">
+                                <div class="text-start my-5">
+                                    <p class="text-muted mb-1 text-uppercase">Graphical view</p>
+                                    <h2 class="display-5 text-uppercase"> Appliances</h2>
+                                </div>
+                                <div class="col-md-4">
+                                    <canvas id="appliancePieChart" class=""></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,7 +246,7 @@ export default {
     name: 'SolarCalculator',
     data() {
         return {
-            buildingType: 'new',
+            buildingType: '',
             location: '',
             sanctionedLoad: '',
             monthlyBill: '',

@@ -111,11 +111,11 @@ const routes = [
     name: "WriteTestimonial",
     component: () => import("@/pages/WriteTestimonial.vue")
   },
-  {
-    path: "/google-reviews",
-    name: "GoogleReview",
-    component: () => import("@/pages/GoogleReview.vue")
-  },
+  // {
+  //   path: "/google-reviews",
+  //   name: "GoogleReview",
+  //   component: () => import("@/pages/GoogleReview.vue")
+  // },
 ];
 
 const router = createRouter({
