@@ -4,8 +4,8 @@
             <div class="card-header text-warning" style="background-color: var(--bg-secondary);">
                 <h2 class="text-center display-1">Solar Calculator</h2>
             </div>
-            <div class="">
-                <div class="card-body text-white" style="background-color: var(--bg-secondary);">
+            <div class="border-0">
+                <div class="p-2 text-white" style="background-color: var(--bg-secondary);">
                     <!-- Building Type Selection -->
                     <div class="d-flex flex-column align-items-center justify-content-start mb-4">
                         <label class="form-label text-uppercase">Building Type</label>
@@ -19,23 +19,6 @@
                             <label class="btn btn-outline-light" for="btnradio2">New Building</label>
                         </div>
                     </div>
-
-                    <!-- <div class="mb-4">
-
-                        <label class="form-label">Building Type:</label>
-                        <div class="d-flex gap-3">
-                            <div class="form-check">
-                                <input type="radio" v-model="buildingType" value="existing" id="existingBuilding"
-                                    class="form-check-input" />
-                                <label class="form-check-label" for="existingBuilding">Existing Building</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" v-model="buildingType" value="new" id="newBuilding"
-                                    class="form-check-input" />
-                                <label class="form-check-label" for="newBuilding">New Building</label>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <!-- Location Input -->
                     <div class="mb-4">
@@ -83,97 +66,162 @@
 
                 </div>
 
-                <div class="card-body bg-white p-0 pt-3">
+                <div class="bg-white p-0 mt-5">
                     <!-- Results Tables -->
                     <div v-if="calculatedData" class="">
                         <!-- System Specifications -->
-                        <h3 class="text-center text-primary my-4">System Specifications</h3>
-                        <div class="table-responsive">
-                            <table class="table table-bordered text-center">
-                                <thead class="table-primary">
-                                    <tr>
-                                        <th>System Size (kW)</th>
-                                        <th>Avg. Monthly Consumption (kWp)</th>
-                                        <th>System Size (sq.ft.)</th>
-                                        <th>Total Cost (Rs.)</th>
-                                        <th>Subsidy (Rs.)</th>
-                                        <th>Net Cost (Rs.)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ calculatedData.kw }}</td>
-                                        <td>{{ calculatedData.consumption }}</td>
-                                        <td>{{ calculatedData.area }}</td>
-                                        <td>{{ calculatedData.cost.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.subsidy.toLocaleString() }}</td>
-                                        <td>{{ (calculatedData.cost - calculatedData.subsidy).toLocaleString() }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="text-start mb-5">
+                            <p class="text-muted mb-1 text-uppercase">system required</p>
+                            <h2 class="display-5 text-uppercase">Specifications</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center">
+                                        <thead class="table-warning border-warning">
+                                            <tr>
+                                                <th class="text-start small">System Size (kW)</th>
+                                                <td class="">{{ calculatedData.kw }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small">Avg. Monthly Consumption (kWp)</th>
+                                                <td class="">{{ calculatedData.consumption }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small">System Size (sq.ft.)</th>
+                                                <td class="">{{ calculatedData.area }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small">Total Cost (Rs.)</th>
+                                                <td class="">{{ calculatedData.cost.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small">Subsidy (Rs.)</th>
+                                                <td class="">{{ calculatedData.subsidy.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small">Net Cost (Rs.)</th>
+                                                <td class="">{{ (calculatedData.cost -
+                                                    calculatedData.subsidy).toLocaleString()
+                                                    }}</td>
+                                            </tr>
+
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4 mt-md-0">
+                                <canvas id="specificationsBarChart" class=""></canvas>
+                            </div>
                         </div>
 
                         <!-- Savings Over Time -->
-                        <h3 class="text-center text-primary my-4">Estimated Savings Over Time</h3>
-                        <div class="table-responsive">
-                            <table class="table table-bordered text-center">
-                                <thead class="table-primary">
-                                    <tr>
-                                        <th>1 Year</th>
-                                        <th>2 Years</th>
-                                        <th>3 Years</th>
-                                        <th>4 Years</th>
-                                        <th>5 Years</th>
-                                        <th>25 Years</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ calculatedData.year1.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.year2.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.year3.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.year4.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.year5.toLocaleString() }}</td>
-                                        <td>{{ calculatedData.year25.toLocaleString() }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="text-start my-5">
+                            <p class="text-muted mb-1 text-uppercase">Over the Time</p>
+                            <h2 class="display-5 text-uppercase">Estimated Savings
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center">
+                                        <thead class=""
+                                            style="background-color: #EBE0FF !important; border-color:#9864FD !important">
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">1 Year</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year1.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">2 Years</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year2.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">3 Years</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year3.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">4 Years</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year4.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">5 Years</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year5.toLocaleString() }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="text-start small"
+                                                    style="background-color: #EBE0FF !important;">25 Years</th>
+                                                <td style="background-color: #EBE0FF !important;">{{
+                                                    calculatedData.year25.toLocaleString() }}</td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4 mt-md-0">
+                                <canvas id="savingsBarChart"></canvas>
+                            </div>
                         </div>
 
                         <!-- Appliance Support -->
-                        <h3 class="text-center text-primary my-4">Supported Appliances</h3>
-                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-                            <div v-for="(count, appliance) in appliances" :key="appliance" class="col">
-                                <div class="card h-100 text-warning p-2">
-                                    <div class="card-body text-center p-0">
-                                        <p>{{ appliance }}</p>
-                                        <h5 class="">× {{ count }}</h5>
+                        <div class="text-start my-5">
+                            <p class="text-muted mb-1 text-uppercase">Supported</p>
+                            <h2 class="display-5 text-uppercase"> Appliances</h2>
+                        </div>
+                        <h3 class="text-center text-primary my-4"></h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row row-cols-2 row-cols-md-3 g-3">
+                                    <div v-for="(count, appliance) in appliances" :key="appliance" class="col">
+                                        <div class="card h-100 text-dark p-2"
+                                            style="background-color: #D5F5F5; border-color:#4BC0C0 !important;">
+                                            <div class="card-body text-center p-0">
+                                                <p>{{ appliance }}</p>
+                                                <h5 class="">× {{ count }}</h5>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-6 mt-4 mt-md-0">
+                                <canvas id="applianceBarChart"></canvas>
                             </div>
                         </div>
                     </div>
                     <div v-if="calculatedData">
                         <!-- Savings Over Time Charts -->
-                        <h3 class="text-center text-primary my-4">Estimated Savings Over Time</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <canvas id="savingsPieChart" class="mt-4"></canvas>
-                            </div>
-                            <div class="col-md-6">
-                                <canvas id="savingsBarChart"></canvas>
-                            </div>
+                        <div class="text-start my-5">
+                            <p class="text-muted mb-1 text-uppercase">Graphical view</p>
+                            <h2 class="display-5 text-uppercase">Estimated Savings
+                            </h2>
                         </div>
 
+                        <canvas id="savingsPieChart" class="col-4"></canvas>
+
                         <!-- System Specifications Charts -->
-                        <h3 class="text-center text-primary my-4">System Specifications</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <canvas id="specificationsBarChart" class="mt-4"></canvas>
+                        <div class="text-start my-5">
+                            <p class="text-muted mb-1 text-uppercase">Graphical view</p>
+                            <h2 class="display-5 text-uppercase">Specifications
+                            </h2>
+                        </div>
+                        <canvas id="specificationsPieChart" class="col-4"></canvas>
+
+                        <!-- Pie Chart for Appliances -->
+                        <div v-if="calculatedData">
+                            <div class="text-start my-5">
+                                <p class="text-muted mb-1 text-uppercase">Graphical view</p>
+                                <h2 class="display-5 text-uppercase"> Appliances</h2>
                             </div>
-                            <div class="col-md-6">
-                                <canvas id="specificationsPieChart" class="mt-4"></canvas>
-                            </div>
+                            <canvas id="appliancePieChart" class="col-4"></canvas>
                         </div>
                     </div>
 
@@ -377,6 +425,7 @@ export default {
                 this.renderSavingsPieChart();
                 this.renderSpecificationsBarChart();
                 this.renderSpecificationsPieChart();
+                this.renderApplianceCharts();
             });
         },
         renderSavingsBarChart() {
@@ -401,8 +450,8 @@ export default {
                                 this.calculatedData.year5,
                                 this.calculatedData.year25,
                             ],
-                            backgroundColor: "rgba(75, 192, 192, 0.2)",
-                            borderColor: "rgba(75, 192, 192, 1)",
+                            backgroundColor: "rgba(153, 102, 255, 0.2)",
+                            borderColor: "rgba(153, 102, 255, 1)",
                             borderWidth: 1,
                         },
                     ],
@@ -477,8 +526,8 @@ export default {
                                 this.calculatedData.subsidy,
                                 this.calculatedData.cost - this.calculatedData.subsidy,
                             ],
-                            backgroundColor: "rgba(153, 102, 255, 0.2)",
-                            borderColor: "rgba(153, 102, 255, 1)",
+                            backgroundColor: "rgba(255,243,205)",
+                            borderColor: "rgba(255,193,7, 1)",
                             borderWidth: 1,
                         },
                     ],
@@ -531,6 +580,76 @@ export default {
                 },
             });
         },
+        renderApplianceCharts() {
+            // const applianceNames = Object.keys(this.appliances);
+            const applianceCounts = Object.values(this.appliances);
+
+            // Render Bar Chart
+            const barChartCtx = document.getElementById("applianceBarChart").getContext("2d");
+            new Chart(barChartCtx, {
+                type: "bar",
+                data: {
+                    labels: ["Inverter Ac", "Television LED", "Ceiling Fan", "Tubelight", "Laptop", "Refrigerator"],
+                    datasets: [
+                        {
+                            label: "Appliance Count",
+                            data: applianceCounts,
+                            backgroundColor: "rgba(75, 192, 192, 0.2)",
+                            borderColor: "rgba(75, 192, 192, 1)",
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
+
+            // Render Pie Chart
+            const pieChartCtx = document.getElementById("appliancePieChart").getContext("2d");
+            new Chart(pieChartCtx, {
+                type: "pie",
+                data: {
+                    labels: ["Inverter Ac", "Television LED", "Ceiling Fan", "Tubelight", "Laptop", "Refrigerator"],
+                    datasets: [
+                        {
+                            label: "Appliance Distribution",
+                            data: applianceCounts,
+                            backgroundColor: [
+                                "rgba(75, 192, 192, 0.2)",
+                                "rgba(54, 162, 235, 0.2)",
+                                "rgba(255, 206, 86, 0.2)",
+                                "rgba(153, 102, 255, 0.2)",
+                                "rgba(255, 159, 64, 0.2)",
+                                "rgba(255, 99, 132, 0.2)",
+                            ],
+                            borderColor: [
+                                "rgba(75, 192, 192, 1)",
+                                "rgba(54, 162, 235, 1)",
+                                "rgba(255, 206, 86, 1)",
+                                "rgba(153, 102, 255, 1)",
+                                "rgba(255, 159, 64, 1)",
+                                "rgba(255, 99, 132, 1)",
+                            ],
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: "top",
+                        },
+                    },
+                },
+            });
+        },
     },
 
     mounted() {
@@ -538,31 +657,9 @@ export default {
         this.savingsPieChart = null;
         this.specificationsBarChart = null;
         this.specificationsPieChart = null;
+        this.appliancePieChart = null;
     }
 
 
 }
 </script>
-
-<style scoped>
-.card {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-}
-
-.brandPrimary {
-    background-color: var(--bg-secondary);
-    color: white;
-}
-
-.brandSecondary {
-    background-color: var(--bg-primary);
-    color: white;
-}
-</style>
