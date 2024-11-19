@@ -8,20 +8,38 @@
                 <div class="border-0">
                     <div class="p-2 text-white" style="background-color: var(--bg-secondary);">
                         <!-- Consumer Category Selection -->
+                        <div class="row g-3 px-3">
+                            <div class="col-12 mb-4">
+                                <label class="form-label text-uppercase fw-bold mb-4">Sanctioned Load (kW)</label>
+                                <input type="number" v-model="sanctionedLoad" class="form-control"
+                                    placeholder="Enter sanctioned load" />
+                            </div>
+                        </div>
                         <div class="my-5 px-3">
                             <label class="form-label text-uppercase fw-bold mb-4">Select your building Category</label>
                             <div class="d-grid gap-3 d-md-flex justify-content-md-center">
-                                <button v-for="category in ['residential', 'commercial', 'industrial']" :key="category"
+                                <button v-for="category in ['Residential', 'Commercial', 'Industrial']" :key="category"
                                     @click="setCategory(category)"
                                     :class="['btn', 'me-2', consumerCategory === category ? 'btn-warning' : 'btn-outline-warning']">
                                     {{ category.toUpperCase() }}
                                 </button>
                             </div>
                         </div>
-                        <!-- Building Type Selection -->
-                        <div class="d-flex flex-column align-items-center justify-content-start my-5 px-3">
+                        <div class="my-5 px-3">
                             <label class="form-label text-uppercase fw-bold mb-4">Select your building Type</label>
-                            <div class="d-flex flex-column flex-md-row jusify-content-between align-items-center gap-3 text-uppercase" role="group" aria-label="Basic radio toggle button group">
+                            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                                <button v-for="building in ['Existing Building', 'New Building']" :key="building"
+                                    @click="setBuilding(building)"
+                                    :class="['btn', 'me-2', buildingType === building ? 'btn-warning' : 'btn-outline-warning']">
+                                    {{ building.toUpperCase() }}
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Building Type Selection -->
+                        <!-- <div class="d-flex flex-column align-items-center justify-content-start my-5 px-3">
+                            <label class="form-label text-uppercase fw-bold mb-4">Select your building Type</label>
+                            <div class="d-flex flex-column flex-md-row jusify-content-between align-items-center gap-3 text-uppercase"
+                                role="group" aria-label="Basic radio toggle button group">
                                 <input type="radio" v-model="buildingType" class="btn-check" name="btnradio"
                                     id="btnradio1" autocomplete="off">
                                 <label class="btn btn-outline-warning" for="btnradio1">Existing Building</label>
@@ -30,11 +48,11 @@
                                     id="btnradio2" autocomplete="off">
                                 <label class="btn btn-outline-warning" for="btnradio2">New Building</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Location Input -->
                         <div class="my-5 px-3">
-                            <label class="form-label text-uppercase fw-bold mb-4">Location</label>
+                            <label class="form-label text-uppercase fw-bold mb-4">Location (optional)</label>
                             <div class="input-group">
                                 <input type="text" v-model="location" class="form-control"
                                     placeholder="Enter location" />
@@ -46,13 +64,13 @@
 
                         <!-- Load and Bill Inputs -->
                         <div class="row g-3 px-3">
-                            <div class="col-md-6 mb-4">
+                            <!-- <div class="col-md-6 mb-4">
                                 <label class="form-label text-uppercase fw-bold mb-4">Sanctioned Load (kW)</label>
                                 <input type="number" v-model="sanctionedLoad" class="form-control"
                                     placeholder="Enter sanctioned load" />
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <label class="form-label text-uppercase fw-bold mb-4">Monthly Bill (Rs.)</label>
+                            </div> -->
+                            <div class="col-12 mb-4">
+                                <label class="form-label text-uppercase fw-bold mb-4">Monthly Bill (optional)</label>
                                 <input type="number" v-model="monthlyBill" class="form-control"
                                     placeholder="Estimated monthly bill (Optional)" />
                             </div>
@@ -70,6 +88,35 @@
                     </div>
 
                     <div class="bg-white p-0 mt-5">
+
+                        <div v-if="calculatedData" class="">
+                            <div class="text-start mb-5">
+                                <!-- <p class="text-muted mb-1 text-uppercase">system required</p> -->
+                                <h2 class="display-5 text-uppercase">Selected Data</h2>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead class="table-warning border-warning">
+                                        <tr>
+                                            <th>Building Type</th>
+                                            <th>Consumer Category</th>
+                                            <th>Location</th>
+                                            <th>Sanctioned Load (kW)</th>
+                                            <th>Monthly Bill (Rs)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ buildingType }}</td>
+                                            <td>{{ consumerCategory }}</td>
+                                            <td>{{ location }}</td>
+                                            <td>{{ sanctionedLoad }}</td>
+                                            <td>{{ monthlyBill }}</td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <button @click="downloadPDF" class="btn btn-warning">Download as PDF</button>
+                        </div>
+
                         <!-- Results Tables -->
                         <div v-if="calculatedData" class="">
                             <!-- System Specifications -->
@@ -232,7 +279,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -242,6 +288,8 @@
 
 <script>
 import { Chart } from "chart.js/auto";
+import jsPDF from "jspdf";
+import "jspdf-autotable"; // Import for tables in jsPDF
 export default {
     name: 'SolarCalculator',
     data() {
@@ -415,8 +463,29 @@ export default {
         }
     },
     methods: {
+        detectLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        // In a real implementation, you would use a reverse geocoding service
+                        // to get the address from coordinates
+                        const { latitude, longitude } = position.coords
+                        this.location = `Lat: ${latitude.toFixed(4)}, Long: ${longitude.toFixed(4)}`
+                    },
+                    (error) => {
+                        console.error('Error getting location:', error)
+                        this.location = 'Location detection failed'
+                    }
+                )
+            } else {
+                this.location = 'Geolocation not supported'
+            }
+        },
         setCategory(category) {
             this.consumerCategory = category;
+        },
+        setBuilding(building) {
+            this.buildingType = building;
         },
         calculate() {
             if (!this.sanctionedLoad) {
@@ -659,6 +728,124 @@ export default {
                 },
             });
         },
+        downloadPDF() {
+            const pdf = new jsPDF();
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+
+            let yPosition = 10; // Initial Y position for content placement
+
+            // Add Title
+            pdf.text("Solar Calculator Report", 10, yPosition);
+            yPosition += 10; // Move Y position down
+
+            // Add User Input Data Table
+            pdf.autoTable({
+                head: [["Building Type", "Consumer Category", "Location", "Sanctioned Load (kW)", "Monthly Bill (Rs)"]],
+                body: [[
+                    this.buildingType || "Not Selected",
+                    this.consumerCategory || "Not Selected",
+                    this.location || "Not Provided",
+                    this.sanctionedLoad || "Not Provided",
+                    this.monthlyBill || "Not Provided",
+                ]],
+                startY: yPosition,
+                didDrawPage: (data) => {
+                    yPosition = data.cursor.y + 10; // Update position after table
+                },
+            });
+
+            // Add Specifications Table
+            pdf.autoTable({
+                head: [["System Size (kW)", "Avg. Monthly Consumption", "Area (sq.ft.)", "Total Cost (Rs.)", "Subsidy (Rs.)", "Net Cost (Rs.)"]],
+                body: [[
+                    this.calculatedData.kw,
+                    this.calculatedData.consumption,
+                    this.calculatedData.area,
+                    this.calculatedData.cost,
+                    this.calculatedData.subsidy,
+                    this.calculatedData.cost - this.calculatedData.subsidy,
+                ]],
+                startY: yPosition,
+                didDrawPage: (data) => {
+                    yPosition = data.cursor.y + 10; // Update position after table
+                },
+            });
+
+            // Add Estimated Savings Table
+            pdf.autoTable({
+                head: [["1 Year", "2 Years", "3 Years", "4 Years", "5 Years", "25 Years"]],
+                body: [
+                    [
+                        this.calculatedData.year1,
+                        this.calculatedData.year2,
+                        this.calculatedData.year3,
+                        this.calculatedData.year4,
+                        this.calculatedData.year5,
+                        this.calculatedData.year25,
+                    ],
+                ],
+                startY: yPosition,
+                didDrawPage: (data) => {
+                    yPosition = data.cursor.y + 10; // Update position after table
+                },
+            });
+
+            // Add Appliance Count Table
+            const applianceCounts = Object.values(this.appliances);
+            console.log(applianceCounts)
+
+            pdf.autoTable({
+                head: [["Appliance", "Count"]],
+                body: [
+                    ["Inverter Ac", this.appliances["1.5 Ton 5 Star Inverter Ac (3200w)"]],
+                    ["Television LED", this.appliances["Television LED (100w)"]],
+                    ["Ceiling Fan", this.appliances["Ceiling Fan (75w)"]],
+                    ["Tubelight", this.appliances["Tubelight (20w)"]],
+                    ["Laptop", this.appliances["Laptop (100w)"]],
+                    ["Refrigerator", this.appliances["Refrigerator (200w)"]],
+                ],
+                startY: yPosition,
+                didDrawPage: (data) => {
+                    yPosition = data.cursor.y + 10; // Update position after table
+                },
+            });
+
+            // Charts Array (Exclude Pie Charts)
+            const charts = [
+                { id: "savingsBarChart", title: "Savings Bar Chart" },
+                { id: "specificationsBarChart", title: "Specifications Bar Chart" },
+                { id: "applianceBarChart", title: "Appliance Bar Chart" },
+            ];
+
+            // Add Charts to PDF
+            charts.forEach((chart) => {
+                const canvas = document.getElementById(chart.id);
+                if (canvas) {
+                    const imageData = canvas.toDataURL("image/png");
+                    const chartHeight = 60; // Chart height in mm
+                    const chartWidth = pageWidth - 20; // Width with padding
+
+                    // Check if new page is needed
+                    if (yPosition + chartHeight > pageHeight) {
+                        pdf.addPage(); // Add a new page
+                        yPosition = 10; // Reset Y position for the new page
+                    }
+
+                    // Add Chart Title
+                    pdf.text(chart.title, 10, yPosition);
+                    yPosition += 10;
+
+                    // Add Chart Image
+                    pdf.addImage(imageData, "PNG", 10, yPosition, chartWidth, chartHeight);
+                    yPosition += chartHeight + 10; // Update Y position after chart
+                }
+            });
+
+            // Save PDF
+            pdf.save("solar_calculator_report.pdf");
+        },
+
     },
 
     mounted() {

@@ -29,14 +29,14 @@
     <div class="my-5">
       <NewGallerySection :images="images" />
     </div>
-    <div class="my-5">
-      <GoogleReviewSection />
-    </div>
     <!-- <div class="my-5">
       <ThankYou />
     </div> -->
     <div>
       <SolarCalculator/>
+    </div>
+    <div class="my-5">
+      <GoogleReviewSection />
     </div>
   </div>
 </template>

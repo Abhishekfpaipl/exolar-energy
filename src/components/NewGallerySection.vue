@@ -5,7 +5,8 @@
                 <div class="col-md-6">
                     <div class="text-md-start text-center mb-5">
                         <p class="mb-1 text-uppercase text-warning display-5">Watch out</p>
-                        <div class="my-4">
+                        <div class="d-flex align-items-center my-4">
+                            <p class="display-1 mb-0 text-white text-uppercase">Our</p>
                             <AutoTypeDeleteText :texts="services" :typingSpeed="300" :deleteSpeed="150" :delay="500" />
                         </div>
                         <router-link :to="route" class="btn btn-warning w-50 text-uppercase text-dark">see more <i
