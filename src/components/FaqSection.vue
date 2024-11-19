@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal"
-        data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;">
+        data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;z-index: 10;">
         <img src="/img/enquiry.svg" alt="" style="width: 30px;">
     </div>
     <FaqFormSection />

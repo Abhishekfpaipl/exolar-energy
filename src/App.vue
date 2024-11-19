@@ -115,4 +115,12 @@ export default {
   display: inline-block;
   animation: slideRight 1.5s ease-in-out infinite;
 }
+
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+.carousel-control-next-icon {
+  filter: invert(1);
+}
 </style>
