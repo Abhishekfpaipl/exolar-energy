@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4">
-                    <img ref="solarPanel" src="/img/banner/2.jpg" alt="Engine" class="img-fluid scale-0" />
+                    <img ref="solarPanel" src="/img/banner/2.jpg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0" />
                 </div>
                 <div class="col-md-8 mt-5 mt-md-0">
                     <div class="text-center">

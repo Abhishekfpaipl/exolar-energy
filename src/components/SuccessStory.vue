@@ -2,7 +2,7 @@
     <div class="container">
         <div class="text-start mb-5">
             <p class="text-muted mb-1 text-uppercase">Our</p>
-            <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);"> Success Story</h2>
+            <h1 class="display-5 text-uppercase" style="color: var(--bg-primary);"> Success Story</h1>
         </div>
         <div class="row mt-5">
             <div class="col-12 position-relative  d-flex align-items-center justify-content-center pt-5">
@@ -11,7 +11,7 @@
                         <img href="#" :src="image" class="rounded-3" alt="Card image">
                     </div>
                     <div class="content">
-                        <h3 class="mt-4 pt-2">{{ title }}</h3>
+                        <h1 class="mt-4 pt-2 fs-3">{{ title }}</h1>
                         <p v-if="post" class="text-ellipsis2">{{ post }}</p>
                     </div>
                 </div>

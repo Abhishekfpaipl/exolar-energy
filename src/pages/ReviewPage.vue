@@ -75,9 +75,37 @@ export default {
 <template>
     <SectionTopBanner />
     <div class="container mt-5">
+
+        <div class="text-start p-md-5 p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"
+            style="background-color:var(--bg-primary)">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="text-start display-1 text-warning">Click here to give your</h2>
+                <i class="bi bi-arrow-right ms-2 fs-1 visit text-warning"></i>
+            </div>
+            <AutoTypeDeleteText :texts="services" :typingSpeed="150" :deleteSpeed="50" :delay="500" />
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="writeReviewLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between align-items-center"
+                        style="background-color:var(--bg-primary)">
+                        <h1 class="modal-title text-white fs-5" id="writeReviewLabel">Testimonial</h1>
+                        <i class="bi bi-x fs-1 text-white" data-bs-dismiss="modal" aria-label="Close"></i>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="senja-collector-iframe"
+                            src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
+                            allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%"
+                            height="1200"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-100" style="background-color: #F3F8F3 !important">
                     <div class="card-body">
                         <!-- <i class="bi bi-google text-primary"></i> -->
                         <div class="d-flex align-items-center mb-2">
@@ -92,9 +120,6 @@ export default {
                             </span>
                             <span class="text-muted">{{ review.date }}</span>
                         </div>
-                        <div class="text-end">
-                            <img src="/img/google.png" alt="google" style="width: 35px;">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -104,10 +129,12 @@ export default {
 
 <script>
 import SectionTopBanner from '@/components/SectionTopBanner.vue';
+import AutoTypeDeleteText from "@/components/AutoTypeDeleteText.vue"
 
 export default {
     components: {
         SectionTopBanner,
+        AutoTypeDeleteText,
     },
     data() {
         return {
@@ -280,7 +307,10 @@ export default {
                     date: 'January, 2024',
                     text: 'Exolar Emergy provided me with top-notch service. The team was knowledgeable, and they installed the system quickly and efficiently. The solar system is performing well, and I’m very pleased with the results. My electricity costs have significantly reduced since installation. I would highly recommend them.',
                 }
-            ]
+            ],
+            services: [
+                'Review'
+            ],
         };
     },
 };

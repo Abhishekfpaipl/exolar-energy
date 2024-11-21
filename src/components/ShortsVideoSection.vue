@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <div class="text-start">
-                <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
+                <h2 class="text-muted mb-1 text-uppercase">Exolar Energy</h2>
                 <div class="d-flex justify-content-between align-items-center">
                     <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Testimonial Video</h2>
                     <router-link to="/testimonial" style="color: var(--bg-primary);"
@@ -10,9 +10,10 @@
                             class="bi bi-arrow-right"></i></router-link>
                 </div>
             </div>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3 my-5">
-                <div v-for="(video, index) in videos" :key="index" class="col">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-5">
+                <div v-for="(video, index) in videos.slice(0,4)" :key="index" class="col">
                     <div class="h-100 shadow-sm rounded-4" style="background-color:#626B7A !important ;">
+                        <!-- Video Section -->
                         <div class="video-container" style="height: 250px;">
                             <iframe style="width: 100%; height: 100%;" class="rounded-top-4"
                                 :src="`https://www.youtube.com/embed/${video.videoId}`" frameborder="0"
@@ -21,7 +22,7 @@
                         </div>
                         <div class="rounded-4 border pt-3" style="background-color:#f3f8f3 !important">
                             <div class="smaller text-muted text-start px-2 text-ellipsis2 mb-3" style="min-height:36px">
-                                {{ video.title }}
+                                " {{ video.title }}
                             </div>
                             <div class="d-flex justify-content-between align-items-center p-2 pb-4">
                                 <div class="small">
@@ -32,7 +33,7 @@
                                     <i class="bi bi-star-fill text-warning"></i>
                                 </div>
                                 <div class="views-counter text-muted smaller">
-                                    <i class="bi bi-eye me-1"></i>
+                                    <i class="bi bi-eye me-1 "></i>
                                     {{ video.viewCount }} views
                                 </div>
                             </div>
@@ -45,44 +46,60 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
-            videos: [
-                {
-                    videoId: "ZtCsYVnjmn4",
-                    title: "Exolar Energy Testimonial video",
-                    viewCount: 26,
-                },
-                {
-                    videoId: "f-4FWD6wAuk",
-                    title: "Unleashing the Power of the Sun: Exolar Energy - Leading the Solar Revolution",
-                    viewCount: 26,
-                },
-                {
-                    videoId: "Y-RWg3xUsAU",
-                    title: "Empowering Tomorrow: Exolar Energy - Harness the Power of the Sun!",
-                    viewCount: 26,
-                },
-                {
-                    videoId: "ZtCsYVnjmn4",
-                    title: "Exolar Energy Testimonial video",
-                    viewCount: 26,
-                },
-                {
-                    videoId: "f-4FWD6wAuk",
-                    title: "Unleashing the Power of the Sun: Exolar Energy - Leading the Solar Revolution",
-                    viewCount: 26,
-                },
-                {
-                    videoId: "Y-RWg3xUsAU",
-                    title: "Empowering Tomorrow: Exolar Energy - Harness the Power of the Sun!",
-                    viewCount: 26,
-                },
-            ],
+            videos: [],
         };
     },
-};
+    created() {
+        this.fetchAllVideos();
+    },
+    methods: {
+        async fetchAllVideos() {
+            // const apiKey = "AIzaSyB78gC2yfrEe7GzdQXJVG-ZmQESLWAwRnM";
+            const apiKey = "AIzaSyDIJw8aJPUCKW4q2Kqq-mlYnFZ8Eq4Anis";
+            // const channelId = "UCIgE6BvgzK3nSnesZPJy2wQ";
+            const channelId = "UC9Z3-5kyCd5ng_ghfuare4w";
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=${apiKey}`;
+
+            try {
+                const response = await axios.get(url);
+                const data = response.data;
+
+                // Check if videos are returned
+                if (data.items && data.items.length > 0) {
+                    this.videos = data.items.map(async (item) => {
+                        // Fetch video details for view count
+                        const videoDetailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${item.id.videoId}&key=${apiKey}`;
+                        const videoDetailsResponse = await axios.get(videoDetailsUrl);
+                        const viewCount = videoDetailsResponse.data.items[0].statistics.viewCount;
+
+                        return {
+                            videoId: item.id.videoId,
+                            thumbnailUrl: item.snippet.thumbnails.high.url,
+                            title: item.snippet.title,
+                            viewCount: this.formatViewCount(viewCount),
+                        };
+                    });
+                    this.videos = await Promise.all(this.videos);
+                }
+            } catch (error) {
+                console.error("Error fetching YouTube data:", error);
+            }
+        },
+        formatViewCount(count) {
+            if (count >= 1000000) {
+                return (count / 1000000).toFixed(1) + 'M';
+            }
+            if (count >= 1000) {
+                return (count / 1000).toFixed(1) + 'K';
+            }
+            return count;
+        },
+    },
+}; 
 </script>
 
 <style scoped>

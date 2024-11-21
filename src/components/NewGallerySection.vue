@@ -4,7 +4,7 @@
             <div class="row align-items-center ">
                 <div class="col-md-6">
                     <div class="text-md-start text-center mb-5">
-                        <p class="mb-1 text-uppercase text-warning display-5">Watch out</p>
+                        <h2 class="mb-1 text-uppercase text-warning display-5">Watch out</h2>
                         <div class="d-flex align-items-center my-4">
                             <p class="display-1 mb-0 text-white text-uppercase">Our</p>
                             <AutoTypeDeleteText :texts="services" :typingSpeed="300" :deleteSpeed="150" :delay="500" />
@@ -20,9 +20,9 @@
                             <div v-for="(image, index) in images" :key="index"
                                 :class="['carousel-item', { active: index === 0 }]">
                                 <div class="d-md-flex justify-content-center align-items-center d-none">
-                                    <img :src="image" class="d-block w-75" alt="Carousel Image" style="width: 100%;" />
+                                    <img :src="image" class="d-block w-75" alt="Rooftop solar panel installation in Delhi by Exolar Energy" style="width: 100%;" />
                                 </div>
-                                <img :src="image" class="d-block d-md-none" alt="Carousel Image" style="width: 100%;" />
+                                <img :src="image" class="d-block d-md-none" alt="Rooftop solar panel installation in Delhi by Exolar Energy" style="width: 100%;" />
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselGalleryAutoplaying"

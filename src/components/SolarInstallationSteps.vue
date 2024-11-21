@@ -1,19 +1,20 @@
 <template>
     <div class="container text-center py-5">
         <div class="text-start mb-5">
-            <p class="text-muted mb-1 text-uppercase">Our Approach</p>
-            <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems with Optimum
-                Energy Generation</h2>
+            <h2 class="text-muted mb-1 text-uppercase">Our Approach</h2>
+            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems with Optimum
+                Energy Generation</h1>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="/img/stepsImage.jpeg" alt="" class="w-100 sticky-image">
+                <img src="/img/stepsImage.jpeg" alt="Rooftop solar panel installation in Delhi by Exolar Energy"
+                    class="w-100 sticky-image">
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="row row-cols-1 g-2 accordion accordion-flush" id="accordionFlushExample">
                     <div class="col accordion-item" v-for="(step, index) in steps" :key="index" v-observe>
-                        <h2 class="accordion-header">
-                            <div class="accordion-button collapsed border p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
+                        <h3 class="accordion-header">
+                            <div class="accordion-button collapsed p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
                                 type="button" data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"
                                 aria-expanded="false" :aria-controls="'flush-collapseOne' + index"
                                 style="background-color: #F3F8F3;">
@@ -30,10 +31,10 @@
                                 </div>
                                 <p class="mb-0 fs-3 text-start ms-3">{{ step.title }}</p>
                             </div>
-                        </h2>
-                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">{{ step.description }}</div>
+                        </h3>
+                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse border mt-2"
+                            data-bs-parent="#accordionFlushExample" style="background-color: #F3F8F3;">
+                            <div class="accordion-body fw-bold text-capitalize">{{ step.description }}</div>
                         </div>
                     </div>
                 </div>
@@ -112,5 +113,14 @@ export default {
         position: sticky;
         top: 10%;
     }
+} 
+.accordion-button:not(.collapsed) {
+    color: white !important;
+    background-color: #198754 !important;
+    border-color: 4px solid var(--bg-primary) !important;
+    box-shadow: none !important;
+}
+.accordion-button::after {
+    filter: invert(1) !important
 }
 </style>

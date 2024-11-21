@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 px-0 image-section" v-observe>
-                    <img src="/img/aboutSection.jpg" alt="" class="award-image">
+                    <img src="/img/aboutSection.jpg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="award-image">
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@
 <script>
 import FormBanner from "@/components/FormBanner.vue";
 import whatMakesUsDifferent from "@/components/WhatMakesUsDifferent.vue";
-import WhyChooseUs from "@/components/WhyChooseUs.vue";
+import WhyChooseUs from "@/components/WhyChooseUsold.vue";
 // import AutoScrolling from "@/components/AutoScrolling.vue";
 // import CustomCounter from "@/components/CustomCounter.vue"; 
 import FaqSection from "@/components/FaqSection.vue";

@@ -38,7 +38,8 @@ export default {
 :root {
   --bg-primary: #237ABF !important;
   --bg-secondary: #283D90 !important;
-  --bg-third: #1B9600 !important;
+  --bg-third: #198754 !important;
+  // --bg-third: #1B9600 !important;
 }
 
 .before-enter {
@@ -63,6 +64,13 @@ export default {
 .text-ellipsis2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-ellipsis12 {
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

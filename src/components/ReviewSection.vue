@@ -2,7 +2,7 @@
     <div class="" style="background-color:var(--bg-primary)">
         <div class="container py-5">
             <div class="text-start">
-                <div class="text-start display-1 text-warning">Click here for</div>
+                <h2 class="text-start display-1 text-warning">Click here for</h2>
                 <router-link to="/write-testimonial"
                     class="d-flex justify-content-between align-items-center text-decoration-none text-white">
                     <AutoTypeDeleteText :texts="services" :typingSpeed="150" :deleteSpeed="50" :delay="500" />

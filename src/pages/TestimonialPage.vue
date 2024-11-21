@@ -3,7 +3,7 @@
         <SectionTopBanner />
         <div class="container mt-4">
             <h2 class="text-start mb-4">Latest Videos</h2>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3 my-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-5">
                 <div v-for="(video, index) in videos" :key="index" class="col">
                     <div class="h-100 shadow-sm rounded-4" style="background-color:#626B7A !important ;">
                         <!-- Video Section -->

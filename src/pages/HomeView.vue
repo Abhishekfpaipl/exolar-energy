@@ -7,21 +7,13 @@
     </div>
     <div class="my-5">
       <SolarInstallationSteps />
-      <!-- <TestimonialSection /> -->
-      <!-- <div class="my-5"> -->
-      <TestSection />
-      <!-- </div> -->
+      <WhyChooseUs />
     </div>
     <div class="my-5">
       <ShortsVideoSection />
     </div>
     <div class="my-5">
-      <ReviewSection />
-    </div>
-    <AboutSection />
-    <ContactSection />
-    <div class="my-5">
-      <TeamSection />
+      <AboutSection />
     </div>
     <div class="my-5">
       <FaqSection />
@@ -29,51 +21,56 @@
     <div class="my-5">
       <NewGallerySection :images="images" />
     </div>
-    <!-- <div class="my-5">
-      <ThankYou />
-    </div> -->
     <div>
-      <SolarCalculator/>
+      <SolarCalculator />
     </div>
     <div class="my-5">
       <GoogleReviewSection />
     </div>
+    <div class="my-5">
+      <BlogSection />
+    </div>
+
+    <div class="container">
+      <TestComp/>
+    </div>
+
   </div>
 </template>
 
 <script>
-import AnimatedText from '@/components/AnimatedText.vue'
+import CarouselBanner from "@/components/CarouselBanner.vue";
+// import AnimatedText from '@/components/AnimatedText.vue'
 import WhyGoSolar from '@/components/WhyGoSolar.vue'
 import SolarInstallationSteps from '@/components/SolarInstallationSteps.vue'
-import CarouselBanner from "@/components/CarouselBanner.vue";
+import WhyChooseUs from '@/components/WhyChooseUs.vue';
 import AboutSection from "@/components/AboutSection.vue";
 // import TestimonialSection from "@/components/TestimonialSection.vue";
 import FaqSection from "@/components/FaqSection.vue";
-import ReviewSection from "@/components/ReviewSection.vue";
-// import ThankYou from "@/components/ThankYou.vue";
 import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 import NewGallerySection from '@/components/NewGallerySection.vue';
-import TestSection from '@/components/TestSection.vue';
 import SolarCalculator from '@/components/SolarCalculator.vue';
+import BlogSection from '@/components/BlogSection.vue';
+import TestComp from '@/components/TestComp.vue';
 
 export default {
   name: "HomeView",
   components: {
-    AnimatedText,
+    // AnimatedText,
     WhyGoSolar,
     CarouselBanner,
     SolarInstallationSteps,
     AboutSection,
     // TestimonialSection,
     FaqSection,
-    // ThankYou,
     ShortsVideoSection,
-    ReviewSection,
     GoogleReviewSection,
     NewGallerySection,
-    TestSection,
+    WhyChooseUs,
     SolarCalculator,
+    BlogSection,
+    TestComp,
   },
   data() {
     return {

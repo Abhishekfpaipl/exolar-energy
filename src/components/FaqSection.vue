@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="text-start">
-            <p class="text-muted mb-1 text-uppercase">Exolar Energy</p>
+            <h2 class="text-muted mb-1 text-uppercase">Exolar Energy</h2>
             <h2 class="display-5 text-uppercase" style="color: var(--bg-primary);">Faqs</h2>
         </div>
         <ul class="nav nav-pills justify-content-start align-items-center" id="pills-tab" role="tablist">
