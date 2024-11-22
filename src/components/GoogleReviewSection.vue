@@ -36,7 +36,7 @@
         <div id="googleReview" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item" :class="{ 'active': index === 0 }" v-for="(review, index) in reviews"
-                    :key="index" data-bs-interval="1500">
+                    :key="index" data-bs-interval="1500" v-observe>
                     <div class="card pb-5 mx-2" style="background-color: #F3F8F3 !important; min-height: 300px !important;">
                         <div class="card-body">
                             <!-- <i class="bi bi-google text-primary"></i> -->

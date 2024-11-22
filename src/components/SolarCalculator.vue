@@ -207,6 +207,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <div v-if="kWH !== null" class="my-5">
+                                <h2 class="text-center text-uppercase mb-5">Eco Data</h2>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100" style="background-color: #f3f8f3 !important;">
+                                            <img src="/img/energy.svg" style="width: 35px; height: 35px;" class="mb-3"
+                                                alt="Rooftop solar panel installation in Delhi by Exolar Energy">
+                                                <p class="text-center mb-1 fs-4">{{ annualEnergy }}</p>
+                                                <p class="text-center mb-1 smaller" style="min-height:48px">Annual Energy Produced</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100" style="background-color: #f3f8f3 !important;">
+                                            <img src="/img/co2.svg" style="width: 35px; height: 35px;" class="mb-3"
+                                                alt="Rooftop solar panel installation in Delhi by Exolar Energy">
+                                                <p class="text-center mb-1 fs-4 ">{{ coOffset }}</p>
+                                                <p class="text-center mb-1 smaller" style="min-height:48px">CO2 Offset kg/per year</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100" style="background-color: #f3f8f3 !important;">
+                                            <img src="/img/tree-save.svg" style="width: 35px; height: 35px;" class="mb-3"
+                                                alt="Rooftop solar panel installation in Delhi by Exolar Energy">
+                                                <p class="text-center mb-1 fs-4 ">{{ treeSaved }}</p>
+                                                <p class="text-center mb-1 smaller" style="min-height:48px">Tree saved per year</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100" style="background-color: #f3f8f3 !important;">
+                                            <img src="/img/no-car.svg" style="width: 35px; height: 35px;" class="mb-3"
+                                                alt="Rooftop solar panel installation in Delhi by Exolar Energy">
+                                                <p class="text-center mb-1 fs-4">{{ carMilesSave }}</p>
+                                                <p class="text-center mb-1 smaller" style="min-height:48px">Car Miles Avoided per year</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div v-if="kWH !== null">
                                 <!-- Savings Over Time Charts -->
                                 <div class="text-center my-5">
@@ -270,6 +307,10 @@ export default {
             email: '',
             address: '',
             phone: '',
+            annualEnergy: null,
+            coOffset: null,
+            treeSaved: null,
+            carMilesSave: null,
         };
     },
     methods: {
@@ -319,8 +360,12 @@ export default {
                     this.subsidy = 0;
                 }
 
-                // Step 8: Calculate Final Price
-                this.finalPrice = this.totalCost - this.subsidy;
+                this.annualEnergy = (this.yearlyBill / this.electricityRate).toFixed(2); // Round to 2 decimal places
+                this.coOffset = (this.annualEnergy * 0.7).toFixed(2); // Round to 2 decimal places
+                this.treeSaved = (this.coOffset / 21.77).toFixed(2); // Round to 2 decimal places
+                this.carMilesSave = (this.coOffset / 0.411).toFixed(2); // Round to 2 decimal places
+                this.finalPrice = Math.round(this.totalCost - this.subsidy); // Round to nearest integer
+
             }
             this.$nextTick(() => {
                 this.renderSavingsBarChart();

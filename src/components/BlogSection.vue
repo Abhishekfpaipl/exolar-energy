@@ -57,7 +57,7 @@ export default {
         <div class="tab-content">
             <div class="tab-pane fade show active">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col" v-for="(post, index) in filteredPosts.slice(0,6)" :key="index">
+                    <div class="col" v-for="(post, index) in filteredPosts.slice(0,6)" :key="index" v-observe>
                         <router-link to=""
                             class="text-decoration-none card h-100 border-0 shadow-sm rounded-4"
                             style="background-color: #F3F8F3;">

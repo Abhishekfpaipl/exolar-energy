@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="row row-cols-1 g-2 accordion accordion-flush" id="accordionFlushExample">
-                    <div class="col accordion-item" v-for="(step, index) in steps" :key="index" v-observe>
+                    <div class="col accordion-item border-bottom-0" v-for="(step, index) in steps" :key="index" v-observe>
                         <h3 class="accordion-header">
                             <div class="accordion-button collapsed p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
                                 type="button" data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"

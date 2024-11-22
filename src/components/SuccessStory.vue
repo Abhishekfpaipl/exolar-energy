@@ -40,8 +40,8 @@ export default {
     },
     data() {
         return {
-            image: 'img/about/owner.jpeg',
-            title: "Gaurav Goyal",
+            image: 'img/logo.png',
+            title: "Exolar Energy",
             post: "Owner",
             points: [
                 "Optimal combination of cost, technology and benefits",

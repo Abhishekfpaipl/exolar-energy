@@ -6,10 +6,7 @@
         </div>
         <div class="my-5" v-observe>
             <TeamInfoSection :techTeam="techTeam" :marketingTeam="marketingTeam" :managementTeam="managementTeam" />
-        </div>
-        <!-- <div class="my-5" v-observe>
-            <AriseolBenefits />
-        </div> -->
+        </div> 
         <div class="my-5" v-observe>
             <OurMissionVision />
         </div>
@@ -19,8 +16,7 @@
 
     </div>
 </template>
-<script>
-// import AriseolBenefits from "@/components/AriseolBenefits.vue";
+<script> 
 
 import SuccessStory from "@/components/SuccessStory.vue";
 import TeamInfoSection from "@/components/TeamInfoSection.vue";
@@ -29,8 +25,7 @@ import OurMissionVision from "@/components/OurMissionVision.vue";
 import SectionTopBanner from "@/components/SectionTopBanner.vue";
 export default {
     name: "AboutUs",
-    components: {
-        // AriseolBenefits,
+    components: { 
         OurCoreValues,
         SuccessStory,
         TeamInfoSection,

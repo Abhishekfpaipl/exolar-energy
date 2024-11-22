@@ -26,7 +26,7 @@
                 </div>
                 <div class="row d-flex justify-content-center pb-5 pt-2">
                     <div class="col-lg-4 row row-cols-1 g-3 mt-0">
-                        <div v-for="(card, index) in servicesLeft" :key="index" class="col">
+                        <div v-for="(card, index) in servicesLeft" :key="index" class="col" v-observe>
                             <div class="d-flex justify-content-start align-items-center text-white p-2">
                                 <div class="text-md-end text-start order-2 order-md-1 card-body me-md-3 ms-3 p-0">
                                     <p class="fw-bold small mb-0 text-ellipsis1">{{ card.title }}</p>
@@ -43,12 +43,12 @@
 
 
                     <div class="col-lg-4 overflow-hidden p-5 mt-0">
-                        <img src="/img/why-choose.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="w-75 of-cover">
+                        <img src="/img/why-choose.png" ref="solarPanel" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="w-75 of-cover scale-0">
                     </div>
 
 
                     <div class="col-lg-4 row row-cols-1 g-3 mt-0">
-                        <div v-for="(card, index) in servicesRight" :key="index" class="col">
+                        <div v-for="(card, index) in servicesRight" :key="index" class="col" v-observe>
                             <div class="d-flex justify-content-start align-items-center text-white p-2">
                                 <div class="rounded overflow-hidden border border-white border-2 p-1 rotate"
                                     style="min-width:60px; height:60px;background-color: var(--bg-secondary)">
@@ -118,9 +118,40 @@ export default {
             ]
         };
     },
+    mounted() { 
+
+        const image = this.$refs.solarPanel;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        image.classList.add("scale-up");
+                    }
+                });
+            },
+            { threshold: [0.1] }
+        );
+
+        observer.observe(image);
+    },
+    beforeUnmount() {
+        // Clear interval on component unmount
+        clearInterval(this.intervalId);
+    },
 };
 </script>
 <style scoped>
+/* Initial scale set to 0 */
+.scale-0 {
+    transform: scale(0);
+    transition: transform 1.5s ease-in-out;
+    /* Smooth scaling transition */
+}
+
+/* This class will be added when the image is in view */
+.scale-up {
+    transform: scale(1);
+}
 @keyframes rotate {
 
     0%,

@@ -81,26 +81,26 @@ const routes = [
     name: "GalleryPage",
     component: () => import("@/pages/GalleryPage.vue"),
   },
-  {
-    path: "/check-dealership",
-    name: "CheckDealership",
-    component: () => import("@/pages/CheckDealership.vue"),
-  },
-  {
-    path: "/report",
-    name: "ReportPage",
-    component: () => import("@/pages/ReportPage.vue"),
-  },
+  // {
+  //   path: "/check-dealership",
+  //   name: "CheckDealership",
+  //   component: () => import("@/pages/CheckDealership.vue"),
+  // },
+  // {
+  //   path: "/report",
+  //   name: "ReportPage",
+  //   component: () => import("@/pages/ReportPage.vue"),
+  // },
   {
     path: "/benefit",
     name: "BenefitPage",
     component: () => import("@/pages/BenefitPage.vue"),
   },
-  {
-    path: "/facility",
-    name: "FacilityPage",
-    component: () => import("@/pages/FacilityPage.vue"),
-  },
+  // {
+  //   path: "/facility",
+  //   name: "FacilityPage",
+  //   component: () => import("@/pages/FacilityPage.vue"),
+  // },
   {
     path: "/business",
     name: "BusinessPage",
