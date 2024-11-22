@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="" style="padding-top:66px; background-color:#125252 ">
+        <div class="" style="padding-top:60px; background-color:#125252 ">
             <div class="container mb-3 py-5">
                 <label for="categorySelect" class="form-label text-white fs-4">Filter by Category</label>
                 <select v-model="selectedCategory" class="form-select" id="categorySelect">

@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-top: 50px;">
+    <div style="padding-top: 60px;">
         <div class=" ">
             <FormBanner brandColorOne="#125252" :text="text" :customer="customer" :service="service"
                 :category="category" :place="place" v-observe />

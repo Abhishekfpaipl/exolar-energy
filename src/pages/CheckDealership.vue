@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-top: 66px;">
+    <div style="padding-top: 60px;">
         <SectionTopBanner />
         <div class="container mb-5 pb-5" style="margin-top:-40px" v-observe>
             <div class="text-white p-4" style="background-color:var(--bg-primary);">

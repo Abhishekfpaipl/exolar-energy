@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-top: 60px;">
         <SectionTopBanner />
         <div class="container mt-4">
             <h2 class="text-start mb-4">Latest Videos</h2>

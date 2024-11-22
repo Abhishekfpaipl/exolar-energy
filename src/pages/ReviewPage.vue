@@ -73,52 +73,55 @@ export default {
 }
 </style> -->
 <template>
-    <SectionTopBanner />
-    <div class="container mt-5">
+    <div style="padding-top: 60px;">
+        <SectionTopBanner />
+        <div class="container mt-5">
 
-        <div class="text-start p-md-5 p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"
-            style="background-color:var(--bg-primary)">
-            <div class="d-flex justify-content-between align-items-center">
-                <h2 class="text-start display-1 text-warning">Click here to give your</h2>
-                <i class="bi bi-arrow-right ms-2 fs-1 visit text-warning"></i>
+            <div class="text-start p-md-5 p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"
+                style="background-color:var(--bg-primary)">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="text-start display-1 text-warning">Click here to give your</h2>
+                    <i class="bi bi-arrow-right ms-2 fs-1 visit text-warning"></i>
+                </div>
+                <AutoTypeDeleteText :texts="services" :typingSpeed="150" :deleteSpeed="50" :delay="500" />
             </div>
-            <AutoTypeDeleteText :texts="services" :typingSpeed="150" :deleteSpeed="50" :delay="500" />
-        </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="writeReviewLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-between align-items-center"
-                        style="background-color:var(--bg-primary)">
-                        <h1 class="modal-title text-white fs-5" id="writeReviewLabel">Testimonial</h1>
-                        <i class="bi bi-x fs-1 text-white" data-bs-dismiss="modal" aria-label="Close"></i>
-                    </div>
-                    <div class="modal-body">
-                        <iframe id="senja-collector-iframe"
-                            src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
-                            allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%"
-                            height="1200"></iframe>
+            <!-- Modal -->
+            <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="writeReviewLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-between align-items-center"
+                            style="background-color:var(--bg-primary)">
+                            <h1 class="modal-title text-white fs-5" id="writeReviewLabel">Testimonial</h1>
+                            <i class="bi bi-x fs-1 text-white" data-bs-dismiss="modal" aria-label="Close"></i>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="senja-collector-iframe"
+                                src="https://senja.io/p/exolar-energy/r/JGPPsO?mode=embed&nostyle=true"
+                                allow="camera;microphone" title="Senja form" frameborder="0" scrolling="no" width="100%"
+                                height="1200"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100" style="background-color: #F3F8F3 !important">
-                    <div class="card-body">
-                        <!-- <i class="bi bi-google text-primary"></i> -->
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
-                            <h5 class="card-title m-0">{{ review.authorName }}</h5>
-                        </div>
-                        <p class="text-start">{{ review.text }}</p>
-                        <div class="d-flex align-items-center mb-2">
-                            <span class="me-2 text-warning">
-                                <i v-for="n in review.rating" :key="n" class="bi bi-star-fill"></i>
-                                <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
-                            </span>
-                            <span class="text-muted">{{ review.date }}</span>
+            <div class="row">
+                <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100" style="background-color: #F3F8F3 !important">
+                        <div class="card-body">
+                            <!-- <i class="bi bi-google text-primary"></i> -->
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="card-title m-0">{{ review.authorName }}</h5>
+                            </div>
+                            <p class="text-start">{{ review.text }}</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="me-2 text-warning">
+                                    <i v-for="n in review.rating" :key="n" class="bi bi-star-fill"></i>
+                                    <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
+                                </span>
+                                <span class="text-muted">{{ review.date }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

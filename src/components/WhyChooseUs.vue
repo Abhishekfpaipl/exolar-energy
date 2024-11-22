@@ -2,7 +2,7 @@
     <div>
         <div class="" style="background-color: var(--bg-secondary)">
             <div class="container pt-5">
-                <h1 class="text-center display-5 text-white mb-4">Why Choose Us?</h1>
+                <h1 class="text-center display-5 text-white mb-4 text-uppercase">Why Choose Us?</h1>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-items-center ">
                     <div class="col mb-5" v-for="(card, index) in cards" :key="index">
                         <div class="card-container border position-relative rounded p-2 "
@@ -28,11 +28,11 @@
                     <div class="col-lg-4 row row-cols-1 g-3 mt-0">
                         <div v-for="(card, index) in servicesLeft" :key="index" class="col">
                             <div class="d-flex justify-content-start align-items-center text-white p-2">
-                                <div class="text-end card-body me-3 p-0">
+                                <div class="text-md-end text-start order-2 order-md-1 card-body me-md-3 ms-3 p-0">
                                     <p class="fw-bold small mb-0 text-ellipsis1">{{ card.title }}</p>
                                     <p class="smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
-                                <div class="rounded overflow-hidden border border-white border-2 p-1 rotate"
+                                <div class="rounded overflow-hidden border order-md-2 border-white border-2 p-1 rotate"
                                     style="min-width:60px; height:60px;background-color: var(--bg-secondary)">
                                     <img :src="card.image" alt="Profile" class="rounded-circle"
                                         style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
@@ -43,7 +43,7 @@
 
 
                     <div class="col-lg-4 overflow-hidden p-5 mt-0">
-                        <img src="/img/why-choose.png" class="w-75 of-cover">
+                        <img src="/img/why-choose.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="w-75 of-cover">
                     </div>
 
 

@@ -8,16 +8,7 @@
     style="bottom: 20px; right: 5px;z-index: 10;">
     <img src="/img/enquiry.svg" alt="" style="width: 30px;">
   </div>
-  <FaqFormSection />
-
-  <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal" data-bs-target="#solarCalculator"
-    style="bottom: 20px; left: 5px;z-index: 10;">
-    <!-- <img src="/img/enquiry.svg" alt="" style="width: 30px;"> -->
-    <i class="bi bi-calculator"></i>
-  </div> 
-
-  <!-- Modal -->
-
+  <FaqFormSection /> 
 
 </template>
 

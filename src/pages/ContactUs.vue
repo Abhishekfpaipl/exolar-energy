@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-top: 66px;">
+    <div style="padding-top: 60px;">
 
         <SectionTopBanner />
         <div class="container " v-observe>

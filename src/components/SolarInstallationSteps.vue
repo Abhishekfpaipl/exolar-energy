@@ -1,9 +1,8 @@
 <template>
     <div class="container text-center py-5">
         <div class="text-start mb-5">
-            <h2 class="text-muted mb-1 text-uppercase">Our Approach</h2>
-            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems with Optimum
-                Energy Generation</h1>
+            <h2 class="text-muted mb-1 text-uppercase"> Optimum Energy</h2>
+            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems</h1>
         </div>
         <div class="row">
             <div class="col-md-6">

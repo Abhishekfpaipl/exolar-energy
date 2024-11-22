@@ -130,11 +130,16 @@ const routes = [
     path: "/service/:slug",
     name: "ServicePage",
     component: () => import("@/pages/ServicePage.vue")
-  }, 
+  },
   {
     path: "/reviews",
     name: "ReviewPage",
     component: () => import("@/pages/ReviewPage.vue")
+  },
+  {
+    path: "/blogs",
+    name: "BlogsPage",
+    component: () => import("@/pages/BlogsPage.vue")
   },
 ];
 

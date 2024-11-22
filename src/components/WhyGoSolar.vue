@@ -1,5 +1,5 @@
 <template>
-    <div class="pb-5 pb-md-0" style="background-color:#f3f8f3 !important ">
+    <div class="py-5" style="background-color:#f3f8f3 !important ">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4">

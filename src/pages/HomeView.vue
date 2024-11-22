@@ -1,7 +1,7 @@
 <template>
-  <div class="" style="padding-top: 64px;">
+  <div class="" style="padding-top: 60px;">
     <CarouselBanner />
-    <div class="my-5">
+    <div class="">
       <AnimatedText />
       <WhyGoSolar />
     </div>
@@ -9,31 +9,24 @@
       <SolarInstallationSteps />
       <WhyChooseUs />
     </div>
-    <div class="my-5">
+    <!-- <div class="my-5">
       <ShortsVideoSection />
-    </div>
+    </div> -->
     <div class="my-5">
       <AboutSection />
     </div>
     <div class="my-5">
       <FaqSection />
     </div>
-    <div class="my-5">
+    <!-- <div class="my-5">
       <NewGallerySection :images="images" />
-    </div>
-    <div>
-      <SolarCalculator />
-    </div>
+    </div> --> 
     <div class="my-5">
       <GoogleReviewSection />
     </div>
     <div class="my-5">
       <BlogSection />
-    </div>
-
-    <div class="container">
-      <TestComp/>
-    </div>
+    </div> 
 
   </div>
 </template>
@@ -47,12 +40,10 @@ import WhyChooseUs from '@/components/WhyChooseUs.vue';
 import AboutSection from "@/components/AboutSection.vue";
 // import TestimonialSection from "@/components/TestimonialSection.vue";
 import FaqSection from "@/components/FaqSection.vue";
-import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
+// import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
-import NewGallerySection from '@/components/NewGallerySection.vue';
-import SolarCalculator from '@/components/SolarCalculator.vue';
-import BlogSection from '@/components/BlogSection.vue';
-import TestComp from '@/components/TestComp.vue';
+// import NewGallerySection from '@/components/NewGallerySection.vue'; 
+import BlogSection from '@/components/BlogSection.vue'; 
 
 export default {
   name: "HomeView",
@@ -64,13 +55,11 @@ export default {
     AboutSection,
     // TestimonialSection,
     FaqSection,
-    ShortsVideoSection,
+    // ShortsVideoSection,
     GoogleReviewSection,
-    NewGallerySection,
-    WhyChooseUs,
-    SolarCalculator,
-    BlogSection,
-    TestComp,
+    // NewGallerySection,
+    WhyChooseUs, 
+    BlogSection, 
   },
   data() {
     return {

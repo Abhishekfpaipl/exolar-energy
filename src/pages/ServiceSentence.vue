@@ -1,26 +1,28 @@
 <template>
-  <SectionTopBanner />
-  <div class="">
+  <div  style="padding-top: 60px;">
+    <SectionTopBanner />
     <div class="">
-      <div class="container mb-3 py-5">
-        <label for="categorySelect" class="form-label text-white fs-4">Filter by Category</label>
-        <select v-model="selectedCategory" class="form-select" id="categorySelect">
-          <option value="">All Categories</option>
-          <option v-for="category in categoriesList" :key="category" :value="category.name">{{ category.name }}</option>
-        </select>
+      <div class="">
+        <div class="container mb-3 py-5">
+          <label for="categorySelect" class="form-label text-white fs-4">Filter by Category</label>
+          <select v-model="selectedCategory" class="form-select" id="categorySelect">
+            <option value="">All Categories</option>
+            <option v-for="category in categoriesList" :key="category" :value="category.name">{{ category.name }}</option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 py-5">
-        <div class="col" v-for="(sentence, index) in filteredSentences" :key="index">
-          <router-link :to="'/service/' + generateSlug(sentence)" class="card text-decoration-none">
-            <div class="card-body py-0" :style="{ backgroundColor: randomColors[index] }">
-              <div class="border-bottom border-dark py-1 text-center">
-                <i :class="randomArrowIcons[index]" class="fs-4 text-center"></i>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 py-5">
+          <div class="col" v-for="(sentence, index) in filteredSentences" :key="index">
+            <router-link :to="'/service/' + generateSlug(sentence)" class="card text-decoration-none">
+              <div class="card-body py-0" :style="{ backgroundColor: randomColors[index] }">
+                <div class="border-bottom border-dark py-1 text-center">
+                  <i :class="randomArrowIcons[index]" class="fs-4 text-center"></i>
+                </div>
+                <h6 class="card-title text-capitalize pt-3" style="min-height: 6rem;">{{ sentence }}</h6>
               </div>
-              <h6 class="card-title text-capitalize pt-3" style="min-height: 6rem;">{{ sentence }}</h6>
-            </div>
-          </router-link>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,33 +1,36 @@
 <template>
-    <SectionTopBanner />
-    <div class="container">
-        <div class="row">
-            <div class="col-12" v-for="(faq, index) in faqs" :key="index">
-                <div class="accordion accordion-flush" style="background-color: var(--bg-primary);"
-                    id="accordionFlushExample">
-                    <div class="accordion-item my-2 border-0 ">
-                        <h2 class="accordion-header border">
-                            <button class="accordion-button text-white collapsed border-start border-4" type="button"
-                                data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"
-                                aria-expanded="false" :aria-controls="'flush-collapseOne' + index"
-                                style="border-color: var(--bg-secondary) !important; background-color: var(--bg-primary)">
-                                <span class="me-2">Q{{ index + 1 }}.</span> {{ faq.question }}
-                            </button>
-                        </h2>
-                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse border-0"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body text-start">{{ faq.answer }}</div>
+    <div style="padding-top: 60px;">
+        <SectionTopBanner />
+        <div class="container">
+            <div class="row">
+                <div class="col-12" v-for="(faq, index) in faqs" :key="index">
+                    <div class="accordion accordion-flush" style="background-color: var(--bg-primary);"
+                        id="accordionFlushExample">
+                        <div class="accordion-item my-2 border-0 ">
+                            <h2 class="accordion-header border">
+                                <button class="accordion-button text-white collapsed border-start border-4"
+                                    type="button" data-bs-toggle="collapse"
+                                    :data-bs-target="'#flush-collapseOne' + index" aria-expanded="false"
+                                    :aria-controls="'flush-collapseOne' + index"
+                                    style="border-color: var(--bg-secondary) !important; background-color: var(--bg-primary)">
+                                    <span class="me-2">Q{{ index + 1 }}.</span> {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse border-0"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body text-start">{{ faq.answer }}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <div class="wh-60 rounded-circle position-fixed  bg-success px-3 py-1" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;">
+            <i class="bi bi-phone fs-2 text-white"></i>
+        </div> -->
+        <FaqFormSection />
     </div>
-    <!-- <div class="wh-60 rounded-circle position-fixed  bg-success px-3 py-1" data-bs-toggle="modal"
-        data-bs-target="#exampleModal" style="bottom: 20px; right: 5px;">
-        <i class="bi bi-phone fs-2 text-white"></i>
-    </div> -->
-    <FaqFormSection />
 
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-light" style="padding-top: 50px;">
+    <div class="bg-light" style="padding-top: 60px;">
         <div class="">
             <FormBanner />
         </div>

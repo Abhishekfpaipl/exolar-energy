@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-top: 66px;">
+    <div style="padding-top: 60px;">
         <SectionTopBanner />
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">

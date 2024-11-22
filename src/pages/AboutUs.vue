@@ -1,5 +1,5 @@
 <template>
-    <div container style="padding-top: 66px;">
+    <div container style="padding-top: 60px;">
         <SectionTopBanner />
         <div class="my-5" v-observe>
             <SuccessStory :tests="tests" />
