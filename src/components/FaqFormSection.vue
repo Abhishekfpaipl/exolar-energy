@@ -113,7 +113,7 @@
                                     required>
                                 <p class="text-start">
                                     <label class="form-check-label " for="terms">
-                                        I agree to HomeScape Solar
+                                        I agree to Exolar Energy
                                         <a href="#" class="text-decoration-none">Terms of Service & Privacy Policy*</a>
                                     </label>
                                 </p>

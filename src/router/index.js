@@ -146,6 +146,11 @@ const routes = [
     name: "CustomerDetailPage",
     component: () => import("@/pages/CustomerDetailPage.vue")
   },
+  {
+    path: "/solar-calculator",
+    name: "SolarCalculator",
+    component: () => import("@/pages/SolarCalculator.vue")
+  },
 ];
 
 const router = createRouter({

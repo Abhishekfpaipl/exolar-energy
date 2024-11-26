@@ -15,41 +15,73 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <form @submit.prevent="calculate" class="row">
+                        <form v-if="capacityConsumption === 0" @submit.prevent="">
+                            <h1 class="text-center mb-4 text-capitalize">Your Details</h1>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="Your Name" placeholder="Your Name"
+                                    v-model="name" required>
+                                <label for="Your Name" class="fw-bold mb-2">Your Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="Your Email" placeholder="Your Email"
+                                    v-model="email" required>
+                                <label for="Your Email" class="fw-bold mb-2">Your Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="Your Phone No"
+                                    placeholder="Your Phone No." v-model="phone" required>
+                                <label for="Your Phone No" class="fw-bold mb-2">Your Phone No.</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="Your Address" placeholder="Your Address"
+                                    v-model="address" required>
+                                <label for="Your Address" class="fw-bold mb-2">Your Address</label>
+                            </div>
+                        </form>
+                        <form v-if="capacityConsumption === 0" @submit.prevent="calculate" class="row mt-5">
+                            <h1 class="text-center mb-4 text-capitalize">Details for solar calculation</h1>
                             <!-- Electricity Charges -->
                             <div class="col-6 mb-3">
-                                <label for="electricityRate" class="fw-bold mb-2">Electricity Charges</label>
-                                <input type="number" class="form-control" id="electricityRate"
-                                    placeholder="Electricity Charges in rupees per unit" v-model="electricityRate"
-                                    required />
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="electricityRate"
+                                        placeholder="Electricity Charges in rupees per unit" v-model="electricityRate"
+                                        required />
+                                    <label for="electricityRate" class="fw-bold mb-2">Electricity Charges</label>
+                                </div>
                             </div>
 
                             <!-- Monthly Bill -->
                             <div class="col-6 mb-3">
-                                <label for="monthlyBill" class="fw-bold mb-2">Monthly Bill</label>
-                                <input type="number" class="form-control" id="monthlyBill"
-                                    placeholder="Monthly Bill in Rupees" v-model="monthlyBill" required />
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="monthlyBill"
+                                        placeholder="Monthly Bill in Rupees" v-model="monthlyBill" required />
+                                    <label for="monthlyBill" class="fw-bold mb-2">Monthly Bill</label>
+                                </div>
                             </div>
 
                             <!-- Sanctioned Load -->
                             <div class="col-6 mb-3">
-                                <label for="sanctionedLoad" class="fw-bold mb-2">Sanctioned Load</label>
-                                <input type="number" class="form-control" id="sanctionedLoad"
-                                    placeholder="Sanctioned Load in kilowatt peak" v-model="userSanctioned" required />
+                                <div class="form-floating">
+
+                                    <input type="number" class="form-control" id="sanctionedLoad"
+                                        placeholder="Sanctioned Load in kilowatt peak" v-model="userSanctioned"
+                                        required />
+                                    <label for="sanctionedLoad" class="fw-bold mb-2">Sanctioned Load</label>
+                                </div>
                             </div>
 
                             <!-- Shadow Free Area -->
                             <div class="col-6 mb-3">
-                                <label for="shadowFree" class="fw-bold mb-2">Shadow Free Area</label>
-                                <input type="number" class="form-control" id="shadowFree"
-                                    placeholder="Shadow Free Area in square feet" v-model="shadowFree" required />
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="shadowFree"
+                                        placeholder="Shadow Free Area in square feet" v-model="shadowFree" required />
+                                    <label for="shadowFree" class="fw-bold mb-2">Shadow Free Area</label>
+                                </div>
                             </div>
 
                             <!-- Building Category -->
-                            <div class="my-3 px-3">
-                                <label class="form-label text-uppercase fw-bold mb-4">
-                                    Select your building Category
-                                </label>
+                            <div class="my-5 px-3">
+                                <h1 class="text-capitalize text-center mb-4"> Select your building Category</h1>
                                 <div class="d-grid gap-3 d-md-flex justify-content-md-center">
                                     <div v-for="category in ['Residential', 'Commercial', 'Industrial']" :key="category"
                                         @click="setCategory(category)" :class="[
@@ -63,10 +95,8 @@
                             </div>
 
                             <!-- Building Type -->
-                            <div class="my-3 px-3">
-                                <label class="form-label text-uppercase fw-bold mb-4">
-                                    Select your building Type
-                                </label>
+                            <div class="mt-3 mb-5 px-3">
+                                <h1 class="text-capitalize text-center mb-4">Select your building Type</h1>
                                 <div class="d-grid gap-3 d-md-flex justify-content-md-center">
                                     <div v-for="building in ['Existing Building', 'New Building']" :key="building"
                                         @click="setBuilding(building)" :class="[
@@ -80,11 +110,17 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary my-3">Calculate</button>
+                            <button type="submit" class="btn btn-success my-3">Calculate</button>
                         </form>
 
+                        <div class="d-flex gap-3">
+                            <button v-if="capacityConsumption !== 0" class="btn text-white"
+                                style="background-color:var(--bg-primary)" @click="resetForm()">Reset Report</button>
+                            <button v-if="capacityConsumption !== 0" class="btn text-white"
+                                style="background-color:var(--bg-primary)">Download Report</button>
+                        </div>
                         <!-- Output Display -->
-                        <div class="mt-4">
+                        <div v-if="capacityConsumption !== 0" class="mt-4">
                             <div class="row">
                                 <div class="col-12">
                                     <h4 class="mb-3">User Details</h4>
@@ -249,47 +285,49 @@
 
                             </div>
                         </div>
-                        <SolarEmiCalculator :loanAmount="costProject" />
-                        <div class="my-5">
-                            <div class="text-center mb-5">
-                                <p class="text-muted mb-1 text-uppercase">Top Benefit</p>
-                                <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Installtion of
-                                    Solar
-                                </h2>
-                            </div>
-                            <div class="row g-2">
-                                <div class="col-12 mb-5">
-                                    <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                        style="background-color: #f3f8f3 !important;">
-                                        <p class="text-center mb-1">Recovery of the cost incured</p>
-                                        <p class="text-center mb-1 fs-1 ">{{ Math.round(coOffset) }} </p>
-                                        <p class="text-center small">year</p>
+                        <div v-if="capacityConsumption !== 0" class="">
+                            <SolarEmiCalculator :loanAmount="costProject" />
+                            <div class="my-5">
+                                <div class="text-center mb-5">
+                                    <p class="text-muted mb-1 text-uppercase">Top Benefit</p>
+                                    <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Installtion of
+                                        Solar
+                                    </h2>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col-12 mb-5">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
+                                            style="background-color: #f3f8f3 !important;">
+                                            <p class="text-center mb-1">Recovery of the cost incured</p>
+                                            <p class="text-center mb-1 fs-1 ">{{ Math.round(coOffset) }} </p>
+                                            <p class="text-center small">year</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-4">
-                                    <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                        style="background-color: #f3f8f3 !important;">
-                                        <p class="text-center mb-1">CO2 Offset</p>
-                                        <p class="text-center mb-1 fs-1 ">{{ Math.round(coOffset) }} </p>
-                                        <p class="text-center small"> kg/per year</p>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
+                                            style="background-color: #f3f8f3 !important;">
+                                            <p class="text-center mb-1">CO2 Offset</p>
+                                            <p class="text-center mb-1 fs-1 ">{{ Math.round(coOffset) }} </p>
+                                            <p class="text-center small"> kg/per year</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                        style="background-color: #f3f8f3 !important;">
-                                        <p class="text-center mb-1">Tree saved</p>
-                                        <p class="text-center mb-1 fs-1 ">{{ Math.round(treeSaved) }}</p>
-                                        <p class="text-center small">per year</p>
+                                    <div class="col-md-4">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
+                                            style="background-color: #f3f8f3 !important;">
+                                            <p class="text-center mb-1">Tree saved</p>
+                                            <p class="text-center mb-1 fs-1 ">{{ Math.round(treeSaved) }}</p>
+                                            <p class="text-center small">per year</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                        style="background-color: #f3f8f3 !important;">
-                                        <p class="text-center mb-1">Carbon Credit</p>
-                                        <p class="text-center mb-1 fs-1">{{ Math.round(carbonSaved) }}</p>
-                                        <p class="text-center small">Units</p>
+                                    <div class="col-md-4">
+                                        <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
+                                            style="background-color: #f3f8f3 !important;">
+                                            <p class="text-center mb-1">Carbon Credit</p>
+                                            <p class="text-center mb-1 fs-1">{{ Math.round(carbonSaved) }}</p>
+                                            <p class="text-center small">Units</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -315,6 +353,12 @@ export default {
             shadowFree: 1000, // square feet
             buildingCategory: null,
             buildingType: null,
+
+            //user details
+            name: '',
+            email: '',
+            address: '',
+            phone: '',
 
             // Calculated Values
             possibleCapacity: 0,
@@ -349,7 +393,7 @@ export default {
             this.capacityArea = this.shadowFree / 100;
 
             // Whichever is lower
-            this.possibleCapacity = Math.min(this.capacityConsumption,this.userSanctioned,this.capacityArea);
+            this.possibleCapacity = Math.min(this.capacityConsumption, this.userSanctioned, this.capacityArea);
 
             // Number of solar panels
             this.monoperc = Math.ceil((this.possibleCapacity * 1000) / 545);
@@ -419,7 +463,28 @@ export default {
             this.coOffset = (this.annualUnitReduced * 0.932).toFixed(2); // Round to 2 decimal places
             this.treeSaved = (this.coOffset / 200).toFixed(2); // Round to 2 decimal places
             this.carbonSaved = ((this.coOffset * 40 * 80) / 1000).toFixed(2); // Round to 2 decimal places
+
+            // Scroll back to the top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Optional for a smooth scrolling effect
+            });
+        },
+        resetForm() {
+            this.capacityConsumption = 0;
+            this.name = '';
+            this.email = '';
+            this.address = '';
+            this.phone = '';
+            this.buildingCategory = null;
+            this.buildingType = null;
+             // Scroll back to the top of the page
+             window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Optional for a smooth scrolling effect
+            });
         }
+
 
 
     },

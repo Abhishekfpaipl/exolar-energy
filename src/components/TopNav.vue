@@ -2,25 +2,31 @@
     <div class="position-fixed w-100 d-flex justify-content-between  align-items-center p-2 top-0 bg-white border-bottom"
         style="z-index: 10; height: 60px;">
         <router-link to="/" class="text-decoration-none text-dark d-flex align-items-center">
-            <img src="/img/logo.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="40px" width="auto">
+            <img src="/img/logo.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="40px"
+                width="auto">
         </router-link>
         <div class="d-none d-md-flex align-items-center gap-3">
             <router-link :to="link.route" class="text-decoration-none text-dark "
                 :class="{ 'border-class': $route.path === link.route }" v-for="(link, index) in links" :key="index">{{
                     link.name }}</router-link>
-            <button class="btn text-white" data-bs-toggle="modal" data-bs-target="#solarCalculator"
-                style="background-color: var(--bg-third)">Calculator</button>
+            <router-link to="/solar-calculator" class="btn text-white"
+                style="background-color: var(--bg-third)">Calculator</router-link>
         </div>
         <div class="d-flex d-md-none gap-3 align-items-center">
-            <i class="bi bi-calculator fs-4 p-1 px-2 btn text-white" data-bs-toggle="modal"
-                data-bs-target="#solarCalculator" style="background-color: var(--bg-third)"></i>
+            <!-- <i class="bi bi-calculator fs-4 p-1 px-2 btn text-white" data-bs-toggle="modal"
+                data-bs-target="#solarCalculator" style="background-color: var(--bg-third)"></i> -->
+            <router-link to="/solar-calculator" class="border rounded p-1 px-2 text-white text-decoration-none"
+                style="background-color: var(--bg-third);">
+                <i class="bi bi-calculator fs-4 "></i>
+            </router-link>
             <i class="bi bi-list fs-1 text-dark" data-bs-toggle="offcanvas" data-bs-target="#MobileMenu"
                 aria-controls="MobileMenu"></i>
         </div>
     </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="MobileMenu" aria-labelledby="MobileMenuLabel">
         <div class="offcanvas-header border-bottom d-flex justify-content-between align-items-center">
-            <img src="img/logo.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy" style="height: 40px;">
+            <img src="img/logo.png" alt="Rooftop solar panel installation in Delhi by Exolar Energy"
+                style="height: 40px;">
             <i class="bi bi-x fs-1 text-dark" data-bs-dismiss="offcanvas" aria-label="Close"></i>
         </div>
         <div class="offcanvas-body px-0" style="background-color: var(--bg-primary);">

@@ -132,4 +132,7 @@ export default {
 .carousel-control-next-icon {
   filter: invert(1);
 }
+.form-control{
+  box-shadow:none !important;
+}
 </style>

@@ -29,7 +29,7 @@
                                 <p>To exercise your cancellation rights, please inform us through one of the following
                                     methods:</p>
                                 <ul>
-                                    <li><strong>Email:</strong> contact.exolarenergy@gmail.com</li>
+                                    <li><strong>Email:</strong>  info@exolarenergy.com</li>
                                     <li><strong>Website:</strong> <a
                                             href="https://www.exolarenergy.com/contact-us">Contact
                                             Page</a></li>
@@ -91,7 +91,7 @@
                                 <p>If you have any questions about our return and refund policy, please reach out to us:
                                 </p>
                                 <ul>
-                                    <li><strong>Email:</strong> contact.exolarenergy@gmail.com</li>
+                                    <li><strong>Email:</strong>  info@exolarenergy.com</li>
                                     <li><strong>Website:</strong> <a
                                             href="https://www.exolarenergy.com/contact/">Contact Page</a></li>
                                     <li><strong>Phone:</strong>+91 11 4656 8831, +91 9319179678</li>

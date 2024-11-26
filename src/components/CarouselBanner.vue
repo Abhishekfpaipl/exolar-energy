@@ -11,7 +11,7 @@
       <div class="carousel-inner">
         <div class="carousel-item" v-for="(banner, index) in banners" :key="index"
           :class="{ 'active': index === 0 }" data-bs-interval="1500">
-          <img :src="banner" class="d-block w-100" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
+          <img :src="banner" class="d-block h-100" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
         </div>
         <!-- <div class="carousel-item" data-bs-interval="2000">
           <img src="/img/banner/banner.jpg" class="d-block w-100"
@@ -39,9 +39,9 @@ export default {
     return {
       banners: [
         "/img/banner/banner.jpg",
-        "/img/banner/new1.png",
-        "/img/banner/new2.png",
-        "/img/banner/new3.png",
+        "/img/banner/new1.jpeg",
+        "/img/banner/new3.jpeg",
+        "/img/banner/new2.jpeg",
       ]
     }
   }

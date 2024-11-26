@@ -69,8 +69,8 @@ export default {
     data() {
         return {
             contact: [
-                { name: ' contact.exolarenergy@gmail.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
-                { name: ' 310, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
+                { name: '  info@exolarenergy.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
+                { name: ' 405, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
             ],
             name: '',
             number: '',
@@ -81,8 +81,8 @@ export default {
     methods: {
         handleIconClick(action) {
             const phoneNumber = '+919319179678';
-            const emailAddress = 'contact.exolarenergy@gmail.com';
-            const location = '310, Pearl Best Height-1,Netaji Subhash Place, Delhi-34';
+            const emailAddress = ' info@exolarenergy.com';
+            const location = '405, Pearl Best Height-1,Netaji Subhash Place, Delhi-34';
 
             switch (action) {
                 case 'openEmail':

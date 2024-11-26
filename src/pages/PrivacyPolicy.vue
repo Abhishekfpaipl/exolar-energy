@@ -84,7 +84,7 @@
 
                             <h2 id="contact-us">Contact Us</h2>
                             <p>If you have any questions or suggestions about our Privacy Policy, feel free to <a
-                                    href="mailto:contact.exolarenergy@gmail.com">contact us</a>.</p>
+                                    href="mailto: info@exolarenergy.com">contact us</a>.</p>
                         </div>
                     </div>
                 </div>

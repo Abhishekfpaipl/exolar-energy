@@ -16,13 +16,13 @@
                         <h2 class="mt-4">Introduction</h2>
                         <p>Your use of the Service signifies your agreement to these Terms and our Privacy Policy
                             (“Agreements”). If you do not agree, you may not use the Service. Please contact us at <a
-                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a> for any
+                                href="mailto: info@exolarenergy.com"> info@exolarenergy.com</a> for any
                             issues.</p>
 
                         <h2 class="mt-4"> Communications</h2>
                         <p>By using our Service, you agree to receive newsletters, marketing or promotional
                             communications. You may opt out of these communications by following the unsubscribe link or
-                            emailing us at <a href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>.
+                            emailing us at <a href="mailto: info@exolarenergy.com"> info@exolarenergy.com</a>.
                         </p>
 
                         <h2 class="mt-4"> Content</h2>
@@ -55,7 +55,7 @@
 
                         <h2 class="mt-4"> Copyright Policy</h2>
                         <p>If you believe any content on our Service infringes on your copyright, please email us at <a
-                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a> with the
+                                href="mailto: info@exolarenergy.com"> info@exolarenergy.com</a> with the
                             subject line “Copyright Infringement” and provide detailed information as outlined in our
                             DMCA Notice.</p>
 
@@ -70,7 +70,7 @@
 
                         <h2 class="mt-4"> Error Reporting and Feedback</h2>
                         <p>If you encounter any errors or have feedback, feel free to contact us at <a
-                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>. By providing
+                                href="mailto: info@exolarenergy.com"> info@exolarenergy.com</a>. By providing
                             feedback, you agree to grant us full rights to use it for any purpose.</p>
 
                         <h2 class="mt-4"> Disclaimer of Warranty</h2>
@@ -106,7 +106,7 @@
 
                         <h2 class="mt-4"> Contact Us</h2>
                         <p>If you have any questions or require support, contact us at <a
-                                href="mailto:contact.exolarenergy@gmail.com">contact.exolarenergy@gmail.com</a>.</p>
+                                href="mailto: info@exolarenergy.com"> info@exolarenergy.com</a>.</p>
                     </div>
 
                 </div>
