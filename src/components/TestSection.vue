@@ -23,28 +23,28 @@
                                     placeholder="Electricity Charges in rupees per unit" v-model="electricityRate"
                                     required />
                             </div>
-    
+
                             <!-- Monthly Bill -->
                             <div class="col-6 mb-3">
                                 <label for="monthlyBill" class="fw-bold mb-2">Monthly Bill</label>
                                 <input type="number" class="form-control" id="monthlyBill"
                                     placeholder="Monthly Bill in Rupees" v-model="monthlyBill" required />
                             </div>
-    
+
                             <!-- Sanctioned Load -->
                             <div class="col-6 mb-3">
                                 <label for="sanctionedLoad" class="fw-bold mb-2">Sanctioned Load</label>
                                 <input type="number" class="form-control" id="sanctionedLoad"
                                     placeholder="Sanctioned Load in kilowatt peak" v-model="userSanctioned" required />
                             </div>
-    
+
                             <!-- Shadow Free Area -->
                             <div class="col-6 mb-3">
                                 <label for="shadowFree" class="fw-bold mb-2">Shadow Free Area</label>
                                 <input type="number" class="form-control" id="shadowFree"
                                     placeholder="Shadow Free Area in square feet" v-model="shadowFree" required />
                             </div>
-    
+
                             <!-- Building Category -->
                             <div class="my-3 px-3">
                                 <label class="form-label text-uppercase fw-bold mb-4">
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <!-- Building Type -->
                             <div class="my-3 px-3">
                                 <label class="form-label text-uppercase fw-bold mb-4">
@@ -78,11 +78,11 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <!-- Submit Button -->
                             <button type="submit" class="btn btn-primary my-3">Calculate</button>
                         </form>
-    
+
                         <!-- Output Display -->
                         <div class="mt-4">
                             <div class="row">
@@ -112,22 +112,22 @@
                                                 <td class="text-start">Shadow Free Area</td>
                                                 <td>{{ shadowFree }}</td>
                                             </tr>
-                                            <!-- <tr>
-                                    <td class="text-start">Plant Capacity Based on Consumption</td>
-                                    <td>{{ capacityConsumption }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-start">Plant Capacity Based on Sanctioned Load</td>
-                                    <td>{{ userSanctioned }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-start">Plant Capacity Based on Area Available</td>
-                                    <td>{{ capacityArea }}</td>
-                                </tr>   
-                                <tr>
-                                    <td class="text-start">Annual Electricity Reduced</td>
-                                    <td>{{ annualUnitReduced }}</td>
-                                </tr> -->
+                                            <tr>
+                                                <td class="text-start">Plant Capacity Based on Consumption</td>
+                                                <td>{{ capacityConsumption }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-start">Plant Capacity Based on Sanctioned Load</td>
+                                                <td>{{ userSanctioned }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-start">Plant Capacity Based on Area Available</td>
+                                                <td>{{ capacityArea }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-start">Annual Electricity Reduced</td>
+                                                <td>{{ annualUnitReduced }}</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -209,7 +209,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-    
+
                                 <!-- <div class="mt-4">
                         <h4>Annual Unit Reduction (30 Years)</h4>
                         <table class="table table-bordered table-striped">
@@ -227,7 +227,7 @@
                             </tbody>
                         </table>
                     </div> -->
-    
+
                                 <!-- <div class="mt-4">
                         <h4>Cumulative Units Generated (30 Years)</h4>
                         <table class="table table-bordered table-striped">
@@ -245,15 +245,16 @@
                             </tbody>
                         </table>
                     </div> -->
-    
-    
+
+
                             </div>
                         </div>
                         <SolarEmiCalculator :loanAmount="costProject" />
                         <div class="my-5">
                             <div class="text-center mb-5">
                                 <p class="text-muted mb-1 text-uppercase">Top Benefit</p>
-                                <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Installtion of Solar
+                                <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Installtion of
+                                    Solar
                                 </h2>
                             </div>
                             <div class="row g-2">
@@ -344,15 +345,11 @@ export default {
         },
         calculate() {
             // Step 1: Calculate Average Monthly Consumption
-            this.capacityConsumption = Math.round((this.monthlyBill - this.userSanctioned * 200) / (this.electricityRate * 4 * 30));
+            this.capacityConsumption = Math.round((this.monthlyBill - (this.userSanctioned * 200)) / (this.electricityRate * 4 * 30));
             this.capacityArea = this.shadowFree / 100;
 
             // Whichever is lower
-            this.possibleCapacity = Math.min(
-                this.capacityConsumption,
-                this.userSanctioned,
-                this.capacityArea
-            );
+            this.possibleCapacity = Math.min(this.capacityConsumption,this.userSanctioned,this.capacityArea);
 
             // Number of solar panels
             this.monoperc = Math.ceil((this.possibleCapacity * 1000) / 545);
