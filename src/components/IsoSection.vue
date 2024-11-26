@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-4 text-start d-flex justify-content-center align-items-center">
-        <img src="/img/certificate.svg" style="width:400px" alt="">
+        <img src="/img/certificate.svg" style="width:400px" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
     </div>
 </template>
 

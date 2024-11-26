@@ -14,7 +14,7 @@
                     </p>
                 </div>
                 <div class="col-12 col-md-6 align-items-center text-center text-md-start">
-                    <img src="/img/formwelcome.svg" class="mt-3" style="width: 350px;max-width: 80%;" alt="">
+                    <img src="/img/formwelcome.svg" class="mt-3" style="width: 350px;max-width: 80%;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                 </div>
                 <div class="col-12 col-md-6 d-flex flex-column mt-5 mt-md-3">
                     <h3 class="text-white text-capitalize">{{ formTitle }}</h3>

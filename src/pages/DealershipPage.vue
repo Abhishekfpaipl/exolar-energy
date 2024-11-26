@@ -4,7 +4,7 @@
         <div class="container my-5" v-observe>
             <div class="row">
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="/img/partnership.svg" style="width: 350px; max-width: 80%" alt="">
+                    <img src="/img/partnership.svg" style="width: 350px; max-width: 80%" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                 </div>
                 <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
                     <form @submit.prevent="submitForm">
@@ -154,7 +154,7 @@
         <div class="container-fluid text-white py-5" style="background-color: var(--bg-primary);">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <img src="/img/reseller-program.svg" style="width: 250px;max-width: 80%;" alt="">
+                    <img src="/img/reseller-program.svg" style="width: 250px;max-width: 80%;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                 </div>
                 <div class="col-12 col-md-6 mt-5 mt-md-0 d-flex justify-content-center align-items-center">
                     <p class="fs-1 fw-bold">"It's your own business <br> Let it shine"</p>

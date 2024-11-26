@@ -35,9 +35,9 @@
         </p>
         <div v-if="showDealers" class="my-5 pb-5">
             <div class="d-flex justify-content-center align-items-center">
-                <img src="/img/congrats.png" class=" d-md-block d-none" style="width: 500px" alt="">
+                <img src="/img/congrats.png" class=" d-md-block d-none" style="width: 500px" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                 <img src="/img/congrats.png" class=" d-md-none d-flex justify-content-center align-items-center"
-                    style="width: 100%;" alt="">
+                    style="width: 100%;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
             </div>
             <p class="display-5 fw-bold" style="color:black !important">Dealership in your area is available, kindly
                 fill the form for dealership. </p>

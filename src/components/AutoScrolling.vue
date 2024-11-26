@@ -7,7 +7,7 @@
                 <div class="marquee__group" :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div v-for="(link, index) in links" :key="index" class="d-flex flex-column">
                         <img :src="link.image" class="rounded-circle"
-                            style="width:80px;height:80px;object-fit: contain;" alt="">
+                            style="width:80px;height:80px;object-fit: contain;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                         <p class="text-center mb-0">{{ link.name }}</p>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                     :style="{ 'animation-direction': isReverse ? 'reverse' : 'normal' }">
                     <div v-for="(link, index) in links" :key="index" class="d-flex flex-column">
                         <img :src="link.image" class="rounded-circle"
-                            style="width:80px;height:80px;object-fit: contain;" alt="">
+                            style="width:80px;height:80px;object-fit: contain;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                         <p class="text-center mb-0">{{ link.name }}</p>
                     </div>
                 </div>

@@ -43,7 +43,7 @@
 
 
                     <div class="col-lg-4 overflow-hidden p-5 mt-0">
-                        <img src="/img/why-choose.png" ref="solarPanel" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="w-75 of-cover scale-0">
+                        <img src="/img/why-choose.png" ref="solarPanel" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="w-75 of-cover scale-0" height="auto">
                     </div>
 
 

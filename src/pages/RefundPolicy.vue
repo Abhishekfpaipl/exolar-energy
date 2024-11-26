@@ -10,7 +10,7 @@
                             <p><strong>Effective Date:</strong> October 22</p>
 
                             <section>
-                                <h2>Thank You for Choosing Exolar Energy</h2>
+                                <h2 class="text-start ">Thank You for Choosing Exolar Energy</h2>
                                 <p>
                                     At Exolar Energy, we are committed to delivering the highest quality solar products
                                     to our customers. If for any reason, you are not entirely satisfied with your
@@ -20,7 +20,7 @@
                             </section>
 
                             <section>
-                                <h2>Order Cancellation Rights</h2>
+                                <h2 class="text-start">Order Cancellation Rights</h2>
                                 <p>
                                     You have the right to cancel your order within 7 days without providing any reason.
                                     The cancellation period expires 7 days after the day you, or a third party
@@ -42,7 +42,7 @@
                             </section>
 
                             <section>
-                                <h2>Conditions for Returns</h2>
+                                <h2 class="text-start">Conditions for Returns</h2>
                                 <p>For your return to be eligible, the following conditions must be met:</p>
                                 <ul>
                                     <li>The goods were purchased within the last 7 days.</li>
@@ -60,7 +60,7 @@
                             </section>
 
                             <section>
-                                <h2>Returning Goods</h2>
+                                <h2 class="text-start">Returning Goods</h2>
                                 <p>
                                     You are responsible for the cost and risk of returning goods to us. Please send the
                                     goods to the following address:
@@ -74,7 +74,7 @@
                             </section>
 
                             <section>
-                                <h2>Refunds for Gifts</h2>
+                                <h2 class="text-start">Refunds for Gifts</h2>
                                 <p>
                                     If the goods were marked as a gift when purchased, and they were shipped directly to
                                     you, you will receive a gift credit for the value of your return. Once the returned
@@ -87,7 +87,7 @@
                             </section>
 
                             <section>
-                                <h2>Contact Us</h2>
+                                <h2 class="text-start">Contact Us</h2>
                                 <p>If you have any questions about our return and refund policy, please reach out to us:
                                 </p>
                                 <ul>

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                 <img src="/img/stepsImage.jpeg" alt="Rooftop solar panel installation in Delhi by Exolar Energy"
-                    class="w-100 sticky-image">
+                    class="w-100 sticky-image" >
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="row row-cols-1 g-2 accordion accordion-flush" id="accordionFlushExample">

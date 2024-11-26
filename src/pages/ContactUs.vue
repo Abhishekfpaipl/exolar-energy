@@ -24,14 +24,14 @@
                             <label for="floatingTextarea" class="ms-2 text-muted">Describe your requirements</label>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-danger py-2 fs-5 w-100 rounded-0 text-white"
+                            <button class="btn btn-success py-2 fs-5 w-100 rounded-0 text-white"
                                 type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="container-fluid mt-5 py-5 bg-dark text-white" v-observe>
+        <div class="container-fluid mt-5 py-5 text-dark bg-light" v-observe>
             <div class="row justify-content-center align-items-center">
                 <h1 class="text-uppercase mb-4 text-center">Need to get in touch with us?</h1>
                 <div class="col-12 col-md-6 mt-5 mt-md-0 ">
@@ -39,8 +39,8 @@
                         <div v-for="(icon, index) in contact" :key="index" class="col py-2"
                             @click="handleIconClick(icon.action)">
                             <div class="d-flex justify-content-start align-items-center border p-2 ps-3">
-                                <a class="text-white" :href="icon.url" target="_blank">
-                                    <i :class="icon.icon" class="primary-text fs-1"></i>
+                                <a class="" :href="icon.url" target="_blank">
+                                    <i :class="icon.icon" class="text-dark fs-1"></i>
                                 </a>
                                 <p class="text-start ms-2 fw-bold mb-0">{{ icon.name }}</p>
                             </div>
@@ -48,7 +48,11 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                    <img src="/img/contactus.png" style="width: 100%;" alt="">
+                    <!-- <img src="/img/contactus.png" style="width: 100%;" alt="Rooftop solar panel installation in Delhi by Exolar Energy"> -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8950637577323!2d77.14881932529143!3d28.692785475631894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03006ce0a879%3A0x3dadf36bf2cb8c82!2sPearls%20Best%20Heights%20-%201!5e0!3m2!1sen!2sin!4v1732511759889!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -66,9 +70,7 @@ export default {
         return {
             contact: [
                 { name: ' contact.exolarenergy@gmail.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
-                {
-                    name: ' 310, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi - geo - fill', color: 'black', action: 'openMaps'
-                },
+                { name: ' 310, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
             ],
             name: '',
             number: '',

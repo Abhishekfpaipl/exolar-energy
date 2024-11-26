@@ -2,13 +2,16 @@
   <div class="text-container py-5">
     <h2 :data-text="text" class="">{{ text }}</h2>
   </div>
-  <button class="btn btn-warning my-5 fs-3 text-capitalize" data-bs-toggle="modal" data-bs-target="#exampleModal">Click
-    here to get a free quote <i class="bi bi-arrow-right visit"></i></button>
+  <!-- <button class="btn btn-warning my-5 fs-3 text-capitalize" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">Contact Us Today for More Information<i class="bi bi-arrow-right visit"></i></button> -->
+    
+  <router-link to="/contact-us" class="btn btn-success my-5 fs-3 text-capitalize">Contact Us Today for More Information<i class="bi bi-arrow-right visit"></i></router-link>
+  
   <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
     style="bottom: 20px; right: 5px;z-index: 10;">
-    <img src="/img/enquiry.svg" alt="" style="width: 30px;">
+    <img src="/img/enquiry.svg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" width="30" height="30">
   </div>
-  <FaqFormSection /> 
+  <FaqFormSection />
 
 </template>
 

@@ -37,7 +37,7 @@
                 <div class="col" v-for="(category, index) in categories" :key="index">
                     <router-link :to="'/category-sentence/' + category.name" class="card text-decoration-none">
                         <p class="text-center card-header fs-4">
-                            <img v-if="category.img" :src="category.img" style="width: 30px;" alt="">
+                            <img v-if="category.img" :src="category.img" style="width: 30px;" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
                             <i v-else class="bi bi-globe"></i>
                         </p>
                         <div class="card-body text-center">
@@ -57,7 +57,7 @@
                     </router-link>
                 </div>
             </div>
-            <img :src="ass" alt="">
+            <img :src="ass" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
         </div>
     </div>
 </template>

@@ -3,7 +3,8 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4">
-                    <img ref="solarPanel" src="/img/banner/2.jpg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0" />
+                    <img ref="solarPanel" src="/img/banner/2.jpg"
+                        alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0" width="100%" height="auto">
                 </div>
                 <div class="col-md-8 mt-5 mt-md-0">
                     <div class="text-center">
@@ -12,14 +13,15 @@
                     </div>
                     <section class="d-flex justify-content-center align-items-center my-3">
                         <div class="position-relative w-100">
-                            <p class="text-uppercase text-muted">Solar Benefits</p>
                             <h2 class="rotatingText-adjective fw-bold" style="color: var(--bg-primary);"
                                 :key="currentPhrase">{{
                                     phrases[currentIndex] }}</h2>
                         </div>
                     </section>
-                    <button class="btn mt-5 fs-4 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        style="background-color:var(--bg-third);">Enquiry Now</button>
+                    <div class="pt-5">
+                        <button class="btn mt-5 fs-4 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            style="background-color:var(--bg-third);">Get Your Free Quote</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,7 +56,7 @@ export default {
         // Set interval to cycle through phrases every 2 seconds (or desired duration)
         this.intervalId = setInterval(() => {
             this.currentIndex = (this.currentIndex + 1) % this.phrases.length;
-        }, 2000);
+        }, 1000);
 
         const image = this.$refs.solarPanel;
         const observer = new IntersectionObserver(

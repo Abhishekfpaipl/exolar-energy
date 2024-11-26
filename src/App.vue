@@ -39,6 +39,7 @@ export default {
   --bg-primary: #237ABF !important;
   --bg-secondary: #283D90 !important;
   --bg-third: #198754 !important;
+  --bg-light: #F3F8F3 !important;
   // --bg-third: #1B9600 !important;
 }
 

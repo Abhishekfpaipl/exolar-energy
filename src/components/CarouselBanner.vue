@@ -9,14 +9,14 @@
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2000">
+        <div class="carousel-item" v-for="(banner, index) in banners" :key="index"
+          :class="{ 'active': index === 0 }" data-bs-interval="1500">
+          <img :src="banner" class="d-block w-100" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
+        </div>
+        <!-- <div class="carousel-item" data-bs-interval="2000">
           <img src="/img/banner/banner.jpg" class="d-block w-100"
             alt="Rooftop solar panel installation in Delhi by Exolar Energy">
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="/img/banner/banner.jpg" class="d-block w-100"
-            alt="Rooftop solar panel installation in Delhi by Exolar Energy">
-        </div>
+        </div> -->
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
         data-bs-slide="prev">
@@ -35,6 +35,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      banners: [
+        "/img/banner/banner.jpg",
+        "/img/banner/new1.png",
+        "/img/banner/new2.png",
+        "/img/banner/new3.png",
+      ]
+    }
+  }
 };
 </script>
 

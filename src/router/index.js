@@ -36,11 +36,11 @@ const routes = [
       description: 'Learn more about Exolar Energy on this page',
     },
   },
-  {
-    path: "/testimonial",
-    name: "TestimonialPage",
-    component: () => import("@/pages/TestimonialPage.vue"),
-  },
+  // {
+  //   path: "/testimonial",
+  //   name: "TestimonialPage",
+  //   component: () => import("@/pages/TestimonialPage.vue"),
+  // },
   {
     path: "/faqs",
     name: "FaqPage",
@@ -72,9 +72,9 @@ const routes = [
     component: () => import("@/pages/RefundPolicy.vue"),
   },
   {
-    path: "/term-of-use",
-    name: "TermOfUse",
-    component: () => import("@/pages/TermOfUse.vue"),
+    path: "/terms-&-conditions",
+    name: "Terms&Conditions",
+    component: () => import("@/pages/Terms&Conditions.vue"),
   },
   {
     path: "/gallery",
@@ -137,9 +137,14 @@ const routes = [
     component: () => import("@/pages/ReviewPage.vue")
   },
   {
-    path: "/blogs",
-    name: "BlogsPage",
-    component: () => import("@/pages/BlogsPage.vue")
+    path: "/customers",
+    name: "CustomersPage",
+    component: () => import("@/pages/CustomersPage.vue")
+  },
+  {
+    path: "/customer-detail/:postId",
+    name: "CustomerDetailPage",
+    component: () => import("@/pages/CustomerDetailPage.vue")
   },
 ];
 

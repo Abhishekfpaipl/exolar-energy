@@ -41,26 +41,23 @@
                             </form>
                             <form @submit.prevent="calculate" class="row">
                                 <div class="col-6 mb-3">
-                                    <label for="Electricity Rate" class="fw-bold mb-2">Electricity Charges</label>
+                                    <label for="Electricity Rate" class="fw-bold mb-2">Electricity Rate</label>
                                     <input type="number" class="form-control" id="Electricity Rate"
-                                        placeholder="Electricity Charges in rupees per unit" v-model="electricityRate"
-                                        required>
+                                        placeholder="Electricity Rate" v-model="electricityRate" required>
                                 </div>
                                 <div class="col-6 mb-3">
-                                    <label for="Bill Amount" class="fw-bold mb-2">Monthly Bill</label>
-                                    <input type="number" class="form-control" id="Bill Amount"
-                                        placeholder="Monthly Bill in Rupees" v-model="monthlyBill" required>
+                                    <label for="Bill Amount" class="fw-bold mb-2">Bill Amount</label>
+                                    <input type="number" class="form-control" id="Bill Amount" placeholder="Bill Amount"
+                                        v-model="billAmount" required>
                                 </div>
                                 <div class="col-6 mb-3">
                                     <label for="Sanctioned Load" class="fw-bold mb-2">Sanctioned Load</label>
                                     <input type="number" class="form-control" id="Sanctioned Load"
-                                        placeholder="Sanctioned Load in kilowatt peak" v-model="userSanctioned"
-                                        required>
+                                        placeholder="Sanctioned Load in square meter" v-model="userSanctioned" required>
                                 </div>
                                 <div class="col-6 mb-3">
                                     <label for="Shadow Free" class="fw-bold mb-2">Shadow Free Area</label>
-                                    <input type="number" class="form-control" id="Shadow Free"
-                                        placeholder="Shadow Free Area in square feet" name="Shadow Free"
+                                    <input type="number" class="form-control" id="Shadow Free" placeholder="Shadow Free Area in square feet" name="Shadow Free"
                                         v-model="userShadow" required>
                                 </div>
                                 <div class="my-5 px-3">
@@ -88,20 +85,6 @@
                                 <button type="submit" class="btn btn-primary my-3">Calculate</button>
                             </form>
 
-                            <p>Monthly bill : {{ monthlyBill }}</p>
-                            <p>electricity rate : {{ electricityRate }}</p>
-                            <p>Sanctioned load : {{ userSanctioned }}</p>
-                            <p>Shadow Free: {{ shadowFree }}</p>
-                            <p>Plant capacity based on consumption: {{ capacityConsumption }}</p>
-                            <p>Plant capacity based on sanctioned load: {{ userSanctioned }}</p>
-                            <p>Plant capacity based on area available: {{ capacityArea }}</p>
-                            <p>No of solar pannel (monoperc module) : {{ monoperc }}</p>
-                            <p>No of solar pannel (W topcon module) : {{ topcon }}</p>
-                            <p>Cost of project: {{ costProject }}</p>
-                            <p>Yearly units generated: {{ yearlyUnitsGenerated }}</p>
-                            <p>Annual Electricity Reduced: {{annualUnitReduced }}</p>
-                            <!-- <p>Annual Electricity Reduced: {{annualUnitReduced }}</p> -->
-
                             <div class="mb-5" v-if="kWH !== null">
                                 <div class="text-center mb-5">
                                     <h2 class="text-uppercase">Selected Data</h2>
@@ -121,7 +104,7 @@
                                                 <td>{{ buildingCategory }}</td>
                                                 <td>{{ address }}</td>
                                                 <td>{{ electricityRate }}</td>
-                                                <td>{{ monthlyBill }}</td>
+                                                <td>{{ billAmount }}</td>
                                             </tr>
                                         </thead>
                                     </table>
@@ -325,26 +308,30 @@ export default {
     data() {
         return {
             electricityRate: 0,
-            monthlyBill: 0,
-            userSanctioned: null,
-            capacityConsumption: null,
-            capacityArea: null,
+            billAmount: 0,
+            kWH: null,
+            systemInstalled: null,
             shadowFree: null,
-            monoperc: null,
-            topcon: null,
-            costProject: null,
-            dailyUnitsGenerated: null,
-            monthlyUnitsGenerated: null,
-            yearlyUnitsGenerated: null,
-            annualUnitReduced:null,
-            // electricityReduced: 0.5 %,
-            annualUnitRedcued: null,
+            monthlyBill: null,
+            yearlyBill: null,
+            twoyearlBill: null,
+            threeyearlBill: null,
+            fouryearlBill: null,
+            fiveyearlBill: null,
+            twentyfiveyearlBill: null,
+            totalCost: null,
+            subsidy: null,
+            finalPrice: null,
             buildingType: '',
             buildingCategory: '',
             name: '',
             email: '',
             address: '',
             phone: '',
+            annualEnergy: null,
+            coOffset: null,
+            treeSaved: null,
+            carMilesSave: null,
         };
     },
     methods: {
@@ -356,34 +343,51 @@ export default {
         },
         calculate() {
             // Step 1: Calculate Avg Monthly Consumption (kWh)
-            this.capacityConsumption = this.monthlyBill - (this.userSanctioned * 200) / (this.electricityRate * 4 * 30);
-            this.capacityArea = this.shadowFree / 100;
+            if (this.electricityRate > 0) {
+                this.kWH = this.billAmount / this.electricityRate;
 
-            // Whichever is lower
-            this.possibleCapacity = Math.min(this.capacityConsumption, this.userSanctioned, this.capacityArea);
+                // Step 2: Calculate System Installed
+                this.systemInstalled = (this.kWH / 120).toFixed(2);
 
-            // Number of solar panels
-            this.monoperc = this.possibleCapacity * 1000 / 545; // for mono PERC panels
-            this.topcon = this.possibleCapacity * 1000 / 590;   // for TOPCon panels
+                // Step 3: Calculate Shadow Free Space
+                this.shadowFree = (this.systemInstalled * 100).toFixed(2);
 
-            // Cost of the project
-            this.costProject = this.possibleCapacity < 10
-                ? this.possibleCapacity * 60000
-                : this.possibleCapacity * 50000;
+                // Step 4: Calculate Avg Monthly Bill Saved
+                this.monthlyBill = (this.kWH * this.electricityRate).toFixed(2);
 
-            // Daily, monthly, and yearly units generated
-            this.dailyUnitsGenerated = this.possibleCapacity * 4;
-            this.monthlyUnitsGenerated = this.dailyUnitsGenerated * 30;
-            this.yearlyUnitsGenerated = this.dailyUnitsGenerated * 365;
+                // Step 5: Calculate Avg Yearly Bill Saved
+                this.yearlyBill = (this.monthlyBill * 12).toFixed(2);
+                this.twoyearlBill = (this.monthlyBill * 24).toFixed(2);
+                this.threeyearlBill = (this.monthlyBill * 36).toFixed(2);
+                this.fouryearlBill = (this.monthlyBill * 48).toFixed(2);
+                this.fiveyearlBill = (this.monthlyBill * 60).toFixed(2);
+                this.twentyfiveyearlBill = (this.monthlyBill * 300).toFixed(2);
 
-            // Calculate yearly unit reduction (degradation rate considered)
-            this.annualUnitReduced = this.yearlyUnitsGenerated * (99.5 / 100);
+                // Step 6: Calculate Total Cost (Estimated)
+                if (this.systemInstalled < 10) {
+                    this.totalCost = 60000 * this.systemInstalled;
+                } else {
+                    this.totalCost = 50000 * this.systemInstalled;
+                }
 
-            // Savings calculations
-            this.savingFirstYear = this.annualUnitReduced * this.electricityRate;
-            this.savingSecondYear = this.savingFirstYear * (99.5 / 100);
+                // Step 7: Calculate Subsidy
+                if (this.systemInstalled >= 3) {
+                    this.subsidy = 78000;
+                } else if (this.systemInstalled === 2) {
+                    this.subsidy = 60000;
+                } else if (this.systemInstalled === 1) {
+                    this.subsidy = 30000;
+                } else {
+                    this.subsidy = 0;
+                }
 
-            // Optional: Chart rendering
+                this.annualEnergy = (this.yearlyBill / this.electricityRate).toFixed(2); // Round to 2 decimal places
+                this.coOffset = (this.annualEnergy * 0.7).toFixed(2); // Round to 2 decimal places
+                this.treeSaved = (this.coOffset / 21.77).toFixed(2); // Round to 2 decimal places
+                this.carMilesSave = (this.coOffset / 0.411).toFixed(2); // Round to 2 decimal places
+                this.finalPrice = Math.round(this.totalCost - this.subsidy); // Round to nearest integer
+
+            }
             this.$nextTick(() => {
                 this.renderSavingsBarChart();
                 this.renderSavingsPieChart();

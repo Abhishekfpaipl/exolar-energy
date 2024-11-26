@@ -7,26 +7,35 @@
     </div>
     <div class="my-5">
       <SolarInstallationSteps />
-      <WhyChooseUs />
+    </div>
+    <div class="my-5">
+      <BlogSection />
     </div>
     <!-- <div class="my-5">
       <ShortsVideoSection />
     </div> -->
     <div class="my-5">
-      <AboutSection />
-    </div>
-    <div class="my-5">
-      <FaqSection />
-    </div>
-    <!-- <div class="my-5">
-      <NewGallerySection :images="images" />
-    </div> --> 
-    <div class="my-5">
       <GoogleReviewSection />
     </div>
     <div class="my-5">
-      <BlogSection />
-    </div> 
+      <WhyChooseUs />
+    </div>
+    <div class="mt-5 pt-5">
+      <AboutSection />
+    </div>
+    <div class="mt-5 pt-5">
+      <TestSection />
+    </div>
+    <div class="mt-5 pt-5">
+      <SolarEmiCalculator />
+    </div>
+    <!-- <div class="my-5">
+      <NewGallerySection :images="images" />
+    </div> -->
+
+    <div class="">
+      <FaqSection />
+    </div>
 
   </div>
 </template>
@@ -43,7 +52,9 @@ import FaqSection from "@/components/FaqSection.vue";
 // import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 // import NewGallerySection from '@/components/NewGallerySection.vue'; 
-import BlogSection from '@/components/BlogSection.vue'; 
+import BlogSection from '@/components/BlogSection.vue';
+import TestSection from '@/components/TestSection.vue';
+// import SolarEmiCalculator from '@/components/SolarEmiCalculator.vue';
 
 export default {
   name: "HomeView",
@@ -58,8 +69,10 @@ export default {
     // ShortsVideoSection,
     GoogleReviewSection,
     // NewGallerySection,
-    WhyChooseUs, 
-    BlogSection, 
+    WhyChooseUs,
+    BlogSection,
+    TestSection,
+    // SolarEmiCalculator,
   },
   data() {
     return {

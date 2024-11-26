@@ -111,7 +111,7 @@ export default {
                 {
                     id: 12,
                     name: 'Terms & Conditions',
-                    link: '/term-of-use'
+                    link: '/terms-&-conditions'
                 },
                 // {
                 //     id: 23,

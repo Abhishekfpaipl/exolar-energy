@@ -7,7 +7,7 @@
         <div class="row mt-5">
             <div class="col-12 position-relative  d-flex align-items-center justify-content-center pt-5">
                 <div class="card rounded-3">
-                    <div class="image rounded-3">
+                    <div class="image rounded-3 d-flex justify-content-center align-items-center bg-white">
                         <img href="#" :src="image" class="rounded-3" alt="Card image">
                     </div>
                     <div class="content">

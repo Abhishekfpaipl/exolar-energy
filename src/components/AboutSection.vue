@@ -8,16 +8,18 @@
                             style="color: var(--bg-primary)">facts</span>
                     </h1>
                     <p class="mt-3">
-                        On the back of an illustrious 150-year legacy, CGL is a French lubricants company
-                        that enjoys global recognition as 'The specialist in synthetic lubricants'.
-                        Among the oldest, most respected lubricant brands in the world, CGL has become
-                        synonymous with high-performance motoring.
+                        Exolar Energy is a new age company that provides the combination of efficient economics and
+                        sustainability through use of solar energy. Our vision is to enable the world maximise the use
+                        of distributed solar energy. Our mission is to have every potential roof solar systems
+                        installed. Rooftop solar is most financially beneficial now and we, at Exolar, are at the
+                        forefront of the solar revolution throughdistributed solar.
                     </p>
                 </div>
             </div>
             <div class="row align-items-stretch mx-0">
                 <div class="col-md-6 px-0 stats-section" v-observe style="background-image: url('/img/worldmap.jpg');">
-                    <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-5" style=" background-color: rgba(0, 0, 0, 0.8)">
+                    <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-5"
+                        style=" background-color: rgba(0, 0, 0, 0.8)">
                         <div class="row g-4">
                             <div class="col-6" v-for="(counter, index) in counters" :key="index">
                                 <div class="counter-item primary-text">
@@ -34,7 +36,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 px-0 image-section" v-observe>
-                    <img src="/img/aboutSection.jpg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="award-image">
+                    <img src="/img/aboutSection.jpg" alt="Rooftop solar panel installation in Delhi by Exolar Energy"
+                        class="award-image">
                 </div>
             </div>
         </div>

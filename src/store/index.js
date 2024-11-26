@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import about from "./about";
 import states from "./states";
+import faqs from "./faqs";
 
 export default createStore({
   state: {
@@ -164,7 +165,7 @@ export default createStore({
         rating: '5',
         text: "Covisor Web Solutions built our new e-commerce site. The design and user interface are excellent, but the project took longer than expected to complete. Communication could have been better, with more frequent updates. Despite the delays, the final website is performing well and attracting more customers."
       },
-    ], 
+    ],
     whatMakesUsDifferent: [
       {
         icon: 'bi-shield-check',
@@ -227,6 +228,82 @@ export default createStore({
         description: "Ensuring quick and efficient delivery for our clients."
       }
     ],
+    tabs: [
+      { id: 'all', name: 'All Posts' },
+      { id: 'projects', name: 'Projects' },
+      { id: 'testimonial', name: 'Testimonials' },
+      { id: 'why choose us', name: 'Why Choose Us' },
+    ],
+    posts: [
+      {
+        id: 1,
+        title: 'system installed 9.8kW',
+        sid: "crm-119",
+        date: '01/10/2024',
+        image: '/img/blogs/blog1.jpg',
+        images: [
+          '/img/blogs/blog1.jpg',
+          '/img/blogs/blog1.jpg',
+          '/img/blogs/blog1.jpg',
+        ],
+        description: "Vaibhav Chaudhary from Noida sector 105",
+        category: 'projects'
+      },
+      {
+        id: 2,
+        title: 'system installed 6kW',
+        sid: "rajeev-kakkar",
+        date: '24/09/2024',
+        image: '/img/blogs/blog2.jpg',
+        description: "Rajeev kakkar from Guru Harikrishna Nagar, Delhi",
+        category: 'projects'
+      },
+      {
+        id: 3,
+        title: 'system installed 5kW',
+        sid: "debunking-the-fear-of-malicious-complaints-under-posh-act",
+        date: '21/09/2024',
+        image: '/img/blogs/blog3.jpg',
+        description: "Suresh Kumar from Ghaziabad",
+        category: 'projects'
+      },
+      {
+        id: 4,
+        title: 'system installed 30 kW',
+        sid: "the-legal-intrusion-in-posh",
+        date: '27/08/2024',
+        image: '/img/blogs/blog4.jpg',
+        description: 'Lamba Hyundai Showroom in Wazirpur',
+        category: 'projects'
+      },
+      {
+        id: 5,
+        title: 'Exolar Energy Testimonial Video',
+        sid: "exolar-energy-testimonial-video",
+        date: '27/08/2024',
+        description: 'Lamba Hyundai Showroom in Wazirpur',
+        category: 'testimonial',
+        videoId: "ZtCsYVnjmn4",
+      },
+      {
+        id: 6,
+        title: 'Unleashing the Power of the Sun: Exolar Energy - Leading the Solar Revolution',
+        sid: "unleashing-the-power-of-the-sun",
+        date: '27/08/2024',
+        description: 'Lamba Hyundai Showroom in Wazirpur',
+        category: 'why choose us',
+        videoId: "f-4FWD6wAuk",
+      },
+      {
+        id: 7,
+        title: 'Empowering Tomorrow: Exolar Energy - Harness the Power of the Sun!',
+        sid: "empowering-tomorrow",
+        date: '27/08/2024',
+        description: 'Lamba Hyundai Showroom in Wazirpur',
+        category: 'why choose us',
+        videoId: "Y-RWg3xUsAU",
+      },
+    ],
   },
   getters: {
     getAutoScrolling: state => state.autoScrolling,
@@ -235,11 +312,18 @@ export default createStore({
     getCustomers: state => state.customers,
     getFaqs: state => state.faqs,
     getWhatMakesUsDifferent: state => state.whatMakesUsDifferent,
+    getPosts: state => state.posts,
+    getPost: (state) => (postId) => {
+      let index = state.posts.findIndex(post => post.sid === postId);
+      return state.posts[index]
+    },
+    getTabs: state => state.tabs,
   },
   mutations: {},
   actions: {},
   modules: {
     about: about,
-    states: states
+    states: states,
+    faqs: faqs,
   },
 });
