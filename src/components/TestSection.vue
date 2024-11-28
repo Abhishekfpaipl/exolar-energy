@@ -16,7 +16,7 @@
                 <div class="modal-body">
                     <div class="container">
                         <form v-if="capacityConsumption === 0" @submit.prevent="">
-                            <h1 class="text-center mb-4 text-capitalize">Your Details</h1>
+                            <h1 class="text-center mb-4 text-capitalize">Inputs Chosen for Your Solar Estimate</h1>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="Your Name" placeholder="Your Name"
                                     v-model="name" required>
@@ -33,9 +33,14 @@
                                 <label for="Your Phone No" class="fw-bold mb-2">Your Phone No.</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="Your Address" placeholder="Your Address"
-                                    v-model="address" required>
-                                <label for="Your Address" class="fw-bold mb-2">Your Address</label>
+                                <input type="number" class="form-control" id="Your Pin Code" placeholder="Your Pin Code"
+                                    v-model="pincode" required>
+                                <label for="Your Phone No" class="fw-bold mb-2">Your Pincode</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="Your Address" placeholder="Your City"
+                                    v-model="city" required>
+                                <label for="Your City" class="fw-bold mb-2">Your City</label>
                             </div>
                         </form>
                         <form v-if="capacityConsumption === 0" @submit.prevent="calculate" class="row mt-5">
@@ -357,7 +362,8 @@ export default {
             //user details
             name: '',
             email: '',
-            address: '',
+            pincode: '',
+            city: '',
             phone: '',
 
             // Calculated Values
@@ -478,8 +484,8 @@ export default {
             this.phone = '';
             this.buildingCategory = null;
             this.buildingType = null;
-             // Scroll back to the top of the page
-             window.scrollTo({
+            // Scroll back to the top of the page
+            window.scrollTo({
                 top: 0,
                 behavior: 'smooth' // Optional for a smooth scrolling effect
             });
@@ -492,7 +498,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 /* Optional styling for the buttons */
 .btn {
     min-width: 150px;

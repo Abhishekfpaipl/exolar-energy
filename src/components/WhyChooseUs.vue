@@ -32,10 +32,11 @@
                                     <p class="fw-bold small mb-0 text-ellipsis1">{{ card.title }}</p>
                                     <p class="smaller mb-0 text-ellipsis3">{{ card.description }} </p>
                                 </div>
-                                <div class="rounded overflow-hidden border order-md-2 border-white border-2 p-1 rotate"
+                                <div class="d-flex justify-content-center align-items-center rounded overflow-hidden border order-md-2 border-white border-2 p-1 rotate"
                                     style="min-width:60px; height:60px;background-color: var(--bg-secondary)">
-                                    <img :src="card.image" alt="Profile" class="rounded-circle"
-                                        style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
+                                    <i class="bi bi-arrow-up"></i>
+                                    <!-- <img :src="card.image" alt="Profile" class="rounded-circle"
+                                        style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" /> -->
                                 </div>
                             </div>
                         </div>
@@ -50,10 +51,11 @@
                     <div class="col-lg-4 row row-cols-1 g-3 mt-0">
                         <div v-for="(card, index) in servicesRight" :key="index" class="col" v-observe>
                             <div class="d-flex justify-content-start align-items-center text-white p-2">
-                                <div class="rounded overflow-hidden border border-white border-2 p-1 rotate"
+                                <div class="d-flex justify-content-center align-items-center rounded overflow-hidden border border-white border-2 p-1 rotate"
                                     style="min-width:60px; height:60px;background-color: var(--bg-secondary)">
-                                    <img :src="card.image" alt="Profile" class="rounded-circle"
-                                        style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" />
+                                    <i class="bi bi-arrow-up"></i>
+                                    <!-- <img :src="card.image" alt="Profile" class="rounded-circle"
+                                        style="width: 100%; height: 100%;object-fit: cover; filter: invert(1)" /> -->
                                 </div>
                                 <div class="text-start card-body ms-3 p-0">
                                     <p class="fw-bold small mb-0 text-ellipsis1">{{ card.title }}</p>
@@ -85,35 +87,45 @@ export default {
             "servicesLeft": [
                 {
                     "image": "/img/why-choose/credit-card-icon.png",
-                    "title": "Credit Card",
-                    "description": "Secure and convenient payment options available via credit card."
+                    "title": "Optimized Design & Engineering",
+                    "description": "Efficient design and engineering for the best project outcomes."
                 },
                 {
                     "image": "/img/why-choose/customer-service-icon.png",
-                    "title": "Customer Service",
-                    "description": "Dedicated customer support to assist you at every step."
+                    "title": "The Best Technology and Value",
+                    "description": "Advanced technology with cost-effective solutions, no compromises."
                 },
                 {
                     "image": "/img/why-choose/end-to-end-delivery.png",
-                    "title": "End to End Delivery",
-                    "description": "Seamless delivery service from start to finish, ensuring timely arrival."
+                    "title": "Quick Project Delivery",
+                    "description": "On-time project completion with precision and expertise."
+                },
+                {
+                    "image": "/img/why-choose/end-to-end-delivery.png",
+                    "title": "Fast Net Metering & Subsidy Approval",
+                    "description": "Quick approval for net metering and subsidies, ensuring timely project setup."
                 },
             ],
             "servicesRight": [
                 {
                     "image": "/img/why-choose/quick-install.png",
-                    "title": "Quick Install",
-                    "description": "Fast and efficient installation for minimal disruption and downtime."
+                    "title": "Strong Top Management",
+                    "description": "Led by solar experts, we ensure quality solutions for your projects."
                 },
                 {
                     "image": "/img/why-choose/survey-icon.png",
-                    "title": "Survey",
-                    "description": "Comprehensive surveys to ensure accurate planning and execution."
+                    "title": "Trust & Honesty",
+                    "description": "Clear communication and flexible options for your peace of mind."
                 },
                 {
                     "image": "/img/why-choose/trained-technicians.png",
-                    "title": "Trained Technicians",
-                    "description": "Expert technicians providing professional and reliable services."
+                    "title": "Top-Quality Maintenance",
+                    "description": "Proactive maintenance for smooth operations and optimal performance."
+                },
+                {
+                    "image": "/img/why-choose/trained-technicians.png",
+                    "title": "Daily Remote Monitoring",
+                    "description": "Real-time monitoring and analytics for complete control."
                 },
             ]
         };

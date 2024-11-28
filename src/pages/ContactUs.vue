@@ -50,7 +50,7 @@
                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                     <!-- <img src="/img/contactus.png" style="width: 100%;" alt="Rooftop solar panel installation in Delhi by Exolar Energy"> -->
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8950637577323!2d77.14881932529143!3d28.692785475631894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03006ce0a879%3A0x3dadf36bf2cb8c82!2sPearls%20Best%20Heights%20-%201!5e0!3m2!1sen!2sin!4v1732511759889!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13999.577563766456!2d77.1516171!3d28.6928056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d0187cc8cabcd%3A0x894510dda97c6adc!2sExolar%20Energy%20Private%20Limited!5e0!3m2!1sen!2sin!4v1732772161072!5m2!1sen!2sin"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -70,7 +70,7 @@ export default {
         return {
             contact: [
                 { name: '  info@exolarenergy.com', icon: 'bi-envelope', color: 'red', action: 'openEmail' },
-                { name: ' 405, Pearl Best Height-1, Netaji Subhash Place, Delhi- 34', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
+                { name: ' 405, Pearls Best Heights-1, Netaji Subhash Place, Pitampura, Delhi, 110034', icon: 'bi-geo-fill', color: 'black', action: 'openMaps' },
             ],
             name: '',
             number: '',

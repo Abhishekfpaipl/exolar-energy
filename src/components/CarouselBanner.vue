@@ -9,9 +9,12 @@
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item" v-for="(banner, index) in banners" :key="index"
-          :class="{ 'active': index === 0 }" data-bs-interval="1500">
-          <img :src="banner" class="d-block h-100" alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
+        <div class="carousel-item" v-for="(banner, index) in banners" :key="index" :class="{ 'active': index === 0 }"
+          data-bs-interval="1500">
+          <img :src="banner.desktop" class="d-md-block d-none h-100"
+            alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
+          <img :src="banner.mobile" class="d-block d-md-none h-100"
+            alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
         </div>
         <!-- <div class="carousel-item" data-bs-interval="2000">
           <img src="/img/banner/banner.jpg" class="d-block w-100"
@@ -38,10 +41,10 @@ export default {
   data() {
     return {
       banners: [
-        "/img/banner/banner.jpg",
-        "/img/banner/new1.jpeg",
-        "/img/banner/new3.jpeg",
-        "/img/banner/new2.jpeg",
+        { desktop: "/img/banner/banner.jpg", mobile: "/img/banner/mobileBanner.jpg", },
+        { desktop: "/img/banner/new1.jpeg", mobile: "/img/banner/mobilenew1.jpeg", },
+        { desktop: "/img/banner/new3.jpeg", mobile: "/img/banner/mobilenew2.jpeg", },
+        { desktop: "/img/banner/new2.jpeg", mobile: "/img/banner/mobilenew3.jpeg", },
       ]
     }
   }

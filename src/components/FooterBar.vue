@@ -11,8 +11,8 @@
             <div class=" col-12 col-md-4 mb-3 text-center">
                 <p class="mb-2 fw-bold">Contact Us</p>
                 <p class="mb-2">Email : info@exolarenergy.com</p>
-                <p class="mb-2">Address : 405, Pearl Best Height-1, <br>
-                    Netaji Subhash Place, Delhi-34</p>
+                <p class="mb-2">Address : 405, Pearls Best Heights-1,<br>
+                    Netaji Subhash Place, Pitampura, Delhi, 110034 </p>
                 <div class="d-flex gap-2 justify-content-center">
                     <p class="fw-bold">Follow Us :</p>
                     <i class="bi bi-twitter-x"></i>

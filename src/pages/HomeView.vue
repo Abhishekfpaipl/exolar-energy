@@ -22,13 +22,7 @@
     </div>
     <div class="mt-5 pt-5">
       <AboutSection />
-    </div>
-    <div class="mt-5 pt-5">
-      <TestSection />
-    </div>
-    <div class="mt-5 pt-5">
-      <SolarEmiCalculator />
-    </div>
+    </div> 
     <!-- <div class="my-5">
       <NewGallerySection :images="images" />
     </div> -->
@@ -52,9 +46,7 @@ import FaqSection from "@/components/FaqSection.vue";
 // import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 // import NewGallerySection from '@/components/NewGallerySection.vue'; 
-import BlogSection from '@/components/BlogSection.vue';
-import TestSection from '@/components/TestSection.vue';
-// import SolarEmiCalculator from '@/components/SolarEmiCalculator.vue';
+import BlogSection from '@/components/BlogSection.vue';  
 
 export default {
   name: "HomeView",
@@ -70,9 +62,7 @@ export default {
     GoogleReviewSection,
     // NewGallerySection,
     WhyChooseUs,
-    BlogSection,
-    TestSection,
-    // SolarEmiCalculator,
+    BlogSection, 
   },
   data() {
     return {
