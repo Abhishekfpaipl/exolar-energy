@@ -52,8 +52,9 @@ export default {
                 <div class="tab-pane fade show active">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <div class="col" v-for="(post, index) in filteredPosts.slice(0, 3)" :key="index" v-observe>
-                            <router-link :to="'/customer-detail/' + post.sid" class="text-decoration-none card h-100 border-0 shadow-sm rounded-4"
-                                style="background-color: var(--bg-light)">
+                            <router-link :to="'/customer-detail/' + post.sid"
+                                class="text-decoration-none card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-white"
+                                style="background-color: var(--bg-primary)">
                                 <img v-if="post.image" :src="post.image" class="card-img-top rounded-top-4"
                                     alt="Rooftop solar panel installation in Delhi by Exolar Energy"
                                     style="height: 230px; object-fit: cover;">
@@ -64,13 +65,13 @@ export default {
                                         allowfullscreen></iframe>
                                 </div>
                                 <div class="card-body text-start rounded-4"
-                                    style="background-color:  var(--bg-light); margin-top: -40px;">
+                                    style="background-color:  var(--bg-primary); margin-top: -40px; z-index: 10;">
                                     <h5 class="card-title text-capitalize fw-bold">{{ post.title }}</h5>
                                     <p class="card-text small">{{ post.description }}</p>
                                 </div>
-                                <div class="card-footer" style="background-color: #F3F8F3;">
+                                <div class="card-footer border-white" style="background-color:var(--bg-primary);">
                                     <div
-                                        class="d-flex gap-3 justify-content-between align-items-center text-muted smaller">
+                                        class="d-flex gap-3 justify-content-between align-items-center smaller">
                                         <span>{{ post.date }}</span>
                                         <p class="mb-0" style="color: var(--primary-color);">Read more <i
                                                 class="bi bi-arrow-right visit"></i></p>
@@ -81,11 +82,11 @@ export default {
                     </div>
                     <!-- <div class="btn d-flex justify-content-center my-5 align-items-center"
                         style="background-color: var(--bg-primary);"> -->
-                        <router-link to="/customers" style="background-color: var(--bg-primary);"
-                            class="btn d-flex justify-content-center my-5 align-items-center text-white">
-                            <span>SEE ALL</span>
-                            <i class="bi bi-arrow-right fs-3 visit ms-2"></i>
-                        </router-link>
+                    <router-link to="/customers" style="background-color: var(--bg-primary);"
+                        class="btn d-flex justify-content-center my-5 align-items-center text-white">
+                        <span>SEE ALL</span>
+                        <i class="bi bi-arrow-right fs-3 visit ms-2"></i>
+                    </router-link>
                     <!-- </div> -->
                 </div>
             </div>
@@ -98,83 +99,18 @@ export default {
     name: 'BlogSection',
     data() {
         return {
-            activeTab: 'all',
-            tabs: [
-                { id: 'all', name: 'All Posts' },
-                { id: 'projects', name: 'Projects' },
-                { id: 'testimonial', name: 'Testimonials' },
-                { id: 'why choose us', name: 'Why Choose Us' },
-            ],
-            posts: [
-                {
-                    id: 1,
-                    title: 'system installed 9.8kW',
-                    sid: "crm-119",
-                    date: '01/10/2024',
-                    image: '/img/blogs/blog1.jpg',
-                    description: "Vaibhav Chaudhary from Noida sector 105",
-                    category: 'projects'
-                },
-                {
-                    id: 2,
-                    title: 'system installed 6kW',
-                    sid: "rajeev-kakkar",
-                    date: '24/09/2024',
-                    image: '/img/blogs/blog2.jpg',
-                    description: "Rajeev kakkar from Guru Harikrishna Nagar, Delhi",
-                    category: 'projects'
-                },
-                {
-                    id: 3,
-                    title: 'system installed 5kW',
-                    sid: "debunking-the-fear-of-malicious-complaints-under-posh-act",
-                    date: '21/09/2024',
-                    image: '/img/blogs/blog3.jpg',
-                    description: "Suresh Kumar from Ghaziabad",
-                    category: 'projects'
-                },
-                {
-                    id: 4,
-                    title: 'system installed 30 kW',
-                    sid: "the-legal-intrusion-in-posh",
-                    date: '27/08/2024',
-                    image: '/img/blogs/blog4.jpg',
-                    description: 'Lamba Hyundai Showroom in Wazirpur',
-                    category: 'projects'
-                },
-                {
-                    id: 5,
-                    title: 'Exolar Energy Testimonial Video',
-                    sid: "exolar-energy-testimonial-video",
-                    date: '27/08/2024',
-                    description: 'Lamba Hyundai Showroom in Wazirpur',
-                    category: 'testimonial',
-                    videoId: "ZtCsYVnjmn4",
-                },
-                {
-                    id: 6,
-                    title: 'Unleashing the Power of the Sun: Exolar Energy - Leading the Solar Revolution',
-                    sid: "unleashing-the-power-of-the-sun",
-                    date: '27/08/2024',
-                    description: 'Lamba Hyundai Showroom in Wazirpur',
-                    category: 'why choose us',
-                    videoId: "f-4FWD6wAuk",
-                },
-                {
-                    id: 7,
-                    title: 'Empowering Tomorrow: Exolar Energy - Harness the Power of the Sun!',
-                    sid: "empowering-tomorrow",
-                    date: '27/08/2024',
-                    description: 'Lamba Hyundai Showroom in Wazirpur',
-                    category: 'why choose us',
-                    videoId: "Y-RWg3xUsAU",
-                },
-            ],
+            activeTab: 'projects', 
         }
     },
     computed: {
+        tabs() {
+            return this.$store.getters.getTabs
+        },
+        posts() {
+            return this.$store.getters.getPosts
+        },
         filteredPosts() {
-            if (this.activeTab === 'all') {
+            if (this.activeTab === 'projects') {
                 return this.posts
             }
             return this.posts.filter(post => post.category === this.activeTab)
@@ -189,11 +125,9 @@ export default {
     color: white !important;
 }
 
-.card {
-    transition: transform 0.3s ease;
-}
 
-.card:hover {
-    transform: translateY(-5px);
+img:hover {
+    scale: 1.1;
+    transition: scale 1s ease;
 }
 </style>

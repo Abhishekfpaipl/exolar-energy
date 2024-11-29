@@ -4,70 +4,65 @@
             <h2 class="text-muted mb-1 text-uppercase">Exolar Energy</h2>
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">What People say about us</h2>
-                <router-link to="/reviews" class="text-decoration-none d-flex align-items-center" style="color: var(--bg-primary);">
+                <router-link to="/reviews" class="text-decoration-none d-flex align-items-center"
+                    style="color: var(--bg-primary);">
                     <span>SEE MORE</span>
                     <i class="bi bi-arrow-right fs-3 visit ms-2"></i>
                 </router-link>
             </div>
         </div>
-        <!-- <div class="row">
-            <div v-for="(review, index) in reviews.slice(0, 3)" :key="index" class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-body"> 
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
-                            <h5 class="card-title m-0">{{ review.authorName }}</h5>
-                        </div>
-                        <p class="text-start">{{ review.text }}</p>
-                        <div class="d-flex align-items-center mb-2">
-                            <span class="me-2 text-warning">
-                                <i v-for="n in review.rating" :key="n" class="bi bi-star-fill"></i>
-                                <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
-                            </span>
-                            <span class="text-muted">{{ review.date }}</span>
-                        </div>
-                        <div class="text-end">
-                            <img src="/img/google.png" alt="google" style="width: 35px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div id="googleReview" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item" :class="{ 'active': index === 0 }" v-for="(review, index) in reviews"
-                    :key="index" data-bs-interval="5000" v-observe>
-                    <div class="card pb-5 mx-2" style="background-color: #F3F8F3 !important; min-height: 300px !important;">
-                        <div class="card-body">
-                            <!-- <i class="bi bi-google text-primary"></i> -->
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
-                                <h5 class="card-title m-0">{{ review.authorName }}</h5>
+                <div class="carousel-item" :class="{ 'active': index === 0 }" v-for="(pair, index) in reviewPairs"
+                    :key="index" data-bs-interval="4000" v-observe>
+                    <div class="d-md-flex justify-content-between">
+                        <div class="card pb-5 m-2"
+                            style="background-color: #F3F8F3 !important; min-height: 300px !important;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+                                    <h5 class="card-title m-0">{{ pair[0].authorName }}</h5>
+                                </div>
+                                <p class="text-start text-short8">{{ pair[0].text }}</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="me-2 text-warning">
+                                        <i v-for="n in pair[0].rating" :key="n" class="bi bi-star-fill"></i>
+                                        <i v-for="n in 5 - pair[0].rating" :key="`empty-${n}`" class="bi bi-star"></i>
+                                    </span>
+                                    <span class="text-muted">{{ pair[0].date }}</span>
+                                </div>
                             </div>
-                            <p class="text-start text-short8">{{ review.text }}</p>
-                            <div class="d-flex align-items-center mb-2">
-                                <span class="me-2 text-warning">
-                                    <i v-for="n in review.rating" :key="n" class="bi bi-star-fill"></i>
-                                    <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
-                                </span>
-                                <span class="text-muted">{{ review.date }}</span>
+                        </div>
+                        <div class="card pb-5 m-2"
+                            style="background-color: #F3F8F3 !important; min-height: 300px !important;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+                                    <h5 class="card-title m-0">{{ pair[1].authorName }}</h5>
+                                </div>
+                                <p class="text-start text-short8">{{ pair[1].text }}</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="me-2 text-warning">
+                                        <i v-for="n in pair[1].rating" :key="n" class="bi bi-star-fill"></i>
+                                        <i v-for="n in 5 - pair[1].rating" :key="`empty-${n}`" class="bi bi-star"></i>
+                                    </span>
+                                    <span class="text-muted">{{ pair[1].date }}</span>
+                                </div>
                             </div>
-                            <!-- <div class="text-end">
-                                <img src="/img/google.png" alt="google" style="width: 35px;">
-                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#googleReview" data-bs-slide="prev">
-                <i class="bi bi-chevron-left fs-1 text-success"></i> 
+                <i class="bi bi-chevron-left fs-1 text-success"></i>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#googleReview" data-bs-slide="next">
-                <i class="bi bi-chevron-right fs-1 text-success"></i> 
+                <i class="bi bi-chevron-right fs-1 text-success"></i>
             </button>
         </div>
     </div>
 </template>
+
 
 <script>
 export default {
@@ -245,6 +240,15 @@ export default {
             ]
         };
     },
+    computed: {
+        reviewPairs() {
+            const pairs = [];
+            for (let i = 0; i < this.reviews.length; i += 2) {
+                pairs.push([this.reviews[i], this.reviews[i + 1]]);
+            }
+            return pairs;
+        }
+    }
 };
 </script>
 
@@ -260,7 +264,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-
     .text-short8 {
         display: -webkit-box;
         -webkit-line-clamp: 8;

@@ -15,8 +15,9 @@
                 <div class="tab-pane fade show active">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <div class="col" v-for="(post, index) in filteredPosts" :key="index" v-observe>
-                            <router-link :to="'/customer-detail/' + post.sid" class="text-decoration-none card h-100 border-0 shadow-sm rounded-4"
-                                style="background-color: #F3F8F3;">
+                            <router-link :to="'/customer-detail/' + post.sid"
+                                class="text-decoration-none card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-white"
+                                style="background-color: var(--bg-primary)">
                                 <img v-if="post.image" :src="post.image" class="card-img-top rounded-top-4"
                                     alt="Rooftop solar panel installation in Delhi by Exolar Energy"
                                     style="height: 230px; object-fit: cover;">
@@ -27,13 +28,12 @@
                                         allowfullscreen></iframe>
                                 </div>
                                 <div class="card-body text-start rounded-4"
-                                    style="background-color: #F3F8F3;margin-top: -40px;">
+                                    style="background-color:  var(--bg-primary); margin-top: -40px; z-index: 10;">
                                     <h5 class="card-title text-capitalize fw-bold">{{ post.title }}</h5>
                                     <p class="card-text small">{{ post.description }}</p>
                                 </div>
-                                <div class="card-footer" style="background-color: #F3F8F3;">
-                                    <div
-                                        class="d-flex gap-3 justify-content-between align-items-center text-muted smaller">
+                                <div class="card-footer border-white" style="background-color:var(--bg-primary);">
+                                    <div class="d-flex gap-3 justify-content-between align-items-center smaller">
                                         <span>{{ post.date }}</span>
                                         <p class="mb-0" style="color: var(--primary-color);">Read more <i
                                                 class="bi bi-arrow-right visit"></i></p>
@@ -58,7 +58,7 @@ export default {
     },
     data() {
         return {
-            activeTab: 'all',
+            activeTab: 'projects',
         }
     },
     computed: {
@@ -69,7 +69,7 @@ export default {
             return this.$store.getters.getPosts
         },
         filteredPosts() {
-            if (this.activeTab === 'all') {
+            if (this.activeTab === 'projects') {
                 return this.posts
             }
             return this.posts.filter(post => post.category === this.activeTab)
@@ -84,11 +84,8 @@ export default {
     color: white !important;
 }
 
-.card {
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+img:hover {
+    scale: 1.1;
+    transition: scale 1s ease;
 }
 </style>

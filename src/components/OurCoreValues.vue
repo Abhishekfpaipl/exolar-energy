@@ -52,12 +52,7 @@ export default {
                     icon: 'bi bi-lightning', // Lightning icon for energy efficiency
                     heading: 'High Energy Efficiency',
                     text: 'Our products are engineered for maximum energy efficiency, providing reliable power while reducing overall energy consumption.'
-                },
-                {
-                    icon: 'bi bi-globe', // Globe icon for global reach
-                    heading: 'Global Reach',
-                    text: 'With projects across various regions, we are committed to making solar energy accessible and beneficial worldwide.'
-                },
+                }, 
                 {
                     icon: 'bi bi-lightbulb', // Lightbulb icon for innovation
                     heading: 'Innovation in Technology',

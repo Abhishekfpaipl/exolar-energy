@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid pt-3 border-top border-bottom bg-white">
+    <div class="container-fluid pt-3 border-top border-bottom text-white" style="background-color: var(--bg-primary);">
         <div class="row">
             <div class="col-12 col-md-4 mb-3 d-flex flex-column align-items-center justify-content-center">
                 <router-link to="/" class="text-decoration-none text-dark d-flex flex-column align-items-center">
@@ -26,14 +26,14 @@
                 <div class="mb-3 text-start">
                     <p class="mb-2 fw-bold">Company</p>
                     <div class="d-flex flex-column">
-                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-white"
                             v-for="(link, index) in company" :key="index">{{ link.name }}</router-link>
                     </div>
                 </div>
                 <div class="mb-3 text-start">
                     <p class="mb-2 fw-bold">Resources</p>
                     <div class="d-flex flex-column">
-                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-white"
                             v-for="(link, index) in links" :key="index">{{ link.name }}</router-link>
                     </div>
                 </div>

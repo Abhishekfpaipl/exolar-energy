@@ -10,7 +10,7 @@
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item" v-for="(banner, index) in banners" :key="index" :class="{ 'active': index === 0 }"
-          data-bs-interval="1500">
+          data-bs-interval="3000">
           <img :src="banner.desktop" class="d-md-block d-none h-100"
             alt="Rooftop solar panel installation in Delhi by Exolar Energy" height="auto" width="100%">
           <img :src="banner.mobile" class="d-block d-md-none h-100"

@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="row row-cols-1 g-2 accordion accordion-flush" id="accordionFlushExample">
-                    <div class="col accordion-item border-bottom-0" v-for="(step, index) in steps" :key="index" v-observe>
+                    <div class="col accordion-item   px-0" v-for="(step, index) in steps" :key="index" v-observe >
                         <h3 class="accordion-header">
                             <div class="accordion-button collapsed p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
                                 type="button" data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"
@@ -31,9 +31,9 @@
                                 <p class="mb-0 fs-3 text-start ms-3">{{ step.title }}</p>
                             </div>
                         </h3>
-                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse border mt-2"
+                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample" style="background-color: #F3F8F3;">
-                            <div class="accordion-body fw-bold text-capitalize">{{ step.description }}</div>
+                            <div class="accordion-body">{{ step.description }}</div>
                         </div>
                     </div>
                 </div>

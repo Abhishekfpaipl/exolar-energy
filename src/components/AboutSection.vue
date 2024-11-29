@@ -19,10 +19,10 @@
             <div class="row align-items-stretch mx-0">
                 <div class="col-md-6 px-0 stats-section" v-observe style="background-image: url('/img/worldmap.jpg');">
                     <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-5"
-                        style=" background-color: rgba(0, 0, 0, 0.8)">
+                        style=" background-color: rgba(35,122,191, 0.8)">
                         <div class="row g-4">
                             <div class="col-6" v-for="(counter, index) in counters" :key="index">
-                                <div class="counter-item primary-text">
+                                <div class="counter-item text-white">
                                     <div class="display-3 fw-bold d-flex gap-1 justify-content-center">
                                         <AutoCounter :data="counter.number" /> +
                                     </div>

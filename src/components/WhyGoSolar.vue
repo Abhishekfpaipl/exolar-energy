@@ -1,5 +1,5 @@
 <template>
-    <div class="py-5" style="background-color:#f3f8f3 !important ">
+    <div class="" style="background-color:#f3f8f3 !important ">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4">
@@ -56,7 +56,7 @@ export default {
         // Set interval to cycle through phrases every 2 seconds (or desired duration)
         this.intervalId = setInterval(() => {
             this.currentIndex = (this.currentIndex + 1) % this.phrases.length;
-        }, 1000);
+        }, 2000);
 
         const image = this.$refs.solarPanel;
         const observer = new IntersectionObserver(
