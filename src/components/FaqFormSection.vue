@@ -113,8 +113,9 @@
                                     required>
                                 <p class="text-start">
                                     <label class="form-check-label " for="terms">
-                                        I agree to Exolar Energy
-                                        <a href="#" class="text-decoration-none">Terms of Service & Privacy Policy*</a>
+                                        I agree to Exolar Energy 
+                                        <router-link to="/terms-&-conditions">Terms of Service</router-link>
+                                        <router-link to="/privacy-policy"> & Privacy Policy*</router-link>
                                     </label>
                                 </p>
                                 <div class="invalid-feedback">{{ errors.termsAccepted }}</div>

@@ -1,5 +1,5 @@
 <template>
-  <div  style="padding-top: 60px;">
+  <div style="padding-top: 60px;">
     <SectionTopBanner />
     <div class=" ">
       <div class="">
@@ -39,7 +39,8 @@ export default {
   data() {
     return {
       servicesList: [
-        { id: 1, name: "Solar Power Plant", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+        { id: 1, name: "Existing building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+        { id: 1, name: "New building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
       ],
       categoriesList: [
         { id: 1, img: '/img/categories/Assembly.svg', name: "Assembly" },

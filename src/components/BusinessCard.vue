@@ -57,7 +57,7 @@
                     </router-link>
                 </div>
             </div>
-            <img :src="ass" alt="Rooftop solar panel installation in Delhi by Exolar Energy">
+            <!-- <img :src="ass" alt="Rooftop solar panel installation in Delhi by Exolar Energy"> -->
         </div>
     </div>
 </template>
@@ -67,11 +67,13 @@ export default {
     data() {
         return {
             services: [
-                { id: 1, name: "Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+                { id: 1, name: "Existing building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+                { id: 1, name: "New building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
             ],
             customers: [
                 { id: 1, name: "Residential", color: "#c6def1" },
                 { id: 2, name: "Commercial", color: "#f2c6de" },
+                { id: 2, name: "Industrial", color: "#f3d6ae" },
             ],
             categories: [
                 { id: 1, img: '/img/categories/Assembly.svg', name: "Assembly" },
@@ -87,7 +89,7 @@ export default {
                 { id: 11, img: '/img/categories/Import n Export.svg', name: "Import n Export" },
                 { id: 12, img: '/img/categories/Manufacturing.svg', name: "Manufacturing" },
                 { id: 13, img: '/img/categories/Pharmaceuticals.svg', name: "Pharmaceuticals" },
-                { id: 14, img: '/img/categories/Restaurants.svg', name: "Restaurants" },
+                { id: 14, img: '/img/categories/Restraunts.svg', name: "Restaurants" },
                 { id: 15, img: '/img/categories/Retail Shop.svg', name: "Retail Shop" },
                 { id: 16, img: '/img/categories/Retail.svg', name: "Retail" },
                 { id: 17, img: '/img/categories/Salon.svg', name: "Salon" },

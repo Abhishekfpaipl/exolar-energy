@@ -1,39 +1,39 @@
 <template>
-    <div class="">
+    <div class="" style="background-color:var(--bg-background);">
         <SectionTopBanner mobileImage="/img/solarMobile.jpg" desktopImg="/img/solarDesktop.jpg" />
         <div class="container my-5">
             <form v-if="capacityConsumption === 0" @submit.prevent="" class="row">
                 <h1 class="text-center mb-4 text-capitalize">Your Details</h1>
-                <div class="col-6">
-                    <div class="form-floating mb-3">
+                <div class="col-12">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="text" class="form-control" id="Your Name" placeholder="Your Name" v-model="name"
                             required>
                         <label for="Your Name" class="fw-bold mb-2">Your Name</label>
                     </div>
                 </div>
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="Your Email" placeholder="Your Email"
                             v-model="email" required>
                         <label for="Your Email" class="fw-bold mb-2">Your Email</label>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-6">
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="number" class="form-control" id="Your Phone No" placeholder="Your Phone No."
                             v-model="phone" required>
                         <label for="Your Phone No" class="fw-bold mb-2">Your Phone No.</label>
                     </div>
                 </div>
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <div class="form-floating mb-3">
                         <input type="number" class="form-control" id="Your Pin Code" placeholder="Your Pin Code"
                             v-model="pincode" required>
                         <label for="Your Phone No" class="fw-bold mb-2">Your Pincode</label>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-6">
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="text" class="form-control" id="Your Address" placeholder="Your City" v-model="city"
                             required>
                         <label for="Your City" class="fw-bold mb-2">Your City</label>
@@ -43,8 +43,8 @@
             <form v-if="capacityConsumption === 0" @submit.prevent="calculate" class="row mt-5">
                 <h1 class="text-center mb-4 text-capitalize">Inputs Chosen for Your Solar Estimate</h1>
                 <!-- Electricity Charges -->
-                <div class="col-6 mb-3">
-                    <div class="form-floating">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="number" class="form-control" id="electricityRate"
                             placeholder="Electricity Charges in rupees per unit" v-model="electricityRate" required />
                         <label for="electricityRate" class="fw-bold mb-2">Electricity Charges</label>
@@ -52,8 +52,8 @@
                 </div>
 
                 <!-- Monthly Bill -->
-                <div class="col-6 mb-3">
-                    <div class="form-floating">
+                <div class="col-6  col-md-3 mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="number" class="form-control" id="monthlyBill" placeholder="Monthly Bill in Rupees"
                             v-model="monthlyBill" required />
                         <label for="monthlyBill" class="fw-bold mb-2">Monthly Bill</label>
@@ -61,8 +61,8 @@
                 </div>
 
                 <!-- Sanctioned Load -->
-                <div class="col-6 mb-3">
-                    <div class="form-floating">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
 
                         <input type="number" class="form-control" id="sanctionedLoad"
                             placeholder="Sanctioned Load in kilowatt peak" v-model="userSanctioned" required />
@@ -71,8 +71,8 @@
                 </div>
 
                 <!-- Shadow Free Area -->
-                <div class="col-6 mb-3">
-                    <div class="form-floating">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="number" class="form-control" id="shadowFree"
                             placeholder="Shadow Free Area in square feet" v-model="shadowFree" required />
                         <label for="shadowFree" class="fw-bold mb-2">Shadow Free Area</label>
@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- Building Category -->
-                <div class="my-5 px-3">
+                <!-- <div class="my-5 px-3">
                     <h1 class="text-capitalize text-center mb-4"> Select your building Category</h1>
                     <div class="d-grid gap-3 d-md-flex justify-content-md-center">
                         <div v-for="category in ['Residential', 'Commercial', 'Industrial']" :key="category"
@@ -92,10 +92,10 @@
                             {{ category.toUpperCase() }}
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Building Type -->
-                <div class="mt-3 mb-5 px-3">
+                <!-- <div class="mt-3 mb-5 px-3">
                     <h1 class="text-capitalize text-center mb-4">Select your building Type</h1>
                     <div class="d-grid gap-3 d-md-flex justify-content-md-center">
                         <div v-for="building in ['Existing Building', 'New Building']" :key="building"
@@ -107,18 +107,18 @@
                             {{ building.toUpperCase() }}
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <h1 class="text-center mb-4 text-capitalize">EMI Details</h1>
+                <h1 class="text-center mb-4 text-capitalize my-5">EMI Details</h1>
                 <div class="col-6 mb-3">
-                    <div class="form-floating">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="number" class="form-control" id="tenure" placeholder="Loan Tenure In Months"
                             v-model="loanTenure" required />
                         <label for="tenure" class="fw-bold mb-2">Loan Tenure In Months</label>
                     </div>
                 </div>
                 <div class="col-6 mb-3">
-                    <div class="form-floating">
+                    <div class="form-floating mb-3 rounded" style="border: 1px solid var(--bg-secondary)">
                         <input type="text" class="form-control" id="InterestRate" placeholder="Interest Rate"
                             v-model="interestRate" pattern="^\d+(\.\d{1,2})?$"
                             title="Enter a valid number with up to 2 decimal places" required />
@@ -137,11 +137,11 @@
             </div>
             <!-- Output Display -->
             <div v-if="capacityConsumption !== 0" class="mt-4">
-                <div class="d-flex justify-content-center align-items-center">
+                <!-- <div class="d-flex justify-content-center align-items-center">
                     <img src="/img/congrats.png" class=" d-md-block d-none" style="width: 500px" alt="">
                     <img src="/img/congrats.png" class=" d-md-none d-flex justify-content-center align-items-center"
                         style="width: 100%;" alt="">
-                </div>
+                </div> -->
                 <div class="my-5">
                     <div class="text-center mb-5">
                         <p class="text-muted mb-1 text-uppercase">Top Benefit</p>
@@ -151,8 +151,8 @@
                     </div>
                     <div class="row g-2">
                         <div class="col-12 mb-5">
-                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                style="background-color: #f3f8f3 !important;">
+                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100 text-white"
+                                style="background-color: var(--bg-secondary) !important;">
                                 <p class="text-center mb-1">Recovery of the cost in</p>
                                 <p class="text-center mb-1 fs-1 ">{{ paybackYear }} </p>
                                 <p class="text-center small">year</p>
@@ -161,16 +161,16 @@
                     </div>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                style="background-color: #f3f8f3 !important;">
+                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100 text-white"
+                                style="background-color: var(--bg-secondary) !important;">
                                 <p class="text-center mb-1">CO2 Offset</p>
                                 <p class="text-center mb-1 fs-1 ">{{ Math.round(coOffset) }} </p>
                                 <p class="text-center small"> kg/per year</p>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100"
-                                style="background-color: #f3f8f3 !important;">
+                            <div class="card d-flex flex-column align-items-center text-center p-3 h-100 text-white"
+                                style="background-color: var(--bg-secondary) !important;">
                                 <p class="text-center mb-1">Tree saved</p>
                                 <p class="text-center mb-1 fs-1 ">{{ Math.round(treeSaved) }}</p>
                                 <p class="text-center small">per year</p>
@@ -225,7 +225,7 @@
                     <div class="col-12 my-5">
                         <div class="row g-4">
                             <div class="col-6 col-md-3">
-                                <div class="card h-100" style="background-color: #FDFD96;">
+                                <div class="card h-100" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                     <div class="card-body">
                                         <h5 class="card-title">Possible Plant Capacity</h5>
                                         <p class="card-text">{{ possibleCapacity }} kWp</p>
@@ -233,7 +233,7 @@
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
-                                <div class="card h-100" style="background-color: #FFB3A7;">
+                                <div class="card h-100"  style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                     <div class="card-body">
                                         <h5 class="card-title">Solar Panels (Mono PERC)</h5>
                                         <p class="card-text">{{ monoperc }} Panels</p>
@@ -241,7 +241,7 @@
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
-                                <div class="card h-100" style="background-color: #FFDAB9;">
+                                <div class="card h-100"  style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                     <div class="card-body">
                                         <h5 class="card-title">Solar Panels (TOPCon)</h5>
                                         <p class="card-text"> {{ topcon }} Panels</p>
@@ -249,7 +249,7 @@
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
-                                <div class="card h-100" style="background-color: #B39EB5;">
+                                <div class="card h-100"  style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                     <div class="card-body">
                                         <h5 class="card-title">Cost of Project</h5>
                                         <p class="card-text">₹ {{ costProject }}</p>
@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                             <div class="col-6 col-md-3">
-                                <div class="card h-100" style="background-color: #E3E4FA;">
+                                <div class="card h-100"  style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                     <div class="card-body">
                                         <h5 class="card-title">Yearly Units Generated</h5>
                                         <p class="card-text"> {{ yearlyUnitsGenerated }} kWh</p>
@@ -346,7 +346,7 @@
                         <div class="col-12 mb-4">
                             <div class="row g-4">
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #B39EB5;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Cost of Project</h5>
                                             <p class="card-text">{{ costProject }}</p>
@@ -354,7 +354,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #FDFD96;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Down Payment</h5>
                                             <p class="card-text">{{ downPayment }}</p>
@@ -362,7 +362,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #FFB3A7;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Loan Amount</h5>
                                             <p class="card-text">{{ localLoanAmount }}</p>
@@ -370,7 +370,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #FFDAB9;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Tenure</h5>
                                             <p class="card-text"> {{ loanTenure }} months</p>
@@ -378,7 +378,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #E3E4FA;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Interest</h5>
                                             <p class="card-text"> {{ interestRate }} %</p>
@@ -386,7 +386,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #AEC6CF;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Monthly EMI</h5>
                                             <p class="card-text">{{ monthlyEmi.toFixed(2) }}</p>
@@ -394,7 +394,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #FFD1DC;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Total Interest</h5>
                                             <p class="card-text">{{ totalInterest.toFixed(2) }}</p>
@@ -402,7 +402,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="card" style="background-color: #77DD77;">
+                                    <div class="card" style="background-color: var(--bg-light);color:var(--bg-primary);border-color: var(--bg-primary)">
                                         <div class="card-body">
                                             <h5 class="card-title">Total Payment</h5>
                                             <p class="card-text">{{ totalPayment.toFixed(2) }}</p>
@@ -750,30 +750,69 @@ export default {
         },
         async generatePdf() {
             const doc = new jsPDF("p", "mm", "a4");
+            const pageWidth = doc.internal.pageSize.width;
+            const pageHeight = doc.internal.pageSize.height;
 
-            // Company Letterhead Top Section
-            // Add Logo
-            const imgData = "/img/logo.png"; // Replace with Base64 of your logo
-            doc.addImage(imgData, "PNG", 10, 10, 30, 15); // Adjust the position and size as needed
+            // Define header and footer content
+            const companyLogo = "/img/logo.png"; // Replace with actual logo path
+            const companyPhone = "+911146568831";
+            const companyEmail = "info@exolarenergy.com";
+            const companyAddress = "405, Pearls Best Heights-1, Netaji Subhash Place, Pitampura, Delhi, 110034";
+            const companyWebsite = "www.exolarenergy.com";
 
-            // Add Company Name
-            doc.setFontSize(18);
-            doc.text("Exolar Energy", 50, 20);
+            // Custom function to add header and footer
+            const addHeaderAndFooter = () => {
+                // Header
+                doc.setFontSize(10);
 
-            // Add a Divider Line
-            doc.setDrawColor(0);
-            doc.setLineWidth(0.5);
-            doc.line(10, 30, 200, 30); // Horizontal line
+                // Logo (left side)
+                if (companyLogo) {
+                    try {
+                        doc.addImage(companyLogo, "PNG", 10, 10, 40, 13);
+                    } catch (error) {
+                        console.error("Error adding logo:", error);
+                    }
+                }
 
-            // Main Content Starts Here
-            doc.setFontSize(18);
-            doc.text("Solar Savings Report", 105, 40, { align: "center" });
+                // Contact Info (right side)
+                doc.text(`Phone: ${companyPhone}`, pageWidth - 70, 15);
+                doc.text(`Email: ${companyEmail}`, pageWidth - 70, 20);
+
+                // Footer
+                doc.setFontSize(8);
+                doc.text(`Address: ${companyAddress}`, 10, pageHeight - 15);
+                doc.text(`Website: ${companyWebsite}`, pageWidth - 70, pageHeight - 15);
+
+                // Page number
+                doc.text(`Page ${doc.internal.getNumberOfPages()}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+            };
+
+            // Function to add descriptive text
+            const addDescriptiveText = (text, startY) => {
+                doc.setFontSize(11);
+                const splitText = doc.splitTextToSize(text, pageWidth - 20);
+                doc.text(splitText, 10, startY);
+                return startY + (splitText.length * 7); // Adjust line height as needed
+            };
+
+            // Configure autoTable options
+            const autoTableOptions = {
+                didDrawPage: function () {
+                    addHeaderAndFooter();
+                },
+                margin: { top: 40, bottom: 30 },
+            };
+
+            // Main Content
+            doc.setFontSize(20);
+            doc.text("Exolar Solar Savings Calculator", 105, 40, { align: "center" });
 
             // Benefits Table
-            doc.setFontSize(14);
+            doc.setFontSize(16);
             doc.text("Benefits", 10, 50);
             autoTable(doc, {
-                startY: 55,
+                ...autoTableOptions,
+                startY: 60,
                 head: [["Benefit", "Value"]],
                 body: [
                     ["Payback Year", `${this.paybackYear} years`],
@@ -782,10 +821,16 @@ export default {
                 ],
             });
 
-            // Section 3: Solar Calculation Data
-            doc.text("Solar Calculation Data", 10, doc.lastAutoTable.finalY + 10);
+            // Descriptive text after Benefits
+            const benefitsDescText = "Switching to solar energy helps you save money and protect the environment. It's a smart and eco-friendly choice that benefits both you and the planet.";
+            let nextSectionY = addDescriptiveText(benefitsDescText, doc.lastAutoTable.finalY + 10);
+
+            // Solar Calculation Data
+            doc.setFontSize(16);
+            doc.text("Solar Calculation Data", 10, nextSectionY + 10);
             autoTable(doc, {
-                startY: doc.lastAutoTable.finalY + 15,
+                ...autoTableOptions,
+                startY: nextSectionY + 15,
                 head: [["Parameter", "Value"]],
                 body: [
                     ["Monthly Bill", this.monthlyBill],
@@ -798,10 +843,16 @@ export default {
                 ],
             });
 
-            // Section 4: Possible Plant Details
-            doc.text("Possible Plant Details", 10, doc.lastAutoTable.finalY + 10);
+            // Descriptive text after Solar Calculation Data
+            const calculationDescText = "Solar power is efficient and uses your available roof space wisely. We design a system to meet your energy needs while saving costs.";
+            nextSectionY = addDescriptiveText(calculationDescText, doc.lastAutoTable.finalY + 10);
+
+            // Possible Plant Details
+            doc.setFontSize(16);
+            doc.text("Possible Plant Details", 10, nextSectionY + 10);
             autoTable(doc, {
-                startY: doc.lastAutoTable.finalY + 15,
+                ...autoTableOptions,
+                startY: nextSectionY + 15,
                 head: [["Parameter", "Value"]],
                 body: [
                     ["Possible Plant Capacity", `${this.possibleCapacity} kWp`],
@@ -812,10 +863,16 @@ export default {
                 ],
             });
 
-            // Section 5: Loan Details
-            doc.text("Loan Details", 10, doc.lastAutoTable.finalY + 10);
+            // Descriptive text after Possible Plant Details
+            const plantDetailsDescText = "Our solar systems use advanced panels for better performance and durability, giving you reliable power for years to come.";
+            nextSectionY = addDescriptiveText(plantDetailsDescText, doc.lastAutoTable.finalY + 10);
+
+            // Loan Details
+            doc.setFontSize(16);
+            doc.text("Loan Details", 10, nextSectionY + 10);
             autoTable(doc, {
-                startY: doc.lastAutoTable.finalY + 15,
+                ...autoTableOptions,
+                startY: nextSectionY + 15,
                 head: [["Parameter", "Value"]],
                 body: [
                     ["Cost of Project", `Rs. ${this.costProject}`],
@@ -829,18 +886,30 @@ export default {
                 ],
             });
 
-            // Section 6: Yearly Savings (30 Years)
-            doc.text("Yearly Savings (30 Years)", 10, doc.lastAutoTable.finalY + 10);
+            // Descriptive text after Loan Details
+            const loanDescText = "We offer easy loan options with low monthly payments, so you can go solar without financial worries.";
+            nextSectionY = addDescriptiveText(loanDescText, doc.lastAutoTable.finalY + 10);
+
+            // Yearly Savings (30 Years)
+            doc.setFontSize(16);
+            doc.text("Yearly Savings (30 Years)", 10, nextSectionY + 10);
             autoTable(doc, {
-                startY: doc.lastAutoTable.finalY + 15,
+                ...autoTableOptions,
+                startY: nextSectionY + 15,
                 head: [["Year", "Savings (Rs.)"]],
                 body: this.yearlySavings.map((entry) => [entry.year, Math.round(entry.savings)]),
             });
 
-            // Section 7: Cumulative Yearly Savings (30 Years)
-            doc.text("Cumulative Yearly Savings (30 Years)", 10, doc.lastAutoTable.finalY + 10);
+            // Descriptive text after Yearly Savings
+            const yearlySavingsDescText = "Solar panels help reduce your electricity bill every year, giving you long-term financial benefits.";
+            nextSectionY = addDescriptiveText(yearlySavingsDescText, doc.lastAutoTable.finalY + 10);
+
+            // Cumulative Yearly Savings (30 Years)
+            doc.setFontSize(16);
+            doc.text("Cumulative Yearly Savings (30 Years)", 10, nextSectionY + 10);
             autoTable(doc, {
-                startY: doc.lastAutoTable.finalY + 15,
+                ...autoTableOptions,
+                startY: nextSectionY + 15,
                 head: [["Year", "Cumulative Savings (Rs.)"]],
                 body: this.cumulativeYearlySavings.map((entry) => [
                     entry.year,
@@ -848,16 +917,41 @@ export default {
                 ]),
             });
 
-            // Company Footer Section
-            // Add Footer Divider Line
-            doc.line(10, 280, 200, 280);
+            // Descriptive text after Cumulative Yearly Savings
+            const cumulativeSavingsDescText = "Over time, your savings add up, making solar energy a smart investment for your future.";
+            addDescriptiveText(cumulativeSavingsDescText, doc.lastAutoTable.finalY + 10);
 
-            // Add Contact Details
-            doc.setFontSize(10);
-            doc.text("Contact Us:", 10, 285);
-            doc.text("Phone: +123 456 7890", 10, 290);
-            doc.text("Email: info@exolarenergy.com", 10, 295);
-            doc.text("Website: https://www.exolarenergy.com/", 10, 300);
+            // Final Page: Why Choose Exolar Energy?
+            // doc.addPage();
+            // addHeaderAndFooter();
+
+            // doc.setFontSize(16);
+            // doc.text("Why Choose Exolar Energy?", 10, 40);
+
+            // doc.setFontSize(11);
+            // const whyChooseText = "At Exolar Energy, we are committed to making solar power accessible, affordable, and efficient for everyone. With years of experience, we specialize in delivering customized solar solutions tailored to your specific needs.";
+            // doc.text(doc.splitTextToSize(whyChooseText, pageWidth - 20), 10, 50);
+
+            // doc.setFontSize(12);
+            // doc.text("Here's why you should choose us:", 10, 70);
+
+            // doc.setFontSize(11);
+            // const reasons = [
+            //     "Expertise You Can Trust: Our team of skilled professionals ensures top-notch service and guidance every step of the way.",
+            //     "Cutting-Edge Technology: We use the latest solar technology for better efficiency and durability.",
+            //     "Affordable Solutions: Our flexible financing options and competitive pricing make solar energy affordable for all.",
+            //     "Customer-Centric Approach: We prioritize your satisfaction and are always available to assist with any queries or concerns.",
+            //     "Sustainability Commitment: Join us in our mission to create a cleaner, greener future for generations to come."
+            // ];
+
+            // let yPosition = 80;
+            // reasons.forEach((reason, index) => {
+            //     doc.text(`${index + 1}. ${reason}`, 10, yPosition);
+            //     yPosition += 15;
+            // });
+
+            // doc.setFontSize(14);
+            // doc.text("Let Exolar Energy help you harness the power of the sun!", 10, yPosition + 20, { maxWidth: pageWidth - 20 });
 
             // Save the PDF
             doc.save("solar_savings_report.pdf");

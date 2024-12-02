@@ -1,5 +1,6 @@
 <template>
-    <div class="container-fluid pt-3 border-top border-bottom text-white" style="background-color: var(--bg-secondary);">
+    <div class="container-fluid pt-3 border-top border-bottom text-white"
+        style="background-color: var(--bg-secondary);">
         <div class="row">
             <div class="col-12 col-md-4 mb-3 d-flex flex-column align-items-center justify-content-center">
                 <router-link to="/" class="text-decoration-none text-dark d-flex flex-column align-items-center">
@@ -72,13 +73,18 @@ export default {
                 },
                 {
                     id: 3,
-                    name: 'Refund Policy',
-                    link: '/refund-policy'
+                    name: 'Business',
+                    link: '/business'
                 },
                 {
                     id: 3,
-                    name: 'Business',
-                    link: '/business'
+                    name: 'Customers',
+                    link: '/customers'
+                },
+                {
+                    id: 3,
+                    name: 'Reviews',
+                    link: '/reviews'
                 },
                 // {
                 //     id: 23,
@@ -112,6 +118,11 @@ export default {
                     id: 12,
                     name: 'Terms & Conditions',
                     link: '/terms-&-conditions'
+                },
+                {
+                    id: 3,
+                    name: 'Refund Policy',
+                    link: '/refund-policy'
                 },
                 // {
                 //     id: 23,

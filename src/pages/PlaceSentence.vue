@@ -146,7 +146,8 @@ export default {
                 { id: 107, img: '', name: "Drug De Addiction Centres" }
             ],
             servicesList: [
-                { id: 1, name: "Solar Power Plant", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+            { id: 1, name: "Existing building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+            { id: 1, name: "New building Solar Panel", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
             ],
             title: this.$route.params.id,
             sentences: [],
