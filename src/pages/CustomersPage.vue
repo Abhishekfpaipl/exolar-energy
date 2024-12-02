@@ -1,6 +1,6 @@
 <template>
     <div class="" style="padding-top: 60px;">
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/customerMobile.jpg" desktopImg="/img/customerDesktop.jpg"/>
         <div class="container py-5 mb-5">
             <ul class="nav nav-pills mb-4 justify-content-start justify-content-md-center overflow-x-scroll flex-nowrap"
                 id="scroll" style="white-space: nowrap;" role="tablist">

@@ -1,7 +1,7 @@
 <template>
-    <div class="" style="background-color:#f3f8f3 !important ">
+    <div class="" style="background-color:var(--bg-background) ">
         <div class="container">
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center pt-5">
                 <div class="col-md-4">
                     <img ref="solarPanel" src="/img/banner/2.jpg"
                         alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0" width="100%" height="auto">

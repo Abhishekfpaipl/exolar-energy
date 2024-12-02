@@ -1,9 +1,9 @@
 <template>
-    <div class="container-fluid pt-3 border-top border-bottom text-white" style="background-color: var(--bg-primary);">
+    <div class="container-fluid pt-3 border-top border-bottom text-white" style="background-color: var(--bg-secondary);">
         <div class="row">
             <div class="col-12 col-md-4 mb-3 d-flex flex-column align-items-center justify-content-center">
                 <router-link to="/" class="text-decoration-none text-dark d-flex flex-column align-items-center">
-                    <img :src="img" style="width: 200px;object-fit: contain; ">
+                    <img :src="img" style="width: 300px;object-fit: contain; ">
                 </router-link>
 
             </div>
@@ -58,7 +58,7 @@ export default {
     },
     data() {
         return {
-            img: '/img/logo.png',
+            img: '/img/footerLogo.png',
             company: [
                 {
                     id: 4,

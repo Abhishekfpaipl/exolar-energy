@@ -14,8 +14,8 @@
         <div id="googleReview" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item" :class="{ 'active': index === 0 }" v-for="(pair, index) in reviewPairs"
-                    :key="index" data-bs-interval="4000" v-observe>
-                    <div class="d-md-flex justify-content-between">
+                    :key="index" data-bs-interval="3000" v-observe>
+                    <div class="d-md-flex d-none justify-content-between">
                         <div class="card pb-5 m-2"
                             style="background-color: #F3F8F3 !important; min-height: 300px !important;">
                             <div class="card-body">
@@ -48,6 +48,23 @@
                                     </span>
                                     <span class="text-muted">{{ pair[1].date }}</span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-none card pb-5 m-2"
+                        style="background-color: #F3F8F3 !important; min-height: 300px !important;">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="card-title m-0">{{ pair[0].authorName }}</h5>
+                            </div>
+                            <p class="text-start text-short8">{{ pair[0].text }}</p>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="me-2 text-warning">
+                                    <i v-for="n in pair[0].rating" :key="n" class="bi bi-star-fill"></i>
+                                    <i v-for="n in 5 - pair[0].rating" :key="`empty-${n}`" class="bi bi-star"></i>
+                                </span>
+                                <span class="text-muted">{{ pair[0].date }}</span>
                             </div>
                         </div>
                     </div>

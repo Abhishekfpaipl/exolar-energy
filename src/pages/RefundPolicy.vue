@@ -1,6 +1,6 @@
 <template>
     <div style="padding-top: 60px;">
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/worldmap.jpg" desktopImg="/img/worldmap.jpg"/>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -65,8 +65,8 @@
                                     You are responsible for the cost and risk of returning goods to us. Please send the
                                     goods to the following address:
                                 </p>
-                                <p><strong>Address:</strong> 310, Pearl Best Height-1,
-                                    Netaji Subhash Place, Delhi-34</p>
+                                <p><strong>Address:</strong> 405, Pearl Best Height-1,
+                                    Netaji Subhash Place, Delhi-110034</p>
                                 <p>
                                     We recommend using an insured and trackable mail service. We cannot issue a refund
                                     without actual receipt of the goods or proof of return delivery.

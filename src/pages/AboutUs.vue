@@ -1,6 +1,6 @@
 <template>
     <div container style="padding-top: 60px;">
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/aboutMobile.jpg" desktopImg="/img/aboutDesktop.jpg"/>
         <div class="my-5" v-observe>
             <SuccessStory :tests="tests" />
         </div> 

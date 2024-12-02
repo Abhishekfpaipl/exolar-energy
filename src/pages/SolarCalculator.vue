@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/solarMobile.jpg" desktopImg="/img/solarDesktop.jpg" />
         <div class="container my-5">
             <form v-if="capacityConsumption === 0" @submit.prevent="" class="row">
                 <h1 class="text-center mb-4 text-capitalize">Your Details</h1>
@@ -119,10 +119,12 @@
                 </div>
                 <div class="col-6 mb-3">
                     <div class="form-floating">
-                        <input type="number" class="form-control" id="InterestRate" placeholder="Interest Rate"
-                            v-model="interestRate" required />
+                        <input type="text" class="form-control" id="InterestRate" placeholder="Interest Rate"
+                            v-model="interestRate" pattern="^\d+(\.\d{1,2})?$"
+                            title="Enter a valid number with up to 2 decimal places" required />
                         <label for="InterestRate" class="fw-bold mb-2">Interest Rate</label>
                     </div>
+
                 </div>
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-success my-3">Calculate</button>
@@ -410,7 +412,7 @@
                             </div>
                         </div>
 
-                            <!-- <div class="col-md-6 mt-5">
+                        <!-- <div class="col-md-6 mt-5">
                                 <h3>Loan Installment (Yearly)</h3>
                                 <table class="table table-striped" id="amortizationTable">
                                     <thead class="table-dark">

@@ -1,7 +1,7 @@
 <template>
     <div style="padding-top: 60px;">
 
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/contactMobile.jpg" desktopImg="/img/contactDesktop.jpg" />
         <div class="container " v-observe>
             <div class="row p-3">
                 <div class="col-12 pt-4 text-center">

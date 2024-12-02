@@ -74,7 +74,7 @@ export default {
 </style> -->
 <template>
     <div style="padding-top: 60px;">
-        <SectionTopBanner />
+        <SectionTopBanner mobileImage="/img/worldmap.jpg" desktopImg="/img/worldmap.jpg"/>
         <div class="container mt-5">
 
             <div class="text-start p-md-5 p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"

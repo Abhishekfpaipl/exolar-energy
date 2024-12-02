@@ -1,6 +1,6 @@
 <template>
-    <div class="" style="padding-top: 60px; background-color: var(--bg-light);">
-        <div class="container p-2 mb-5" >
+    <div class="" style="padding-top: 60px; background-color: var(--bg-background);">
+        <div class="container p-2 mb-5 pb-5">
             <div v-if="post.images" id="customerDetailImages" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item" v-for="(banner, index) in post.images" :key="index"
@@ -29,16 +29,18 @@
                     allowfullscreen></iframe>
             </div>
             <div class="text-start my-5">
-                <h2 class="text-muted mb-1 text-uppercase">Customer</h2>
-                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">{{post.title}}</h2>
+                <!-- <h2 class="text-muted mb-1 text-uppercase">Customer</h2> -->
+                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">{{ post.title }}</h2>
             </div>
-            <div class="text-start mt-5"> 
+            <div class="text-start mt-5">
                 <p class="card-text fs-5 mt-3">{{ post.description }}</p>
             </div>
             <p class="text-start mt-5">{{ post.date }}</p>
 
         </div>
-        <BlogSection />
+        <div class="" style="border-top:2px solid var(--bg-third)">
+            <BlogSection />
+        </div>
     </div>
 </template>
 
