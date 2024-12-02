@@ -12,7 +12,7 @@
                     </div>
                     <div class="content">
                         <h1 class="mt-4 pt-2 fs-3">{{ title }}</h1>
-                        <p v-if="post" class="text-ellipsis2">{{ post }}</p>
+                        <!-- <p v-if="post" class="text-ellipsis2">{{ post }}</p> -->
                     </div>
                 </div>
             </div>

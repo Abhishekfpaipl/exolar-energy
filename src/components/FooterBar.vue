@@ -98,11 +98,11 @@ export default {
 
             ],
             links: [
-                {
-                    id: 13,
-                    name: 'Gallery',
-                    link: '/gallery'
-                },
+                // {
+                //     id: 13,
+                //     name: 'Gallery',
+                //     link: '/gallery'
+                // },
                 {
                     id: 1,
                     name: 'Privacy Policy',

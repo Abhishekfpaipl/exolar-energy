@@ -751,15 +751,29 @@ export default {
         async generatePdf() {
             const doc = new jsPDF("p", "mm", "a4");
 
-            // Section 1: Title of the PDF
-            doc.setFontSize(18);
-            doc.text("Solar Savings Report", 105, 15, { align: "center" });
+            // Company Letterhead Top Section
+            // Add Logo
+            const imgData = "/img/logo.png"; // Replace with Base64 of your logo
+            doc.addImage(imgData, "PNG", 10, 10, 30, 15); // Adjust the position and size as needed
 
-            // Section 2: Benefits Table (Now Appears First)
+            // Add Company Name
+            doc.setFontSize(18);
+            doc.text("Exolar Energy", 50, 20);
+
+            // Add a Divider Line
+            doc.setDrawColor(0);
+            doc.setLineWidth(0.5);
+            doc.line(10, 30, 200, 30); // Horizontal line
+
+            // Main Content Starts Here
+            doc.setFontSize(18);
+            doc.text("Solar Savings Report", 105, 40, { align: "center" });
+
+            // Benefits Table
             doc.setFontSize(14);
-            doc.text("Benefits", 10, 25);
+            doc.text("Benefits", 10, 50);
             autoTable(doc, {
-                startY: 30,
+                startY: 55,
                 head: [["Benefit", "Value"]],
                 body: [
                     ["Payback Year", `${this.paybackYear} years`],
@@ -833,6 +847,17 @@ export default {
                     entry.cumulativeSavings,
                 ]),
             });
+
+            // Company Footer Section
+            // Add Footer Divider Line
+            doc.line(10, 280, 200, 280);
+
+            // Add Contact Details
+            doc.setFontSize(10);
+            doc.text("Contact Us:", 10, 285);
+            doc.text("Phone: +123 456 7890", 10, 290);
+            doc.text("Email: info@exolarenergy.com", 10, 295);
+            doc.text("Website: https://www.exolarenergy.com/", 10, 300);
 
             // Save the PDF
             doc.save("solar_savings_report.pdf");

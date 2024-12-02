@@ -7,11 +7,11 @@
         <div class="row">
             <div class="col-md-6">
                 <img src="/img/stepsImage.jpeg" alt="Rooftop solar panel installation in Delhi by Exolar Energy"
-                    class="w-100 sticky-image" >
+                    class="w-100 sticky-image">
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="row row-cols-1 g-2 accordion accordion-flush" id="accordionFlushExample">
-                    <div class="col accordion-item   px-0" v-for="(step, index) in steps" :key="index" v-observe >
+                    <div class="col accordion-item   px-0" v-for="(step, index) in steps" :key="index" v-observe>
                         <h3 class="accordion-header">
                             <div class="accordion-button collapsed p-3 h-100 w-100 d-flex align-items-center justify-content-start gap-2"
                                 type="button" data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"
@@ -31,8 +31,10 @@
                                 <p class="mb-0 fs-3 text-start ms-3">{{ step.title }}</p>
                             </div>
                         </h3>
-                        <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample" style="background-color: #F3F8F3;">
+                        <div :id="'flush-collapseOne' + index"
+                            class="accordion-collapse collapse border-end border-start border-bottom"
+                            data-bs-parent="#accordionFlushExample"
+                            style="background-color: var(--bg-background);border-color:var(--bg-third) !important">
                             <div class="accordion-body">{{ step.description }}</div>
                         </div>
                     </div>
@@ -49,55 +51,56 @@ export default {
         return {
             steps: [
                 {
-                    title: "Consultancy",
+                    title: "Understanding Customer Needs",
                     icon: "bi-sun",
-                    description: "Providing expert advice and strategic planning to guide your project from start to finish."
+                    description: "Collect electricity bills, location details, and rooftop photos to analyze consumption and site conditions."
                 },
                 {
-                    title: "End to End Survey",
+                    title: "On-Site Survey",
                     icon: "bi-geo",
-                    description: "Conducting comprehensive surveys to assess site conditions and gather necessary data for design and implementation."
+                    description: "Engineers assess roof space, shadowing, structural strength, and cable routes for system feasibility."
                 },
                 {
-                    title: "Detailed Engineering Report",
-                    icon: "bi-file-earmark-text",
-                    description: "Creating a detailed report that outlines the technical specifications, design plans, and necessary steps for successful execution."
+                    title: "Design Finalization and Proposal",
+                    icon: "bi-diagram-3",
+                    description: "Prepare designs and proposals following field data, guidelines, and client preferences."
+                },
+                {
+                    title: "Approval of the Proposal",
+                    icon: "bi-file-earmark-check",
+                    description: "Client reviews and approves the proposal, advancing the project with payment confirmation."
                 },
                 {
                     title: "Procurement & Liaisoning",
+                    icon: "bi-file-earmark-text",
+                    description: "Materials are procured, and approvals from DISCOMs and authorities are managed."
+                },
+                {
+                    title: "Installation and Commissioning",
                     icon: "bi-shop-window",
-                    description: "Managing the procurement process for required materials and liaising with suppliers and vendors to ensure timely delivery."
+                    description: "Solar panels, inverters, and cables are installed, followed by system testing and commissioning."
                 },
                 {
-                    title: "Desktop Simulation",
-                    icon: "bi-display",
-                    description: "Using advanced software to simulate the system's performance, ensuring optimal design and function before installation."
-                },
-                {
-                    title: "Site Visit",
-                    icon: "bi-geo-alt-fill",
-                    description: "Visiting the site to assess physical conditions, make necessary adjustments to designs, and ensure readiness for the next steps."
-                },
-                {
-                    title: "Validation & Design",
-                    icon: "bi-diagram-3",
-                    description: "Validating the initial designs with on-site data and refining the design to meet all technical and functional requirements."
-                },
-                {
-                    title: "Proposal & Acceptance",
-                    icon: "bi-file-earmark-check",
-                    description: "Submitting a comprehensive proposal outlining costs, timelines, and specifications, followed by client acceptance to move forward."
-                },
-                {
-                    title: "Installation & Testing",
-                    icon: "bi-hammer",
-                    description: "Carrying out the installation process and conducting thorough testing to ensure all systems are functional and meet quality standards."
-                },
-                {
-                    title: "Net Metering",
+                    title: "Net Metering and Subsidy Approval",
                     icon: "bi-receipt",
-                    description: "Implementing net metering systems to track energy usage and optimize energy efficiency, enabling clients to monitor consumption and savings."
-                }
+                    description: "Submit compliant designs to DISCOM, ensure queries are resolved, and process subsidy applications."
+                },
+                // {
+                //     title: "Desktop Simulation",
+                //     icon: "bi-display",
+                //     description: "Using advanced software to simulate the system's performance, ensuring optimal design and function before installation."
+                // },
+                // {
+                //     title: "Site Visit",
+                //     icon: "bi-geo-alt-fill",
+                //     description: "Visiting the site to assess physical conditions, make necessary adjustments to designs, and ensure readiness for the next steps."
+                // },
+                // {
+                //     title: "Validation & Design",
+                //     icon: "bi-diagram-3",
+                //     description: "Validating the initial designs with on-site data and refining the design to meet all technical and functional requirements."
+                // },
+
             ]
 
         };
@@ -112,13 +115,15 @@ export default {
         position: sticky;
         top: 10%;
     }
-} 
+}
+
 .accordion-button:not(.collapsed) {
     color: white !important;
     background-color: #198754 !important;
     border-color: 4px solid var(--bg-primary) !important;
     box-shadow: none !important;
 }
+
 .accordion-button::after {
     filter: invert(1) !important
 }

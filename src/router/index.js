@@ -76,11 +76,11 @@ const routes = [
     name: "Terms&Conditions",
     component: () => import("@/pages/Terms&Conditions.vue"),
   },
-  {
-    path: "/gallery",
-    name: "GalleryPage",
-    component: () => import("@/pages/GalleryPage.vue"),
-  },
+  // {
+  //   path: "/gallery",
+  //   name: "GalleryPage",
+  //   component: () => import("@/pages/GalleryPage.vue"),
+  // },
   // {
   //   path: "/check-dealership",
   //   name: "CheckDealership",

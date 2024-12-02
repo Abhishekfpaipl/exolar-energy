@@ -82,7 +82,7 @@ export default {
                     </div>
                     <!-- <div class="btn d-flex justify-content-center my-5 align-items-center"
                         style="background-color: var(--bg-primary);"> -->
-                    <router-link to="/customers" style="background-color: var(--bg-primary);"
+                    <router-link to="/customers" style="background-color: var(--bg-secondary);"
                         class="btn d-flex justify-content-center my-5 align-items-center text-white">
                         <span>SEE ALL</span>
                         <i class="bi bi-arrow-right fs-3 visit ms-2"></i>
@@ -121,7 +121,7 @@ export default {
 
 <style scoped>
 .nav-link.active {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     color: white !important;
 }
 
