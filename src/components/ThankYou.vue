@@ -3,11 +3,25 @@
     <h2 :data-text="text" class="">{{ text }}</h2>
   </div> -->
   <!-- <button class="btn btn-warning my-5 fs-3 text-capitalize" data-bs-toggle="modal"
-    data-bs-target="#exampleModal">Contact Us Today for More Information<i class="bi bi-arrow-right visit"></i></button> -->
-    
-  <router-link to="/contact-us" class="btn btn-success my-5 fs-3 text-capitalize">Contact Us Today for More Information<i class="bi bi-arrow-right visit"></i></router-link>
-  
-  <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    data-bs-target="#siteVisitModal">Contact Us Today for More Information<i class="bi bi-arrow-right visit"></i></button> -->
+
+  <!-- <router-link to="/contact-us" class="btn btn-success fs-3 text-capitalize">Contact Us Today for More Information<i
+      class="bi bi-arrow-right visit"></i></router-link> -->
+  <div class="container-fluid shadow" style="background-color: var(--bg-light ) ;">
+    <router-link to="/contact-us" class="text-decoration-none text-dark">
+      <div class="row align-items-center py-4">
+        <div class="col-md-6">
+          <img src="/img/contactFooter.png" alt="subscribe newsletter" style="width: 200px; max-width: 90%;">
+        </div>
+        <div class="col-md-6 mb-4">
+          <p class="display-5 text-uppercase fw-bold">Have some more query</p>
+          <p class="text-center text-uppercase fs-3">Kindly<br><span class="fw-bold text-warning display-1"></span></p>
+          <button class="btn btn-warning w-50 fs-3">Contact Us <i class="bi bi-arrow-right visit"></i></button>
+        </div>
+      </div>
+    </router-link>
+  </div>
+  <div class="wh-60 rounded position-fixed p-2 bg-warning" data-bs-toggle="modal" data-bs-target="#siteVisitModal"
     style="bottom: 20px; right: 5px;z-index: 10;">
     <img src="/img/enquiry.svg" alt="Rooftop solar panel installation in Delhi by Exolar Energy" width="30" height="30">
   </div>

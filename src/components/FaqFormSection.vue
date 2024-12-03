@@ -1,17 +1,18 @@
 <template>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="siteVisitModal" tabindex="-1" aria-labelledby="siteVisitModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule a Free Site Visit Today!</h1>
+                <div class="modal-header border-bottom" style="background-color: var(--bg-light);border-color: var(--bg-secondary) !important;">
+                    <h1 class="modal-title fs-5" id="siteVisitModalLabel">Get A Free Site Visit Today!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background-color: var(--bg-light);">
                     <div class="mt-4">
                         <form @submit.prevent="submitForm" class="">
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="text" class="form-control" id="firstName" placeholder=""
                                             v-model="formData.firstName" :class="{ 'is-invalid': errors.firstName }"
                                             required>
@@ -20,7 +21,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="text" class="form-control" id="lastName" placeholder=""
                                             v-model="formData.lastName" :class="{ 'is-invalid': errors.lastName }"
                                             required>
@@ -32,7 +34,8 @@
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="text" class="form-control" id="postalCode" placeholder=""
                                             v-model="formData.postalCode" :class="{ 'is-invalid': errors.postalCode }"
                                             required>
@@ -41,7 +44,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="text" class="form-control" id="city" placeholder=""
                                             v-model="formData.city" :class="{ 'is-invalid': errors.city }" required>
                                         <div class="invalid-feedback">{{ errors.city }}</div>
@@ -52,7 +56,8 @@
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="text" class="form-control" id="state" placeholder=""
                                             v-model="formData.state" :class="{ 'is-invalid': errors.state }" required>
                                         <div class="invalid-feedback">{{ errors.state }}</div>
@@ -60,7 +65,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3 border rounded-2"
+                                        style="border-color: var(--bg-secondary) !important;">
                                         <input type="tel" class="form-control" id="phoneNumber" placeholder=""
                                             v-model="formData.phoneNumber" :class="{ 'is-invalid': errors.phoneNumber }"
                                             required>
@@ -69,14 +75,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3 border rounded-2"
+                                style="border-color: var(--bg-secondary) !important;">
                                 <input type="email" class="form-control" id="email" placeholder=""
                                     v-model="formData.email" :class="{ 'is-invalid': errors.email }" required>
                                 <div class="invalid-feedback">{{ errors.email }}</div>
                                 <label for="email">Email*</label>
                             </div>
 
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3 border rounded-2"
+                                style="border-color: var(--bg-secondary) !important;">
                                 <select class="form-control" id="electricityBill" v-model="formData.electricityBill"
                                     :class="{ 'is-invalid': errors.electricityBill }" required>
                                     <option value="">Select your average bill</option>
@@ -100,9 +108,13 @@
                                     </div>
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="commercial"
-                                            value="Commercial Establishment" v-model="formData.propertyType">
-                                        <label class="form-check-label" for="commercial">Commercial
-                                            Establishment</label>
+                                            value="Commercial" v-model="formData.propertyType">
+                                        <label class="form-check-label" for="commercial">Commercial</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="Industrial"
+                                            value="Industrial" v-model="formData.propertyType">
+                                        <label class="form-check-label" for="Industrial">Industrial</label>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +125,7 @@
                                     required>
                                 <p class="text-start">
                                     <label class="form-check-label " for="terms">
-                                        I agree to Exolar Energy 
+                                        I agree to Exolar Energy
                                         <router-link to="/terms-&-conditions">Terms of Service</router-link>
                                         <router-link to="/privacy-policy"> & Privacy Policy*</router-link>
                                     </label>

@@ -38,10 +38,10 @@ export default {
 :root {
   --bg-background:#f3f8f3 !important;
   --bg-secondary: #274185 !important;
-  --bg-primary: #1C75BC !important;
+  --bg-primary: #1c75bc !important; 
   --bg-third: #1C8452 !important;
   --bg-forth: #FEC111 !important;
-  --bg-light: #ABE1FA !important;
+  --bg-light: #ebfbff !important;
   --bg-grey: #546670 !important;
   --bg-lightgrey: #BACAD3 !important;
   // --bg-third: #1B9600 !important;

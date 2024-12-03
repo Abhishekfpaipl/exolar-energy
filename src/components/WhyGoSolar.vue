@@ -1,10 +1,11 @@
 <template>
-    <div class="" style="background-color:var(--bg-background) ">
+    <!-- <div class="" style="background-color:var(--bg-background) "> -->
         <div class="container">
             <div class="row justify-content-center align-items-center pt-5">
                 <div class="col-md-4">
                     <img ref="solarPanel" src="/img/banner/2.jpg"
-                        alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0" width="100%" height="auto">
+                        alt="Rooftop solar panel installation in Delhi by Exolar Energy" class="img-fluid scale-0"
+                        width="100%" height="auto">
                 </div>
                 <div class="col-md-8 mt-5 mt-md-0">
                     <div class="text-center">
@@ -19,13 +20,13 @@
                         </div>
                     </section>
                     <div class="pt-5">
-                        <button class="btn mt-5 fs-4 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            style="background-color:var(--bg-third);">Get Your Free Quote</button>
+                        <button class="btn mt-5 fs-4 text-white text-capitalize" data-bs-toggle="modal" data-bs-target="#siteVisitModal"
+                            style="background-color:var(--bg-third);">Get a free site visit</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>

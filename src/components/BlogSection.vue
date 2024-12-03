@@ -36,8 +36,8 @@ export default {
     <div class="container-fluid bg-light">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2 class="text-muted mb-1 text-uppercase">what our customer says about</h2>
-                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Exolar energy</h2>
+                <h2 class="text-muted mb-1 text-uppercase">Innovation | Trust | Sustainability | Community</h2>
+                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Our Happy Customers</h2>
             </div>
             <ul class="nav nav-pills mb-4 justify-content-start justify-content-md-center overflow-x-scroll flex-nowrap"
                 id="scroll" style="white-space: nowrap;" role="tablist">
@@ -53,8 +53,8 @@ export default {
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <div class="col" v-for="(post, index) in filteredPosts.slice(0, 3)" :key="index" v-observe>
                             <router-link :to="'/customer-detail/' + post.sid"
-                                class="text-decoration-none card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-white"
-                                style="background-color: var(--bg-primary)">
+                                class="text-decoration-none card h-100 border-0 shadow-sm rounded-4 overflow-hidden text-dark"
+                                style="background-color: var(--bg-light)">
                                 <img v-if="post.image" :src="post.image" class="card-img-top rounded-top-4"
                                     alt="Rooftop solar panel installation in Delhi by Exolar Energy"
                                     style="height: 230px; object-fit: cover;">
@@ -65,11 +65,11 @@ export default {
                                         allowfullscreen></iframe>
                                 </div>
                                 <div class="card-body text-start rounded-4"
-                                    style="background-color:  var(--bg-primary); margin-top: -40px; z-index: 10;">
+                                    style="background-color:  var(--bg-light); margin-top: -40px; z-index: 10;">
                                     <h5 class="card-title text-capitalize fw-bold">{{ post.title }}</h5>
                                     <p class="card-text small">{{ post.description }}</p>
                                 </div>
-                                <div class="card-footer border-white" style="background-color:var(--bg-primary);">
+                                <div class="card-footer border-white" style="background-color:var(--bg-light);">
                                     <div
                                         class="d-flex gap-3 justify-content-between align-items-center smaller">
                                         <span>{{ post.date }}</span>

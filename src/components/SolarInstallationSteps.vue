@@ -1,8 +1,8 @@
 <template>
     <div class="container text-center py-5">
         <div class="text-start mb-5">
-            <h2 class="text-muted mb-1 text-uppercase"> Optimum Energy</h2>
-            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Setting up Solar Systems</h1>
+            <h2 class="text-muted mb-1 text-uppercase">Step-by-Step Installation Process</h2>
+            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Complete Solar Journey</h1>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -18,17 +18,17 @@
                                 aria-expanded="false" :aria-controls="'flush-collapseOne' + index"
                                 style="background-color: #F3F8F3;">
                                 <div class="d-flex justify-content-center align-items-center border rounded-circle position-relative"
-                                    style="min-width: 100px; min-height: 100px;">
+                                    style="min-width: 80px; min-height: 80px;">
                                     <div class="position-absolute end-0 bg-success text-white rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                        style="width: 40px; height: 40px; font-size: 1.2rem; top: -10%">
+                                        style="width: 30px; height: 30px; font-size: 1.2rem; top: -10%">
                                         {{ index + 1 }}
                                     </div>
                                     <div class="d-flex justify-content-center align-items-center bg-light p-3 rounded-circle "
                                         style="width: 50px; height: 50px;">
-                                        <i :class="`bi ${step.icon} fs-1 text-success`"></i>
+                                        <i :class="`bi ${step.icon} fs-2 text-success`"></i>
                                     </div>
                                 </div>
-                                <p class="mb-0 fs-3 text-start ms-3">{{ step.title }}</p>
+                                <p class="mb-0 fs-4 text-start ms-3">{{ step.title }}</p>
                             </div>
                         </h3>
                         <div :id="'flush-collapseOne' + index"
@@ -61,7 +61,7 @@ export default {
                     description: "Engineers assess roof space, shadowing, structural strength, and cable routes for system feasibility."
                 },
                 {
-                    title: "Design Finalization and Proposal",
+                    title: "Design Finalization & Proposal",
                     icon: "bi-diagram-3",
                     description: "Prepare designs and proposals following field data, guidelines, and client preferences."
                 },
@@ -76,12 +76,12 @@ export default {
                     description: "Materials are procured, and approvals from DISCOMs and authorities are managed."
                 },
                 {
-                    title: "Installation and Commissioning",
+                    title: "Installation & Commissioning",
                     icon: "bi-shop-window",
                     description: "Solar panels, inverters, and cables are installed, followed by system testing and commissioning."
                 },
                 {
-                    title: "Net Metering and Subsidy Approval",
+                    title: "Net Metering & Subsidy Approval",
                     icon: "bi-receipt",
                     description: "Submit compliant designs to DISCOM, ensure queries are resolved, and process subsidy applications."
                 },

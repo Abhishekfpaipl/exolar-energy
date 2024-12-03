@@ -6,7 +6,7 @@
                 width="auto">
         </router-link>
         <div class="d-none d-md-flex align-items-center gap-3">
-            <router-link :to="link.route" class="text-decoration-none text-dark "
+            <router-link :to="link.route" class="text-decoration-none text-dark hover-text"
                 :class="{ 'border-class': $route.path === link.route }" v-for="(link, index) in links" :key="index">{{
                     link.name }}</router-link>
             <router-link to="/solar-calculator" class="btn text-white"
@@ -95,5 +95,8 @@ export default {
     border-bottom: 2px solid var(--bg-third) !important;
     color: var(--bg-primary) !important;
     font-weight: 600;
+}
+.hover-text:hover{
+    border-bottom: 2px solid var(--bg-third)
 }
 </style>

@@ -74,16 +74,19 @@ export default {
 </style> -->
 <template>
     <div style="padding-top: 60px;">
-        <SectionTopBanner mobileImage="/img/worldmap.jpg" desktopImg="/img/worldmap.jpg"/>
+        <SectionTopBanner mobileImage="/img/worldmap.jpg" desktopImg="/img/worldmap.jpg" />
         <div class="container mt-5">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="text-start p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"
+                    style="background-color:var(--bg-primary)">
 
-            <div class="text-start p-md-5 p-3 rounded mb-5" data-bs-toggle="modal" data-bs-target="#writeReview"
-                style="background-color:var(--bg-primary)">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2 class="text-start display-1 text-warning">Click here to give your</h2>
-                    <i class="bi bi-arrow-right ms-2 fs-1 visit text-warning"></i>
+                    <h2 class="text-center display-5 text-warning">Click here to give your</h2>
+                    <div class="d-flex gap-3 justify-content-center align-items-center">
+                        <h2 class="text-start display-5 text-white text-uppercase">Review</h2>
+                        <i class="bi bi-arrow-right ms-2 fs-1 visit text-white"></i>
+                    </div>
+
                 </div>
-                <AutoTypeDeleteText :texts="services" :typingSpeed="150" :deleteSpeed="50" :delay="500" />
             </div>
 
             <!-- Modal -->
@@ -106,20 +109,20 @@ export default {
                 </div>
             </div>
             <div class="row">
-                <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100" style="background-color: #F3F8F3 !important">
+                <div v-for="(review, index) in reviews" :key="index" class="col-md-6 col-lg-4 mb-5">
+                    <div class="card h-100" style="background-color:var(--bg-light) !important;">
                         <div class="card-body">
                             <!-- <i class="bi bi-google text-primary"></i> -->
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>
-                                <h5 class="card-title m-0">{{ review.authorName }}</h5>
-                            </div>
-                            <p class="text-start">{{ review.text }}</p>
-                            <div class="d-flex align-items-center mb-2">
+                            <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+                                <i class="bi bi-person-circle" style="margin-top: -50px; font-size: 40px;"></i>
+                                <h5 class="card-title m-0 text-uppercase fw-bold">{{ review.authorName }}</h5>
                                 <span class="me-2 text-warning">
                                     <i v-for="n in review.rating" :key="n" class="bi bi-star-fill"></i>
                                     <i v-for="n in 5 - review.rating" :key="`empty-${n}`" class="bi bi-star"></i>
                                 </span>
+                            </div>
+                            <p class="text-start">{{ review.text }}</p>
+                            <div class="d-flex justify-content-end align-items-center mb-2">
                                 <span class="text-muted">{{ review.date }}</span>
                             </div>
                         </div>
@@ -132,12 +135,10 @@ export default {
 
 <script>
 import SectionTopBanner from '@/components/SectionTopBanner.vue';
-import AutoTypeDeleteText from "@/components/AutoTypeDeleteText.vue"
 
 export default {
     components: {
         SectionTopBanner,
-        AutoTypeDeleteText,
     },
     data() {
         return {

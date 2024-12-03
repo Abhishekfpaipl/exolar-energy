@@ -6,6 +6,9 @@
       <WhyGoSolar />
     </div>
     <div class="my-5">
+      <WhyChooseUs />
+    </div>
+    <div class="my-5">
       <SolarInstallationSteps />
     </div>
     <div class="my-5">
@@ -16,9 +19,6 @@
     </div> -->
     <div class="my-5">
       <GoogleReviewSection />
-    </div>
-    <div class="my-5">
-      <WhyChooseUs />
     </div>
     <div class="mt-5 pt-5">
       <AboutSection />

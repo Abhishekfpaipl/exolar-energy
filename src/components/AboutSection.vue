@@ -17,8 +17,8 @@
                 </div>
             </div>
             <div class="row align-items-stretch mx-0">
-                <div class="col-md-6 px-0 stats-section" v-observe style="background-image: url('/img/worldmap.jpg');">
-                    <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-5"
+                <div class="col-md-6 px-0 stats-section pb-5" v-observe style="background-image: url('/img/worldmap.jpg');">
+                    <div class="counter-wrapper d-flex flex-column position-absolute top-0 start-0 end-0 bottom-0 p-md-5 p-3"
                         style=" background-color: rgba(39,65,133, 0.8)">
                         <div class="row g-4">
                             <div class="col-6" v-for="(counter, index) in counters" :key="index">
@@ -30,8 +30,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <router-link to="/about-us" class="btn btn-warning">Know More About us</router-link>
+                        <div class="row justify-content-center align-items-center mt-md-5 mt-4">
+                            <router-link to="/about-us" class="btn btn-warning w-50">Know More About us</router-link>
                         </div>
                     </div>
                 </div>
