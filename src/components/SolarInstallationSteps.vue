@@ -1,8 +1,8 @@
 <template>
     <div class="container text-center py-5">
         <div class="text-start mb-5">
-            <h2 class="text-muted mb-1 text-uppercase">Step-by-Step Installation Process</h2>
-            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Complete Solar Journey</h1>
+            <h2 class="text-muted mb-1 text-uppercase">Complete Solar Journey</h2>
+            <h1 class="display-5 text-uppercase" style="color: var(--bg-third);">Step-by-Step Installation Process</h1>
         </div>
         <div class="row">
             <div class="col-md-6">

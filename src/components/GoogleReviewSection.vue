@@ -1,7 +1,6 @@
 <template>
     <div class="container mt-5">
-        <div class="text-start mb-5">
-            <h2 class="text-muted mb-1 text-uppercase">Exolar Energy</h2>
+        <div class="text-start mb-5"> 
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">What People say about us</h2>
                 <!-- <router-link to="/reviews" class="text-decoration-none d-flex align-items-center"

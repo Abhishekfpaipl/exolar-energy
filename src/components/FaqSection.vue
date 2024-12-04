@@ -7,8 +7,7 @@
                         class="img-fluid" style="height: 250px; width: auto;">
                 </div>
                 <div class="col-md-6 mt-5 mt-md-0">
-                    <router-link to="/faqs" class="text-decoration-none text-start mb-5">
-                        <h2 class="text-muted mb-1 text-uppercase"> Explore </h2>
+                    <router-link to="/faqs" class="text-decoration-none text-start mb-5"> 
                         <h1 class="display-5 text-uppercase" style="color: var(--bg-primary);">Frequently Asked Questions
                             <i class="bi bi-arrow-right visit ms-2"></i>
                         </h1>

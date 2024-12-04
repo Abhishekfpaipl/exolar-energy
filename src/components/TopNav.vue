@@ -66,11 +66,11 @@ export default {
             links: [
                 { name: 'Home', route: '/' },
                 { name: 'About Us', route: '/about-us' },
+                { name: 'Customers', route: '/customers' },
                 { name: 'Contact Us', route: '/contact-us' },
                 // { name: 'Career', route: '/career' },
                 // { name: 'Benefit', route: '/benefit' },
                 // { name: 'Dealership', route: '/dealership' },
-                { name: 'Customers', route: '/customers' },
             ],
             follows: [
                 { name: "Twitter", icon: "bi bi-twitter", url: "https://x.com/exolar_energy" },

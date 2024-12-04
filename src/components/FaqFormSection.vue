@@ -2,13 +2,14 @@
     <div class="modal fade" id="siteVisitModal" tabindex="-1" aria-labelledby="siteVisitModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header border-bottom" style="background-color: var(--bg-light);border-color: var(--bg-secondary) !important;">
-                    <h1 class="modal-title fs-5" id="siteVisitModalLabel">Get A Free Site Visit Today!</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header border-bottom d-flex justify-content-between align-items-center"
+                    style="background-color: var(--bg-secondary);border-color: var(--bg-primary) !important;">
+                    <h1 class="modal-title fs-5 text-white" id="siteVisitModalLabel">Get A Free Site Visit Today!</h1>
+                    <i class="bi bi-x fs-2 text-white" data-bs-dismiss="modal" aria-label="Close"></i>
                 </div>
-                <div class="modal-body" style="background-color: var(--bg-light);">
+                <div class="modal-body" style="background-color: var(--bg-secondary);">
                     <div class="mt-4">
-                        <form @submit.prevent="submitForm" class="">
+                        <!-- <form @submit.prevent="submitForm" class="">
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 border rounded-2"
@@ -137,6 +138,81 @@
                                 style="background-color: var(--bg-primary)">REQUEST A
                                 CALL
                                 BACK</button>
+                        </form> -->
+
+                        <form @submit.prevent="submitForm" class="container">
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class=" mb-3">
+                                        <!-- <label for="Name" class="text-start d-block text-white">Name</label> -->
+                                        <input type="text"
+                                            class="form-control bg-transparent text-white custom-placeholder"
+                                            placeholder="Name" v-model="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <!-- <label for="Mobile number" class="text-start d-block text-white">Mobile number</label> -->
+                                        <input type="tel"
+                                            class="form-control bg-transparent text-white custom-placeholder"
+                                            placeholder="Mobile number*" v-model="mobileNumber" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="mb-3">
+                                        <input type="text"
+                                            class="form-control bg-transparent text-white custom-placeholder"
+                                            placeholder="pincode*" v-model="pincode" required>
+                                        <!-- <label for="pincode">Pincode</label> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="mb-3">
+                                        <input type="email"
+                                            class="form-control bg-transparent text-white custom-placeholder"
+                                            placeholder="Email*" v-model="email" required>
+                                        <!-- <label for="Email">Email</label> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-select bg-transparent custom-select" v-model="selectedOption">
+                                        <option value="" class="">I'm looking for</option>
+                                        <option value="Residential">Residential</option>
+                                        <option value="Commercial">Commercial</option>
+                                        <option value="Industrial">Industrial</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class=" mb-3">
+                                        <input type="number"
+                                            class="form-control bg-transparent text-white custom-placeholder"
+                                            placeholder="Electricity Bill*" v-model="electricityBill" required>
+                                        <!-- <label for="electricityBill">Electricity Bill</label> -->
+                                    </div>
+                                </div>
+                                <div class="form-check mb-3 mt-4">
+                                    <input type="checkbox" class="form-check-input" id="terms"
+                                        v-model="formData.termsAccepted" :class="{ 'is-invalid': errors.termsAccepted }"
+                                        required>
+                                    <p class="text-start">
+                                        <label class="form-check-label text-white  " for="terms">
+                                            I agree to Exolar Energy
+                                            <router-link to="/terms-&-conditions"
+                                                class="text-white text-decoration-none fw-bold">Terms of
+                                                Service</router-link>
+                                            <router-link to="/privacy-policy"
+                                                class="text-white text-decoration-none fw-bold"> & Privacy
+                                                Policy*</router-link>
+                                        </label>
+                                    </p>
+                                    <div class="invalid-feedback">{{ errors.termsAccepted }}</div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3 mb-5">
+                                <button type="submit" class="btn btn-warning">Submit Your Interest</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -163,6 +239,13 @@ export default {
                 propertyType: [],
                 termsAccepted: false
             },
+            name: '',
+            mobileNumber: '',
+            pincode: '',
+            email: '',
+            selectedOption: '',
+            electricityBill: null,
+            termsAccepted: false,
             errors: {},
             billRanges: [
                 '₹1,000 - ₹3,000',
@@ -250,6 +333,30 @@ export default {
 </script>
 
 <style scoped>
+.custom-placeholder::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* Example: Semi-transparent white */
+    font-style: italic;
+    /* Optional: Styling the placeholder text */
+}
+
+.custom-select {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Example: Semi-transparent black */
+    color: white;
+    /* Text color */
+    border: 1px solid white;
+    /* Optional: Border styling */
+}
+
+/* Style for dropdown options */
+.custom-select option {
+    background-color: black;
+    /* Background color for dropdown options */
+    color: white;
+    /* Text color for options */
+}
+
 .form-check-input:checked {
     background-color: #0d6efd;
     border-color: #0d6efd;

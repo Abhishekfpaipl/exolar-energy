@@ -183,19 +183,19 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start">Monthly Bill</td>
-                                    <td class="">{{ monthlyBill }}</td>
+                                    <td class="">₹ {{ monthlyBill }}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start">Electricity Rate</td>
-                                    <td>{{ electricityRate }}</td>
+                                    <td>₹ {{ electricityRate }}</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start">Sanctioned Load</td>
-                                    <td>{{ userSanctioned }}</td>
+                                    <td>{{ userSanctioned }} kW</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start">Shadow Free Area</td>
-                                    <td>{{ shadowFree }}</td>
+                                    <td>{{ shadowFree }} sq.ft</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -212,19 +212,19 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start">Plant Capacity Based on Consumption</td>
-                                    <td>{{ capacityConsumption }}</td>
+                                    <td>{{ capacityConsumption }} kW</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start">Plant Capacity Based on Sanctioned Load</td>
-                                    <td>{{ userSanctioned }}</td>
+                                    <td>{{ userSanctioned }} kW</td>
                                 </tr>
                                 <tr>
                                     <td class="text-start">Plant Capacity Based on Area Available</td>
-                                    <td>{{ capacityArea }}</td>
+                                    <td>{{ capacityArea }} kW</td>
                                 </tr>
                                 <tr class="table-warning fw-bold">
                                     <td class="text-start">Possible Plant Capacity (whichever is lower)</td>
-                                    <td>{{ possibleCapacity }}</td>
+                                    <td>{{ possibleCapacity }} kW</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -785,7 +785,7 @@ export default {
             }, 1000);
         },
         calculateFinalBill() {
-            this.billAfterSolar = this.possibleCapacity * 4 * 30 * this.electricityRate;
+            this.billAfterSolar = this.monthlyBill -  (this.possibleCapacity * 4 * 30 * this.electricityRate );
             this.savingPercent = (this.monthlyBill - this.billAfterSolar) / this.monthlyBill * 100
             this.yearlyUnitsSaving = this.yearlyUnitsGenerated * this.electricityRate
         },
@@ -978,220 +978,220 @@ export default {
             });
         },
         async generatePdf() {
-    const doc = new jsPDF("p", "mm", "a4");
-    const pageWidth = doc.internal.pageSize.width;
-    const pageHeight = doc.internal.pageSize.height;
+            const doc = new jsPDF("p", "mm", "a4");
+            const pageWidth = doc.internal.pageSize.width;
+            const pageHeight = doc.internal.pageSize.height;
 
-    // Define header and footer content
-    const companyLogo = "/img/logo.png"; // Replace with actual logo path
-    const companyPhone = "+911146568831";
-    const companyEmail = "info@exolarenergy.com";
-    const companyAddress = "405, Pearls Best Heights-1, Netaji Subhash Place, Pitampura, Delhi, 110034";
-    const companyWebsite = "www.exolarenergy.com";
+            // Define header and footer content
+            const companyLogo = "/img/logo.png"; // Replace with actual logo path
+            const companyPhone = "+911146568831";
+            const companyEmail = "info@exolarenergy.com";
+            const companyAddress = "405, Pearls Best Heights-1, Netaji Subhash Place, Pitampura, Delhi, 110034";
+            const companyWebsite = "www.exolarenergy.com";
 
-    // Custom function to add header and footer with borders
-    const addHeaderAndFooter = () => {
-        // Header
-        doc.setFontSize(10);
+            // Custom function to add header and footer with borders
+            const addHeaderAndFooter = () => {
+                // Header
+                doc.setFontSize(10);
 
-        // Logo (left side)
-        if (companyLogo) {
-            try {
-                doc.addImage(companyLogo, "PNG", 10, 10, 40, 13);
-            } catch (error) {
-                console.error("Error adding logo:", error);
+                // Logo (left side)
+                if (companyLogo) {
+                    try {
+                        doc.addImage(companyLogo, "PNG", 10, 10, 40, 13);
+                    } catch (error) {
+                        console.error("Error adding logo:", error);
+                    }
+                }
+
+                // Contact Info (right side)
+                doc.text(`Phone: ${companyPhone}`, pageWidth - 70, 15);
+                doc.text(`Email: ${companyEmail}`, pageWidth - 70, 20);
+
+                // Draw border below header
+                doc.setLineWidth(0.5);
+                doc.line(10, 25, pageWidth - 10, 25); // Draw line at Y position 25
+
+                // Footer
+                doc.setFontSize(8);
+                doc.text(`Address: ${companyAddress}`, 10, pageHeight - 20);
+                doc.text(`Website: ${companyWebsite}`, pageWidth - 70, pageHeight - 20);
+
+                // Draw border above footer
+                doc.setLineWidth(0.5);
+                doc.line(10, pageHeight - 30, pageWidth - 10, pageHeight - 30); // Draw line at Y position (footer margin)
+
+                // Page number
+                doc.text(`Page ${doc.internal.getNumberOfPages()}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+            };
+
+            // Function to add descriptive text
+            const addDescriptiveText = (text, startY) => {
+                doc.setFontSize(11);
+                const splitText = doc.splitTextToSize(text, pageWidth - 20);
+                doc.text(splitText, 10, startY);
+                return startY + (splitText.length * 7); // Adjust line height as needed
+            };
+
+            // Configure autoTable options
+            const autoTableOptions = {
+                didDrawPage: function () {
+                    addHeaderAndFooter();
+                },
+                margin: { top: 40, bottom: 30 },
+            };
+
+            // Main Content
+            doc.setFontSize(20);
+            doc.text("Exolar Solar Savings Calculator", 105, 40, { align: "center" });
+
+            let currentYPosition = 50; // Starting Y position
+
+            // Benefits Table
+            doc.setFontSize(16);
+            doc.text("Benefits", 10, currentYPosition);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 10,
+                head: [["Benefit", "Value"]],
+                body: [
+                    ["Payback Year", `${this.paybackYear} years`],
+                    ["CO2 Offset", `${Math.round(this.coOffset)} kg/year`],
+                    ["Trees Saved", `${Math.round(this.treeSaved)} per year`],
+                ],
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10; // Update the position after table
+
+            // Descriptive text after Benefits
+            const benefitsDescText = "Switching to solar energy helps you save money and protect the environment. It's a smart and eco-friendly choice that benefits both you and the planet.";
+            currentYPosition = addDescriptiveText(benefitsDescText, currentYPosition);
+
+            // Solar Calculation Data
+            doc.setFontSize(16);
+            doc.text("Solar Calculation Data", 10, currentYPosition + 10);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 15,
+                head: [["Parameter", "Value"]],
+                body: [
+                    ["Monthly Bill", `Rs.${this.monthlyBill}`],
+                    ["Electricity Rate", this.electricityRate],
+                    ["Sanctioned Load", `${this.userSanctioned} kW`],
+                    ["Shadow Free Area", `${this.shadowFree} sq.ft`],
+                ],
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10;
+
+            // Descriptive text after Solar Calculation Data
+            const calculationDescText = "Solar power is efficient and uses your available roof space wisely. We design a system to meet your energy needs while saving costs.";
+            currentYPosition = addDescriptiveText(calculationDescText, currentYPosition);
+
+            // Possible Plant Capacity Table
+            doc.setFontSize(16);
+            doc.text("Your Possible Plant Capacity", 10, currentYPosition + 10);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 15,
+                head: [["Parameter", "Value"]],
+                body: [
+                    ["Plant Capacity (Consumption)", this.capacityConsumption],
+                    ["Plant Capacity (Sanctioned Load)", this.userSanctioned],
+                    ["Plant Capacity (Area)", this.capacityArea],
+                    ["Possible Plant Capacity (whichever is lower)", this.possibleCapacity],
+                ],
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10;
+
+            // Solar Plant Output Table
+            doc.setFontSize(16);
+            doc.text("Your Solar Plant Output", 10, currentYPosition + 10);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 15,
+                head: [["Parameter", "Value"]],
+                body: [
+                    ["Cost of Project", this.costProject],
+                    ["Solar Panels", `${this.monoperc} panels`],
+                    ["Yearly Units Generated", `${this.yearlyUnitsGenerated} kWh`],
+                    ["Yearly Saving", `Rs ${this.yearlyUnitsSaving}`],
+                ],
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10;
+
+            // Descriptive text after Solar Plant Output
+            const plantDetailsDescText = "Our solar systems use advanced panels for better performance and durability, giving you reliable power for years to come.";
+            currentYPosition = addDescriptiveText(plantDetailsDescText, currentYPosition);
+
+            // Loan Details Table
+            doc.setFontSize(16);
+            doc.text("Loan Details", 10, currentYPosition + 10);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 15,
+                head: [["Parameter", "Value"]],
+                body: [
+                    ["Cost of Project", `Rs. ${this.costProject}`],
+                    ["Down Payment", `Rs. ${this.downPayment}`],
+                    ["Loan Amount", `Rs. ${this.localLoanAmount}`],
+                    ["Tenure", `${this.loanTenure} months`],
+                    ["Interest Rate", `${this.interestRate}%`],
+                    ["Monthly EMI", `Rs. ${this.monthlyEmi.toFixed(2)}`],
+                    ["Total Interest", `Rs. ${this.totalInterest.toFixed(2)}`],
+                    ["Total Payment", `Rs. ${this.totalPayment.toFixed(2)}`],
+                ],
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10;
+
+            // Descriptive text after Loan Details
+            const loanDescText = "We offer easy loan options with low monthly payments, so you can go solar without financial worries.";
+            currentYPosition = addDescriptiveText(loanDescText, currentYPosition);
+
+            // Yearly Savings Table
+            doc.setFontSize(16);
+            doc.text("Yearly Savings (10 Years)", 10, currentYPosition + 10);
+            autoTable(doc, {
+                ...autoTableOptions,
+                startY: currentYPosition + 15,
+                head: [["Year", "Savings (Rs.)"]],
+                body: this.yearlySavings.map((entry) => [entry.year, Math.round(entry.savings)]),
+            });
+            currentYPosition = doc.lastAutoTable.finalY + 10;
+
+            // Descriptive text after Yearly Savings
+            const yearlySavingsDescText = "Solar panels help reduce your electricity bill every year, giving you long-term financial benefits.";
+            currentYPosition = addDescriptiveText(yearlySavingsDescText, currentYPosition);
+
+            // Bar Charts (EMI and Savings Chart)
+            const maxContentHeight = pageHeight - 50; // Keeping some margin space for footer
+            let chartYPosition = currentYPosition;
+
+            // Check if the EMI Chart fits on the page
+            const emiChartCanvas = document.getElementById('emiChart');
+            if (emiChartCanvas) {
+                const emiChartHeight = 100;
+                if (chartYPosition + emiChartHeight > maxContentHeight) {
+                    doc.addPage(); // If not enough space, create a new page
+                    chartYPosition = 10; // Reset the position
+                }
+                const emiChartImage = emiChartCanvas.toDataURL('image/png');
+                doc.addImage(emiChartImage, 'PNG', 10, chartYPosition + 10, pageWidth - 20, emiChartHeight);
+                chartYPosition += emiChartHeight + 10;
             }
+
+            // Check if the Savings Bar Chart fits on the page
+            const savingsChartCanvas = document.getElementById('emiSavingsChart');
+            if (savingsChartCanvas) {
+                const savingsChartHeight = 100;
+                if (chartYPosition + savingsChartHeight > maxContentHeight) {
+                    doc.addPage(); // If not enough space, create a new page
+                    chartYPosition = 10; // Reset the position
+                }
+                const savingsChartImage = savingsChartCanvas.toDataURL('image/png');
+                doc.addImage(savingsChartImage, 'PNG', 10, chartYPosition + 10, pageWidth - 20, savingsChartHeight);
+            }
+
+            // Finalize and Save the PDF
+            doc.save("Exloar_Energy.pdf");
         }
-
-        // Contact Info (right side)
-        doc.text(`Phone: ${companyPhone}`, pageWidth - 70, 15);
-        doc.text(`Email: ${companyEmail}`, pageWidth - 70, 20);
-
-        // Draw border below header
-        doc.setLineWidth(0.5);
-        doc.line(10, 25, pageWidth - 10, 25); // Draw line at Y position 25
-
-        // Footer
-        doc.setFontSize(8);
-        doc.text(`Address: ${companyAddress}`, 10, pageHeight - 15);
-        doc.text(`Website: ${companyWebsite}`, pageWidth - 70, pageHeight - 15);
-
-        // Draw border above footer
-        doc.setLineWidth(0.5);
-        doc.line(10, pageHeight - 30, pageWidth - 10, pageHeight - 30); // Draw line at Y position (footer margin)
-
-        // Page number
-        doc.text(`Page ${doc.internal.getNumberOfPages()}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
-    };
-
-    // Function to add descriptive text
-    const addDescriptiveText = (text, startY) => {
-        doc.setFontSize(11);
-        const splitText = doc.splitTextToSize(text, pageWidth - 20);
-        doc.text(splitText, 10, startY);
-        return startY + (splitText.length * 7); // Adjust line height as needed
-    };
-
-    // Configure autoTable options
-    const autoTableOptions = {
-        didDrawPage: function () {
-            addHeaderAndFooter();
-        },
-        margin: { top: 40, bottom: 30 },
-    };
-
-    // Main Content
-    doc.setFontSize(20);
-    doc.text("Exolar Solar Savings Calculator", 105, 40, { align: "center" });
-
-    let currentYPosition = 50; // Starting Y position
-
-    // Benefits Table
-    doc.setFontSize(16);
-    doc.text("Benefits", 10, currentYPosition);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 10,
-        head: [["Benefit", "Value"]],
-        body: [
-            ["Payback Year", `${this.paybackYear} years`],
-            ["CO2 Offset", `${Math.round(this.coOffset)} kg/year`],
-            ["Trees Saved", `${Math.round(this.treeSaved)} per year`],
-        ],
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10; // Update the position after table
-
-    // Descriptive text after Benefits
-    const benefitsDescText = "Switching to solar energy helps you save money and protect the environment. It's a smart and eco-friendly choice that benefits both you and the planet.";
-    currentYPosition = addDescriptiveText(benefitsDescText, currentYPosition);
-
-    // Solar Calculation Data
-    doc.setFontSize(16);
-    doc.text("Solar Calculation Data", 10, currentYPosition + 10);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 15,
-        head: [["Parameter", "Value"]],
-        body: [
-            ["Monthly Bill", this.monthlyBill],
-            ["Electricity Rate", this.electricityRate],
-            ["Sanctioned Load", this.userSanctioned],
-            ["Shadow Free Area", this.shadowFree],
-        ],
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10;
-
-    // Descriptive text after Solar Calculation Data
-    const calculationDescText = "Solar power is efficient and uses your available roof space wisely. We design a system to meet your energy needs while saving costs.";
-    currentYPosition = addDescriptiveText(calculationDescText, currentYPosition);
-
-    // Possible Plant Capacity Table
-    doc.setFontSize(16);
-    doc.text("Your Possible Plant Capacity", 10, currentYPosition + 10);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 15,
-        head: [["Parameter", "Value"]],
-        body: [
-            ["Plant Capacity (Consumption)", this.capacityConsumption],
-            ["Plant Capacity (Sanctioned Load)", this.userSanctioned],
-            ["Plant Capacity (Area)", this.capacityArea],
-            ["Possible Plant Capacity (whichever is lower)", this.possibleCapacity],
-        ],
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10;
-
-    // Solar Plant Output Table
-    doc.setFontSize(16);
-    doc.text("Your Solar Plant Output", 10, currentYPosition + 10);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 15,
-        head: [["Parameter", "Value"]],
-        body: [
-            ["Cost of Project", this.costProject],
-            ["Solar Panels", `${this.monoperc} panels`],
-            ["Yearly Units Generated", `${this.yearlyUnitsGenerated} kWh`],
-            ["Yearly Saving", `Rs ${this.yearlyUnitsSaving}`],
-        ],
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10;
-
-    // Descriptive text after Solar Plant Output
-    const plantDetailsDescText = "Our solar systems use advanced panels for better performance and durability, giving you reliable power for years to come.";
-    currentYPosition = addDescriptiveText(plantDetailsDescText, currentYPosition);
-
-    // Loan Details Table
-    doc.setFontSize(16);
-    doc.text("Loan Details", 10, currentYPosition + 10);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 15,
-        head: [["Parameter", "Value"]],
-        body: [
-            ["Cost of Project", `Rs. ${this.costProject}`],
-            ["Down Payment", `Rs. ${this.downPayment}`],
-            ["Loan Amount", `Rs. ${this.localLoanAmount}`],
-            ["Tenure", `${this.loanTenure} months`],
-            ["Interest Rate", `${this.interestRate}%`],
-            ["Monthly EMI", `Rs. ${this.monthlyEmi.toFixed(2)}`],
-            ["Total Interest", `Rs. ${this.totalInterest.toFixed(2)}`],
-            ["Total Payment", `Rs. ${this.totalPayment.toFixed(2)}`],
-        ],
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10;
-
-    // Descriptive text after Loan Details
-    const loanDescText = "We offer easy loan options with low monthly payments, so you can go solar without financial worries.";
-    currentYPosition = addDescriptiveText(loanDescText, currentYPosition);
-
-    // Yearly Savings Table
-    doc.setFontSize(16);
-    doc.text("Yearly Savings (30 Years)", 10, currentYPosition + 10);
-    autoTable(doc, {
-        ...autoTableOptions,
-        startY: currentYPosition + 15,
-        head: [["Year", "Savings (Rs.)"]],
-        body: this.yearlySavings.map((entry) => [entry.year, Math.round(entry.savings)]),
-    });
-    currentYPosition = doc.lastAutoTable.finalY + 10;
-
-    // Descriptive text after Yearly Savings
-    const yearlySavingsDescText = "Solar panels help reduce your electricity bill every year, giving you long-term financial benefits.";
-    currentYPosition = addDescriptiveText(yearlySavingsDescText, currentYPosition);
-
-    // Bar Charts (EMI and Savings Chart)
-    const maxContentHeight = pageHeight - 50; // Keeping some margin space for footer
-    let chartYPosition = currentYPosition;
-
-    // Check if the EMI Chart fits on the page
-    const emiChartCanvas = document.getElementById('emiChart');
-    if (emiChartCanvas) {
-        const emiChartHeight = 100;
-        if (chartYPosition + emiChartHeight > maxContentHeight) {
-            doc.addPage(); // If not enough space, create a new page
-            chartYPosition = 10; // Reset the position
-        }
-        const emiChartImage = emiChartCanvas.toDataURL('image/png');
-        doc.addImage(emiChartImage, 'PNG', 10, chartYPosition + 10, pageWidth - 20, emiChartHeight);
-        chartYPosition += emiChartHeight + 10;
-    }
-
-    // Check if the Savings Bar Chart fits on the page
-    const savingsChartCanvas = document.getElementById('emiSavingsChart');
-    if (savingsChartCanvas) {
-        const savingsChartHeight = 100;
-        if (chartYPosition + savingsChartHeight > maxContentHeight) {
-            doc.addPage(); // If not enough space, create a new page
-            chartYPosition = 10; // Reset the position
-        }
-        const savingsChartImage = savingsChartCanvas.toDataURL('image/png');
-        doc.addImage(savingsChartImage, 'PNG', 10, chartYPosition + 10, pageWidth - 20, savingsChartHeight);
-    }
-
-    // Finalize and Save the PDF
-    doc.save("solar_savings_report.pdf");
-}
 
 
 

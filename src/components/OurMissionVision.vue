@@ -37,20 +37,22 @@ export default {
         return {
             items: [
                 {
-                    icon: "bi-sun",
+                    icon: "bi-house",
                     title: "Our Mission",
-                    text: "Our mission is to accelerate the transition to clean energy by delivering reliable and affordable solar solutions, empowering individuals, businesses, and communities to reduce their carbon footprint and embrace a sustainable future."
+                    text: "We are dedicated to providing start-to-end support for our customers in rooftop solar power plant installation. Our focus is on delivering high-quality solar systems at minimal cost while ensuring aesthetic appeal. We strive to be the most reliable and trusted solar company in the market, setting a benchmark for excellence in solar solutions."
                 },
                 {
-                    icon: "bi-globe",
+                    icon: "bi-building",
                     title: "Our Vision",
-                    text: "Our vision is to be a global leader in renewable energy, driving positive environmental impact and enabling a world where clean, sustainable energy is accessible to all, creating a healthier planet for future generations."
+                    text: "Our vision is to enable the world to maximize the use of distributed solar energy. To become India’s No. 1 rooftop solar company, renowned for delivering exceptional quality and maintaining system-oriented processes across every major city in the country. We aspire to be recognized as the best employer in India, fostering a workplace that inspires growth, innovation, and excellence."
                 },
                 {
-                    icon: "bi-tree",
+                    icon: "bi-people",
                     title: "Our Values",
-                    text: "Our values are rooted in innovation, integrity, and environmental responsibility, as we strive to deliver high-quality solar solutions that respect the earth and contribute to a greener, cleaner world."
+                    text: "We value trust, on-time delivery, and uncompromised quality. Customer satisfaction and happiness are our priorities, alongside caring for our employees. We focus on growing as an organization while increasing company profitability."
                 }
+
+
             ]
         };
     },

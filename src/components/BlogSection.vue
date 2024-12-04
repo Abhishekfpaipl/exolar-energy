@@ -36,8 +36,9 @@ export default {
     <div class="container-fluid bg-light">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2 class="text-muted mb-1 text-uppercase">Innovation | Trust | Sustainability | Community</h2>
-                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Our Happy Customers</h2>
+                <h2 class="text-muted mb-1 text-uppercase">Our Happy Customers </h2>
+                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Innovation | Trust |
+                    Sustainability | Community</h2>
             </div>
             <ul class="nav nav-pills mb-4 justify-content-start justify-content-md-center overflow-x-scroll flex-nowrap"
                 id="scroll" style="white-space: nowrap;" role="tablist">
@@ -70,8 +71,7 @@ export default {
                                     <p class="card-text small">{{ post.description }}</p>
                                 </div>
                                 <div class="card-footer border-white" style="background-color:var(--bg-light);">
-                                    <div
-                                        class="d-flex gap-3 justify-content-between align-items-center smaller">
+                                    <div class="d-flex gap-3 justify-content-between align-items-center smaller">
                                         <span>{{ post.date }}</span>
                                         <p class="mb-0" style="color: var(--primary-color);">Read more <i
                                                 class="bi bi-arrow-right visit"></i></p>
@@ -99,7 +99,7 @@ export default {
     name: 'BlogSection',
     data() {
         return {
-            activeTab: 'projects', 
+            activeTab: 'projects',
         }
     },
     computed: {

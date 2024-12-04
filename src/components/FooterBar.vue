@@ -16,11 +16,9 @@
                     Netaji Subhash Place, Pitampura, Delhi, 110034 </p>
                 <div class="d-flex gap-2 justify-content-center">
                     <p class="fw-bold">Follow Us :</p>
-                    <i class="bi bi-twitter-x"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-linkedin"></i>
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-instagram"></i>
+                    <a :href="link.route" v-for="(link, index) in socialLinks" :key="index" class="text-white"><i class="bi"
+                            :class="link.icon"></i></a>
+
                 </div>
             </div>
             <div class="col-12 col-md-4 d-flex justify-content-around">
@@ -135,6 +133,13 @@ export default {
                 //     link: '/report'
                 // },
             ],
+            socialLinks: [
+                { icon: "bi-twitter-x", route: "", },
+                { icon: "bi-facebook", route: "", },
+                { icon: "bi-linkedin", route: "", },
+                { icon: "bi-youtube", route: "", },
+                { icon: "bi-instagram", route: "", },
+            ]
         }
     },
 }
