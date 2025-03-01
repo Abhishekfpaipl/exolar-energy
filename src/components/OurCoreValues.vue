@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5"> 
-                    <h2 class="display-5 text-uppercase fw-bold" style="color: var(--bg-primary)">
+                    <h2 class="display-5 text-capitalize fw-bold" style="color: var(--bg-primary)">
                         Our Core Values
                     </h2>
                 </div>
@@ -57,43 +57,63 @@ export default {
             datas: [
                 {
                     icon: 'bi bi-sun', // Sun icon for renewable energy
-                    heading: 'Sustainable Energy',
-                    text: 'Our mission is to deliver clean, renewable energy solutions that reduce carbon footprint and contribute to a greener planet.'
+                    heading: 'Competitive Pricing',
+                    text: 'Best prices on leading brands.'
                 },
                 {
                     icon: 'bi bi-recycle', // Recycle icon for eco-friendliness
-                    heading: 'Eco-Friendly Practices',
-                    text: 'We are dedicated to eco-friendly practices, minimizing environmental impact through sustainable product development and operations.'
+                    heading: 'In-House Expertise',
+                    text: 'Dedicated design and installation team.'
                 },
                 {
                     icon: 'bi bi-tree', // Tree icon for environmental consciousness
-                    heading: 'Environmental Stewardship',
-                    text: 'We prioritize conservation and environmental responsibility in all aspects of our business, ensuring a positive impact on the planet.'
+                    heading: 'Optimized Design & Engineering',
+                    text: 'Efficient design and engineering for the best project outcomes.'
                 },
                 {
                     icon: 'bi bi-lightning', // Lightning icon for energy efficiency
-                    heading: 'High Energy Efficiency',
-                    text: 'Our products are engineered for maximum energy efficiency, providing reliable power while reducing overall energy consumption.'
+                    heading: 'Strong Top Management',
+                    text: 'Led by solar experts, we ensure quality solutions for your projects.'
                 }, 
                 {
                     icon: 'bi bi-lightbulb', // Lightbulb icon for innovation
-                    heading: 'Innovation in Technology',
-                    text: 'We continuously innovate to bring the latest advancements in solar technology, providing efficient and cost-effective energy solutions.'
+                    heading: 'Quality Assurance',
+                    text: 'Top-tier materials and workmanship guaranteed.'
                 },
                 {
                     icon: 'bi bi-building', // Building icon for infrastructure
-                    heading: 'Reliable Infrastructure',
-                    text: 'Our robust infrastructure supports sustainable energy production, ensuring reliable power for both residential and commercial needs.'
+                    heading: 'After-Sales Excellence',
+                    text: ' Premium support after installation.'
                 },
                 {
                     icon: 'bi bi-wrench', // Wrench icon for flexibility
-                    heading: 'Custom Solutions',
-                    text: 'We offer tailored solar solutions to meet the unique requirements of our customers, ensuring optimal results for each project.'
+                    heading: 'The Best Technology and Value',
+                    text: ' Advanced technology with cost-effective solutions, no compromises.'
                 },
                 {
                     icon: 'bi bi-award', // Award icon for quality assurance
-                    heading: 'Quality Assurance',
-                    text: 'Our commitment to quality is backed by industry standards and certifications, guaranteeing excellence in every product and service.'
+                    heading: 'Top-Quality Maintenance',
+                    text: 'Proactive maintenance for smooth operations and optimal performance.'
+                },
+                {
+                    icon: 'bi bi-award', // Award icon for quality assurance
+                    heading: 'Quick Project Delivery',
+                    text: 'On-time project completion with precision and expertise.'
+                },
+                {
+                    icon: 'bi bi-award', // Award icon for quality assurance
+                    heading: 'Fast Net Metering & Subsidy Approval',
+                    text: 'Quick approval for net metering and subsidies, ensuring timely project setup.'
+                },
+                {
+                    icon: 'bi bi-award', // Award icon for quality assurance
+                    heading: 'Trust & Honesty',
+                    text: ' Clear communication and flexible options for your peace of mind.'
+                },
+                {
+                    icon: 'bi bi-award', // Award icon for quality assurance
+                    heading: 'Daily Remote Monitoring',
+                    text: 'Real-time monitoring and analytics for complete control.'
                 },
             ],
         }

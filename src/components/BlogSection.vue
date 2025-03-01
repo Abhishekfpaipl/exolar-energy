@@ -1,44 +1,11 @@
-<!-- <template>
-    <div>
-        <h1>My Blog Posts</h1>
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <h2>{{ post.title }}</h2>
-                <p v-html="post.content"></p>
-            </li>
-        </ul>
-    </div>
-</template>
-
-<script>
-export default {
-    data() {
-        return {
-            posts: [],
-        };
-    },
-    async created() {
-        const apiKey = 'AIzaSyB9GyVaW4PVIwRGWunb7lSx5BgTx-hd2q4';
-        const blogId = '6475577164886193723';
-        const url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts?key=${apiKey}`;
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            this.posts = data.items || [];
-        } catch (error) {
-            console.error('Error fetching blog posts:', error);
-        }
-    },
-};
-</script> -->
-
+ 
 <template>
     <div class="container-fluid bg-light">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <h2 class="text-muted mb-1 text-uppercase">Our Happy Customers </h2>
-                <h2 class="display-5  text-uppercase" style="color: var(--bg-primary);">Innovation | Trust |
+                <h2 class="text-muted mb-1 text-capitalize">Innovation | Trust |
                     Sustainability | Community</h2>
+                <h2 class="display-5  text-capitalize" style="color: var(--bg-primary);"> Our Happy Customers </h2>
             </div>
             <ul class="nav nav-pills mb-4 justify-content-start justify-content-md-center overflow-x-scroll flex-nowrap"
                 id="scroll" style="white-space: nowrap;" role="tablist">
@@ -79,19 +46,17 @@ export default {
                                 </div>
                             </router-link>
                         </div>
-                    </div>
-                    <!-- <div class="btn d-flex justify-content-center my-5 align-items-center"
-                        style="background-color: var(--bg-primary);"> -->
+                    </div> 
                     <router-link to="/customers" style="background-color: var(--bg-secondary);"
                         class="btn d-flex justify-content-center my-5 align-items-center text-white">
                         <span>SEE ALL</span>
                         <i class="bi bi-arrow-right fs-3 visit ms-2"></i>
-                    </router-link>
-                    <!-- </div> -->
+                    </router-link> 
                 </div>
             </div>
         </div>
     </div>
+    
 </template>
 
 <script>
@@ -131,3 +96,80 @@ img:hover {
     transition: scale 1s ease;
 }
 </style>
+<!-- <template>
+    <div>
+        <h1>My Blog Posts</h1>
+ 
+        <select v-model="selectedLabel" @change="fetchPosts">
+            <option value="">All Categories</option>
+            <option v-for="label in labels" :key="label" :value="label">
+                {{ label }}
+            </option>
+        </select>
+ 
+        <ul>
+            <li v-for="post in posts" :key="post.id">
+                <h2>{{ post.title }}</h2>
+                <p v-html="post.content"></p>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            posts: [],
+            selectedLabel: "", 
+            labels: ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"], 
+            apiKey: "AIzaSyB9GyVaW4PVIwRGWunb7lSx5BgTx-hd2q4",
+            blogId: "6475577164886193723",
+        };
+    },
+    async created() {
+        this.fetchPosts();  
+    },
+    methods: {
+        async fetchPosts() {
+            let url = `https://www.googleapis.com/blogger/v3/blogs/${this.blogId}/posts?key=${this.apiKey}`;
+
+             
+            if (this.selectedLabel) {
+                url += `&labels=${encodeURIComponent(this.selectedLabel)}`;
+            }
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                this.posts = data.items || [];
+            } catch (error) {
+                console.error("Error fetching blog posts:", error);
+            }
+        },
+    },
+};
+</script>
+
+<style scoped>
+h1 {
+    text-align: center;
+}
+
+select {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+</style> -->

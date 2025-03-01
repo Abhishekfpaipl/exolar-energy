@@ -41,10 +41,11 @@ export default {
   data() {
     return {
       banners: [
-        { desktop: "/img/banner/banner.jpg", mobile: "/img/banner/mobileBanner.jpg", },
-        { desktop: "/img/banner/new1.jpeg", mobile: "/img/banner/mobilenew1.jpeg", },
-        { desktop: "/img/banner/new3.jpeg", mobile: "/img/banner/mobilenew2.jpeg", },
-        { desktop: "/img/banner/new2.jpeg", mobile: "/img/banner/mobilenew3.jpeg", },
+        { desktop: "/img/bannerNew/1.jpg", mobile: "/img/bannerNew/mob1.jpg", },
+        { desktop: "/img/bannerNew/2.jpg", mobile: "/img/bannerNew/mob2.jpg", },
+        { desktop: "/img/bannerNew/3.jpg", mobile: "/img/bannerNew/mob3.jpg", },
+        { desktop: "/img/bannerNew/4.jpg", mobile: "/img/bannerNew/mob4.jpg", },
+        { desktop: "/img/bannerNew/5.jpg", mobile: "/img/bannerNew/mob5.jpg", },
       ]
     }
   }

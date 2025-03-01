@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-8 mt-5 mt-md-0">
                     <div class="text-center"> 
-                        <h2 class="display-5 text-uppercase" style="color: var(--bg-third);">Why Go Solar ?</h2>
+                        <h2 class="display-5 text-capitalize" style="color: var(--bg-third);">Why Go Solar ?</h2>
                     </div>
                     <section class="d-flex justify-content-center align-items-center my-3">
                         <div class="position-relative w-100">

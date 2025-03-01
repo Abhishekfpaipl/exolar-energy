@@ -68,12 +68,7 @@ export default {
                     id: 42,
                     name: 'About Us',
                     link: '/about-us'
-                },
-                {
-                    id: 3,
-                    name: 'Business',
-                    link: '/business'
-                },
+                }, 
                 {
                     id: 3,
                     name: 'Customers',
@@ -83,30 +78,10 @@ export default {
                     id: 3,
                     name: 'Reviews',
                     link: '/reviews'
-                },
-                // {
-                //     id: 23,
-                //     name: 'Career',
-                //     link: '/career'
-                // },
-                // {
-                //     id: 23,
-                //     name: 'Benefit',
-                //     link: '/benefit'
-                // },
-                // {
-                //     id: 3,
-                //     name: 'Check Dealership',
-                //     link: '/check-dealership'
-                // },
+                }, 
 
             ],
-            links: [
-                // {
-                //     id: 13,
-                //     name: 'Gallery',
-                //     link: '/gallery'
-                // },
+            links: [ 
                 {
                     id: 1,
                     name: 'Privacy Policy',
@@ -121,17 +96,7 @@ export default {
                     id: 3,
                     name: 'Refund Policy',
                     link: '/refund-policy'
-                },
-                // {
-                //     id: 23,
-                //     name: 'Facility',
-                //     link: '/facility'
-                // },
-                // {
-                //     id: 23,
-                //     name: 'Reports',
-                //     link: '/report'
-                // },
+                }, 
             ],
             socialLinks: [
                 { icon: "bi-twitter-x", route: "", },

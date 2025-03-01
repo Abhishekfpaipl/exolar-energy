@@ -33,7 +33,7 @@
         </div>
         <div class="container-fluid mt-5 py-5 text-dark bg-light" v-observe>
             <div class="row justify-content-center align-items-center">
-                <h1 class="text-uppercase mb-4 text-center">Need to get in touch with us?</h1>
+                <h1 class="text-capitalize mb-4 text-center">Need to get in touch with us?</h1>
                 <div class="col-12 col-md-6 mt-5 mt-md-0 ">
                     <div class="row row-cols-1">
                         <div v-for="(icon, index) in contact" :key="index" class="col py-2"

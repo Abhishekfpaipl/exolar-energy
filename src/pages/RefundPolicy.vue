@@ -1,13 +1,12 @@
 <template>
-    <div style="padding-top: 60px;">
-        <SectionTopBanner mobileImage="/img/worldmap.jpg" desktopImg="/img/worldmap.jpg"/>
+    <div > 
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card border-0">
                         <div class="card-body my-5 text-start">
                             <h1 class="text-center mb-4">Return and Refund Policy</h1>
-                            <p><strong>Effective Date:</strong> October 22</p>
+                            <p><strong>Effective Date:</strong> Feb 22</p>
 
                             <section>
                                 <h2 class="text-start ">Thank You for Choosing Exolar Energy</h2>
@@ -106,15 +105,9 @@
     </div>
 </template>
 
-<script>
-import SectionTopBanner from '@/components/SectionTopBanner.vue';
+<script> 
 
 export default {
-    name: 'PrivacyPolicy',
-    components: {
-        SectionTopBanner
-    },
+    name: 'RefundPolicy', 
 }
-</script>
-
-<style scoped></style>
+</script> 

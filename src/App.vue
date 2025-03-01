@@ -1,19 +1,16 @@
 <template>
   <DashboardNav />
   <router-view />
-  <ThankYou />
   <FooterBar />
 </template>
 <script>
 import DashboardNav from "@/components/TopNav.vue";
 import FooterBar from "@/components/FooterBar.vue";
-import ThankYou from "@/components/ThankYou.vue";
 export default {
   name: "App",
   components: {
     DashboardNav,
     FooterBar,
-    ThankYou
   },
   computed: {
     // hide() {
@@ -26,19 +23,41 @@ export default {
 }
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://your-cdn-link-to-gilroy/Gilroy-Regular.woff2') format('woff2'),
+    url('https://your-cdn-link-to-gilroy/Gilroy-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://your-cdn-link-to-gilroy/Gilroy-Bold.woff2') format('woff2'),
+    url('https://your-cdn-link-to-gilroy/Gilroy-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Apply globally */
+body {
+  font-family: 'Gilroy', Roboto;
+}
+
+#app { 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
+ 
+
 
 :root {
-  --bg-background:#f3f8f3 !important;
+  --bg-background: #f3f8f3 !important;
   --bg-secondary: #274185 !important;
-  --bg-primary: #1c75bc !important; 
+  --bg-primary: #1c75bc !important;
   --bg-third: #1C8452 !important;
   --bg-forth: #FEC111 !important;
   --bg-light: #ebfbff !important;
@@ -73,6 +92,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .text-ellipsis12 {
   display: -webkit-box;
   -webkit-line-clamp: 12;
@@ -136,7 +156,8 @@ export default {
 .carousel-control-next-icon {
   filter: invert(1);
 }
-.form-control{
-  box-shadow:none !important;
+
+.form-control {
+  box-shadow: none !important;
 }
 </style>

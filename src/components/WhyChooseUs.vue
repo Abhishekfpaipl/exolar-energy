@@ -2,7 +2,7 @@
     <div>
         <div class="" style="background-color: var(--bg-secondary)">
             <div class="container pt-5">
-                <h1 class="text-center display-5 text-white mb-4 text-uppercase">Why Choose Us?</h1>
+                <h1 class="text-center display-5 text-white mb-4 text-capitalize">Why Choose Us?</h1>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-items-center ">
                     <div class="col mb-5" v-for="(card, index) in cards" :key="index">
                         <div class="card-container border position-relative rounded p-2 "

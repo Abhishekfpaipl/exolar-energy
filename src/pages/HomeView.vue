@@ -22,7 +22,7 @@
     </div>
     <div class="mt-5 pt-5">
       <AboutSection />
-    </div> 
+    </div>
     <!-- <div class="my-5">
       <NewGallerySection :images="images" />
     </div> -->
@@ -30,7 +30,9 @@
     <div class="">
       <FaqSection />
     </div>
-
+    <div class=""> 
+      <ThankYou />
+    </div>
   </div>
 </template>
 
@@ -46,7 +48,8 @@ import FaqSection from "@/components/FaqSection.vue";
 // import ShortsVideoSection from "@/components/ShortsVideoSection.vue";
 import GoogleReviewSection from "@/components/GoogleReviewSection.vue";
 // import NewGallerySection from '@/components/NewGallerySection.vue'; 
-import BlogSection from '@/components/BlogSection.vue';  
+import BlogSection from '@/components/BlogSection.vue';
+import ThankYou from "@/components/ThankYou.vue";
 
 export default {
   name: "HomeView",
@@ -62,7 +65,8 @@ export default {
     GoogleReviewSection,
     // NewGallerySection,
     WhyChooseUs,
-    BlogSection, 
+    BlogSection,
+    ThankYou
   },
   data() {
     return {

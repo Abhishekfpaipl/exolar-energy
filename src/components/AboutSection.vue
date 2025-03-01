@@ -24,7 +24,7 @@
                             <div class="col-6" v-for="(counter, index) in counters" :key="index">
                                 <div class="counter-item text-white">
                                     <div class="display-3 fw-bold d-flex gap-1 justify-content-center">
-                                        <AutoCounter :data="counter.number" /> +
+                                        <AutoCounter :data="counter.number" /> <span>{{ counter.prefix }}</span> +
                                     </div>
                                     <p class="small">{{ counter.text }}</p>
                                 </div>
@@ -55,10 +55,10 @@ export default {
     data() {
         return {
             counters: [
-                { number: 800, text: "Satisfied Customers" },
-                { number: 20, text: "State Presence" },
-                { number: 16, text: "Megawatt Capacity" },
-                { number: 250, text: "Trusted Partners" },
+                { number: 100, text: "Satisfied Customers" },
+                { number: 10, text: "State Presence" },
+                { number: 4, text: "Megawatt Capacity" },
+                { number: 1.8, prefix:"L", text: "Trees Equivalent" },
             ]
         }
     },

@@ -5,7 +5,7 @@
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="pe-md-4">
                         <div class="text-center text-md-start mb-5">
-                            <h2 class="display-5 text-uppercase fw-bold" style="color: var(--bg-primary);">
+                            <h2 class="display-5 text-capitalize fw-bold" style="color: var(--bg-primary);">
                                 Why We Are The Best
                             </h2>
                             <div class="separator-line bg-primary mb-4"></div>
@@ -48,24 +48,24 @@ export default {
         return {
             highlights: [
                 {
-                    title: "Professional Expertise",
-                    description: "Founded by professionals with extensive experience in solar sector."
+                    title: "Exclusive Brands Tie-up",
+                    description: "Collaborating with top-tier brands for premium product offerings."
                 },
                 {
-                    title: "Engineering Excellence",
-                    description: "Team of high competence engineers with robust, well-thought-out designs."
+                    title: "Extended Quality Assurance",
+                    description: "  Delivering products and services that exceed industry standards."
                 },
                 {
-                    title: "Cutting-Edge Technology",
-                    description: "Utilizing the latest software to optimize design efficiency."
+                    title: "Expert In-House Design",
+                    description: "Innovative, tailor-made solutions crafted by skilled professionals."
                 },
                 {
-                    title: "Customized Solutions",
-                    description: "Multiple options tailored to meet your specific needs and preferences."
+                    title: "Excellent Installation Work",
+                    description: "Precision and perfection in every project execution."
                 },
                 {
-                    title: "Advanced Monitoring",
-                    description: "Remote monitoring and data analysis at your fingertips."
+                    title: "Exceptional After-Sales Support ",
+                    description: "Ensuring long-term customer satisfaction with dedicated service."
                 }
             ]
         };

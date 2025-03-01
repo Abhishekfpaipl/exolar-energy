@@ -1,6 +1,5 @@
 <template>
-    <div style="padding-top: 60px;">
-        <SectionTopBanner />
+    <div> 
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -93,14 +92,10 @@
     </div>
 </template>
 
-<script>
-import SectionTopBanner from '@/components/SectionTopBanner.vue';
+<script> 
 
 export default {
-    name: 'PrivacyPolicy',
-    components: {
-        SectionTopBanner
-    },
+    name: 'PrivacyPolicy', 
 }
 </script>
 

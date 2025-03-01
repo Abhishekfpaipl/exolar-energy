@@ -1,6 +1,5 @@
 <template>
-    <div style="padding-top: 60px;">
-        <SectionTopBanner />
+    <div > 
         <div class="container py-5 rounded-top-5 bg-white text-start" style="margin-top: -40px;" v-observe>
             <div class="card border-0">
                 <div class="card-body my-5">
@@ -115,14 +114,10 @@
     </div>
 </template>
 
-<script>
-import SectionTopBanner from '@/components/SectionTopBanner.vue';
+<script> 
 
 export default {
-    name: "TermOfUse",
-    components: {
-        SectionTopBanner
-    }
+    name: "TermOfUse", 
 };
 </script>
 
